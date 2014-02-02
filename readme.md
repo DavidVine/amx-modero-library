@@ -157,7 +157,7 @@ Copy the required DEV arrays from **amx-modero-listener**:
 	dev dvPanelsUserTextInput[]	= { 10001:1:0 }
 	#end_if
 
-to the main program file and populate the contents of the DEV arrays with only the ports of the DVX that you want to listen to. E.g:
+to the main program file and populate the contents of the DEV arrays with only the ports of the Modero that you want to listen to. E.g:
 
 	define_device
 

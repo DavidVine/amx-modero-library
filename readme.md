@@ -27,7 +27,7 @@ The **amx-modero-library** NetLinx library is intended as a tool to make things 
 + NXD-700i       | NXD-700Vi
 + NXD-CV5
 + NXD-500i       | NXD-500iW
-+ NXD-430        |NXD-435          | NXD-435P
++ NXD-430        | NXD-435         | NXD-435P
 + MVP-9000i
 + MVP-8400       | MVP-8400i
 + MVP-5100       | MVP-5150        | MVP-5200i

@@ -113,9 +113,24 @@ define_function moderoNotifyKeyboardEntry (dev panel, char text[])
 }
 */
 
+
+/*
+#define INCLUDE_MODERO_NOTIFY_KEYBOARD_ABORT
+define_function moderoNotifyKeyboardAbort (dev panel)
+{
+}
+*/
+
 /*
 #define INCLUDE_MODERO_NOTIFY_KEYPAD_ENTRY
 define_function moderoNotifyKeypadEntry (dev panel, char text[])
+{
+}
+*/
+
+/*
+#define INCLUDE_MODERO_NOTIFY_KEYPAD_ABORT
+define_function moderoNotifyKeypadAbort (dev panel)
 {
 }
 */
@@ -475,27 +490,38 @@ data_event[dvPanelsUserTextInput]
 		{
 			active (find_string(data.text,"MODERO_STRING_KEYBOARD",1) == 1):
 			{
-				#if_defined INCLUDE_MODERO_NOTIFY_KEYBOARD_ENTRY
 				remove_string (data.text, "MODERO_STRING_KEYBOARD", 1)
 				
-				
-				if (data.text != MODERO_KEYBOARD_ABORT)
+				if (data.text == MODERO_KEYBOARD_ABORT)
 				{
-					moderoNotifyKeyboardEntry (data.device, data.text)
+					#if_defined INCLUDE_MODERO_NOTIFY_KEYBOARD_ABORT
+					moderoNotifyKeyboardAbort (data.device)
+					#end_if
 				}
-				#end_if
+				else
+				{
+					#if_defined INCLUDE_MODERO_NOTIFY_KEYBOARD_ENTRY
+					moderoNotifyKeyboardEntry (data.device, data.text)
+					#end_if
+				}
 			}
 			
 			active (find_string(data.text,"MODERO_STRING_KEYPAD",1) == 1):
 			{
-				#if_defined INCLUDE_MODERO_NOTIFY_KEYPAD_ENTRY
 				remove_string (data.text, "MODERO_STRING_KEYPAD", 1)
 				
 				if (data.text != MODERO_KEYPAD_ABORT)
 				{
-					moderoNotifyKeypadEntry (data.device, data.text)
+					#if_defined INCLUDE_MODERO_NOTIFY_KEYPAD_ABORT
+					moderoNotifyKeypadAbort (data.device)
+					#end_if
 				}
-				#end_if
+				else
+				{
+					#if_defined INCLUDE_MODERO_NOTIFY_KEYPAD_ENTRY
+					moderoNotifyKeypadEntry (data.device, data.text)
+					#end_if
+				}
 			}
 		}
 	}

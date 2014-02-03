@@ -481,7 +481,6 @@ data_event[dvPanelsCoordinateTracking]
     }
 }
 
-
 data_event[dvPanelsUserTextInput]
 {
 	string:

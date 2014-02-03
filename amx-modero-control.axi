@@ -63,30 +63,29 @@ char VERSION_AMX_MODERO_CONTROL[] = 'v0.9.0'
  */
 
 /*
- * Function:	moderoSetPage
+ * Function:    moderoSetPage
  * 
- * Arguments:	dev panel - touch panel
- * 				char pageName[] - page name
- * 					- 1-50 ASCII characters.
+ * Arguments:   dev panel - touch panel
+ *              char pageName[] - page name (1-50 ASCII characters)
  * 
- * Description:	Flip to a page with a specified page name. If the page name is
- * 		empty, the panel flips to the previous page.
+ * Description: Flip to a page with a specified page name. If the page name is
+ *              empty, the panel flips to the previous page.
  */
 define_function moderoSetPage (dev panel, char pageName[])
 {
-    sendCommand (panel, "MODERO_COMMAND_PAGE_FLIP,pageName")
+	sendCommand (panel, "MODERO_COMMAND_PAGE_FLIP,pageName")
 }
 
 /*
- * Function:	moderoSetPagePrevious
+ * Function:    moderoSetPagePrevious
  * 
- * Arguments:	dev panel - touch panel
+ * Arguments:   dev panel - touch panel
  * 
- * Description:	Flip to the previous page.
+ * Description: Flip to the previous page.
  */
 define_function moderoSetPagePrevious (dev panel)
 {
-    sendCommand (panel, "MODERO_COMMAND_PAGE_FLIP")
+	sendCommand (panel, "MODERO_COMMAND_PAGE_FLIP")
 }
 
 
@@ -97,18 +96,16 @@ define_function moderoSetPagePrevious (dev panel)
  */
 
 /*
- * Function:	moderoAddPopupToGroup
+ * Function:    moderoAddPopupToGroup
  * 
- * Arguments:	dev panel - touch panel
- * 				char popupName[] - popup page name
- * 					- 1-50 ASCII characters.
- * 				char popupGroupName[] - popup group name
- * 					- 1-50 ASCII characters.
+ * Arguments:   dev panel - touch panel
+ *              char popupName[] - popup page name (1-50 ASCII characters)
+ *              char popupGroupName[] - popup group name (1-50 ASCII characters)
  * 
- * Description:	Add a specific popup page to a specified popup group if it does 
- *		not already exist. If the new popup is added to a group which has a 
- *		popup displayed on the current page along with the new pop-up, the
- *		displayed popup will be hidden and the new popup will be displayed.
+ * Description: Add a specific popup page to a specified popup group if it does 
+ *              not already exist. If the new popup is added to a group which has a 
+ *              popup displayed on the current page along with the new pop-up, the
+ *              displayed popup will be hidden and the new popup will be displayed.
  */
 define_function moderoAddPopupToGroup (dev panel, char popupName[], char popupGroupName[])
 {
@@ -116,13 +113,12 @@ define_function moderoAddPopupToGroup (dev panel, char popupName[], char popupGr
 }
 
 /*
- * Function:	moderoClearAllPopupsFromGroup
+ * Function:    moderoClearAllPopupsFromGroup
  * 
- * Arguments:	dev panel - touch panel
- * 				char popupGroupName[] - popup group name
- * 					- 1-50 ASCII characters.
+ * Arguments:   dev panel - touch panel
+ *              char popupGroupName[] - popup group name (1-50 ASCII characters)
  * 
- * Description:	Clear all popup pages from specified popup group.
+ * Description: Clear all popup pages from specified popup group.
  */
 define_function moderoClearAllPopupsFromGroup (dev panel, char popupGroupName[])
 {
@@ -130,15 +126,13 @@ define_function moderoClearAllPopupsFromGroup (dev panel, char popupGroupName[])
 }
 
 /*
- * Function:	moderoDeletePopupFromGroup
+ * Function:    moderoDeletePopupFromGroup
  * 
- * Arguments:	dev panel - touch panel
- * 				char popupName[] - popup page name
- * 					- 1-50 ASCII characters.
- * 				char popupGroupName[] - popup group name
- * 					- 1-50 ASCII characters.
+ * Arguments:   dev panel - touch panel
+ *              char popupName[] - popup page name (1-50 ASCII characters)
+ *              char popupGroupName[] - popup group name (1-50 ASCII characters)
  * 
- * Description:	Delete a specific popup page from specified popup group if it exists.
+ * Description: Delete a specific popup page from specified popup group if it exists.
  */
 define_function moderoDeletePopupFromGroup (dev panel, char popupName[], char popupGroupName[])
 {
@@ -146,15 +140,14 @@ define_function moderoDeletePopupFromGroup (dev panel, char popupName[], char po
 }
 
 /*
- * Function:	moderoEnablePopupLocationResetFlag
+ * Function:    moderoEnablePopupLocationResetFlag
  * 
- * Arguments:	dev panel - touch panel
- * 				char popupName[] - popup page name
- * 					- 1-50 ASCII characters.
+ * Arguments:   dev panel - touch panel
+ *              char popupName[] - popup page name (1-50 ASCII characters)
  * 
- * Description:	Enable the popup location reset flag. If the flag is set, the 
- *		popup will return to its default location on show instead of its last 
- *		drag location.
+ * Description: Enable the popup location reset flag. If the flag is set, the 
+ *              popup will return to its default location on show instead of its last 
+ *              drag location.
  */
 define_function moderoEnablePopupLocationResetFlag (dev panel, char popupName[])
 {
@@ -162,15 +155,14 @@ define_function moderoEnablePopupLocationResetFlag (dev panel, char popupName[])
 }
 
 /*
- * Function:	moderoDisablePopupLocationResetFlag
+ * Function:    moderoDisablePopupLocationResetFlag
  * 
- * Arguments:	dev panel - touch panel
- * 				char popupName[] - popup page name
- * 					- 1-50 ASCII characters.
+ * Arguments:   dev panel - touch panel
+ *              char popupName[] - popup page name (1-50 ASCII characters)
  * 
- * Description:	Disable the popup location reset flag. If the flag is not set, 
- *		the popup will return to its default location on show instead of its 
- *		last drag location.
+ * Description: Disable the popup location reset flag. If the flag is not set, 
+ *              the popup will return to its default location on show instead of its 
+ *              last drag location.
  */
 define_function moderoDisablePopupLocationResetFlag (dev panel, char popupName[])
 {
@@ -178,13 +170,12 @@ define_function moderoDisablePopupLocationResetFlag (dev panel, char popupName[]
 }
 
 /*
- * Function:	moderoTogglePopup
+ * Function:    moderoTogglePopup
  * 
- * Arguments:	dev panel - touch panel
- * 				char popupName[] - popup page name
- * 					- 1-50 ASCII characters.
+ * Arguments:   dev panel - touch panel
+ *              char popupName[] - popup page name (1-50 ASCII characters)
  * 
- * Description:	Toggle a specific popup page on a the current page.
+ * Description: Toggle a specific popup page on a the current page.
  */
 define_function moderoTogglePopup (dev panel, char popupName[])
 {
@@ -192,15 +183,13 @@ define_function moderoTogglePopup (dev panel, char popupName[])
 }
 
 /*
- * Function:	moderoTogglePopupOnPage
+ * Function:    moderoTogglePopupOnPage
  * 
- * Arguments:	dev panel - touch panel
- * 				char popupName[] - popup page name
- * 					- 1-50 ASCII characters.
- * 				char pageName[] - page name
- * 					- 1-50 ASCII characters.
+ * Arguments:   dev panel - touch panel
+ *              char popupName[] - popup page name (1-50 ASCII characters)
+ *              char pageName[] - page name (1-50 ASCII characters)
  * 
- * Description:	Toggle a specific popup page on a specified page.
+ * Description: Toggle a specific popup page on a specified page.
  */
 define_function moderoTogglePopupOnPage (dev panel, char popupName[], char pageName[])
 {
@@ -208,13 +197,12 @@ define_function moderoTogglePopupOnPage (dev panel, char popupName[], char pageN
 }
 
 /*
- * Function:	moderoEnablePopupModality
+ * Function:    moderoEnablePopupModality
  * 
- * Arguments:	dev panel - touch panel
- * 				char popupName[] - popup page name
- * 					- 1-50 ASCII characters.
+ * Arguments:   dev panel - touch panel
+ *              char popupName[] - popup page name (1-50 ASCII characters)
  * 
- * Description:	Set the modality of a specific popup page to modal.
+ * Description: Set the modality of a specific popup page to modal.
  */
 define_function moderoEnablePopupModality (dev panel, char popupName[])
 {
@@ -222,13 +210,12 @@ define_function moderoEnablePopupModality (dev panel, char popupName[])
 }
 
 /*
- * Function:	moderoDisablePopupModality
+ * Function:    moderoDisablePopupModality
  * 
- * Arguments:	dev panel - touch panel
- * 				char popupName[] - popup page name
- * 					- 1-50 ASCII characters.
+ * Arguments:   dev panel - touch panel
+ *              char popupName[] - popup page name (1-50 ASCII characters)
  * 
- * Description:	Set the modality of a specific popup page to non-modal.
+ * Description: Set the modality of a specific popup page to non-modal.
  */
 define_function moderoDisablePopupModality (dev panel, char popupName[])
 {
@@ -236,80 +223,73 @@ define_function moderoDisablePopupModality (dev panel, char popupName[])
 }
 
 /*
- * Function:	moderoEnablePopup
+ * Function:    moderoEnablePopup
  * 
- * Arguments:	dev panel - touch panel
- * 				char popupName[] - popup page name
- * 					- 1-50 ASCII characters.
+ * Arguments:   dev panel - touch panel
+ *              char popupName[] - popup page name (1-50 ASCII characters)
  * 
- * Description:	Activates a specific popup to launch on the current page. If
- *		the popup is already active on the current page it does not get redrawn.
+ * Description: Activates a specific popup to launch on the current page. If
+ *              the popup is already active on the current page it does not get redrawn.
  */
 define_function moderoEnablePopup (dev panel, char popupName[])
 {
-    sendCommand (panel, "MODERO_COMMAND_POPUP_SHOW,popupName")
+	sendCommand (panel, "MODERO_COMMAND_POPUP_SHOW,popupName")
 }
 
 /*
- * Function:	moderoEnablePopupOnPage
+ * Function:    moderoEnablePopupOnPage
  * 
- * Arguments:	dev panel - touch panel
- * 				char popupName[] - popup page name
- * 					- 1-50 ASCII characters.
- * 				char pageName[] - page name
- * 					- 1-50 ASCII characters.
+ * Arguments:   dev panel - touch panel
+ *              char popupName[] - popup page name (1-50 ASCII characters)
+ *              char pageName[] - page name (1-50 ASCII characters)
  * 
- * Description:	Activates a specific popup to launch on a specified page. If
- * 		the page name is empty, the current page is used. If the popup is
- *		already active on the current page it does not get redrawn.
+ * Description: Activates a specific popup to launch on a specified page. If
+ *              the page name is empty, the current page is used. If the popup is
+ *              already active on the current page it does not get redrawn.
  */
 define_function moderoEnablePopupOnPage (dev panel, char popupName[], char pageName[])
 {
-    sendCommand (panel, "MODERO_COMMAND_POPUP_SHOW,popupName,';',pageName")
+	sendCommand (panel, "MODERO_COMMAND_POPUP_SHOW,popupName,';',pageName")
 }
 
 /*
- * Function:	moderoDisablePopup
+ * Function:    moderoDisablePopup
  * 
- * Arguments:	dev panel - touch panel
- * 				char popupName[] - popup page name
- * 					- 1-50 ASCII characters.
+ * Arguments:   dev panel - touch panel
+ *              char popupName[] - popup page name (1-50 ASCII characters)
  * 
- * Description:	Deactivates a specific popup on the current page.If the popup
- *		is part of a group the whole group is deactivated.
+ * Description: Deactivates a specific popup on the current page.If the popup
+ *              is part of a group the whole group is deactivated.
  */
 define_function moderoDisablePopup (dev panel, char popupName[])
 {
-    sendCommand (panel, "MODERO_COMMAND_POPUP_HIDE,popupName")
+	sendCommand (panel, "MODERO_COMMAND_POPUP_HIDE,popupName")
 }
 
 /*
- * Function:	moderoDisablePopupOnPage
+ * Function:    moderoDisablePopupOnPage
  * 
- * Arguments:	dev panel - touch panel
- * 				char popupName[] - popup page name
- * 					- 1-50 ASCII characters.
- * 				char pageName[] - page name
- * 					- 1-50 ASCII characters.
+ * Arguments:   dev panel - touch panel
+ *              char popupName[] - popup page name (1-50 ASCII characters)
+ *              char pageName[] - page name (1-50 ASCII characters)
  * 
- * Description:	Deactivates a specific popup on a specified page. If the page
- * 		name is empty, the current page is used. If the popup is part of a
- *		group the whole group is deactivated.
+ * Description: Deactivates a specific popup on a specified page. If the page
+ *              name is empty, the current page is used. If the popup is part of a
+ *              group the whole group is deactivated.
  */
 define_function moderoDisablePopupOnPage (dev panel, char popupName[], char pageName[])
 {
-    sendCommand (panel, "MODERO_COMMAND_POPUP_HIDE,popupName,';',pageName")
+	sendCommand (panel, "MODERO_COMMAND_POPUP_HIDE,popupName,';',pageName")
 }
 
 /*
- * Function:	moderoDisablePopupOnAllPages
+ * Function:    moderoDisablePopupOnAllPages
  * 
- * Arguments:	dev panel - touch panel
- * 				char popupName[] - popup page name
- * 					- 1-50 ASCII characters.
+ * Arguments:   dev panel - touch panel
+ *              char popupName[] - popup page name (1-50 ASCII characters)
  * 
- * Description:	Deactivates a specific popup on all pages. If the popup is par
- *		of a group the whole group is deactivated.
+ * Description: Deactivates a specific popup on all pages. If the popup is par
+ *              of a group the whole group is deactivated.
  */
 define_function moderoDisablePopupOnAllPages (dev panel, char popupName[])
 {
@@ -317,15 +297,15 @@ define_function moderoDisablePopupOnAllPages (dev panel, char popupName[])
 }
 
 /*
- * Function:	moderoDisableAllPopups
+ * Function:    moderoDisableAllPopups
  * 
- * Arguments:	dev panel - touch panel
+ * Arguments:   dev panel - touch panel
  * 
- * Description:	Close all popups on all pages.
+ * Description: Close all popups on all pages.
  */
 define_function moderoDisableAllPopups (dev panel)
 {
-    sendCommand (panel, "MODERO_COMMAND_POPUP_CLOSE_ALL")
+	sendCommand (panel, "MODERO_COMMAND_POPUP_CLOSE_ALL")
 }
 
 
@@ -335,15 +315,14 @@ define_function moderoDisableAllPopupsOnPage (dev panel, char pageName[])
 }
 
 /*
- * Function:	moderoSetPopupTimeout
+ * Function:    moderoSetPopupTimeout
  * 
- * Arguments:	dev panel - touch panel
- * 				char popupName[] - popup page name
- * 					- 1-50 ASCII characters.
- *				integer timeoutInTenthsOfSeconds - timeout in tenths of seconds
+ * Arguments:   dev panel - touch panel
+ *              char popupName[] - popup page name (1-50 ASCII characters)
+ *              integer timeoutInTenthsOfSeconds - timeout in tenths of seconds
  * 
- * Description:	Set a specific popup page to timeout within a specified time. If
- *		timeout is empty, popup page will clear the timeout.
+ * Description: Set a specific popup page to timeout within a specified time. If
+ *              timeout is empty, popup page will clear the timeout.
  */
 define_function moderoSetPopupTimeout (dev panel, char popupName[], integer timeoutInTenthsOfSeconds)
 {
@@ -351,20 +330,19 @@ define_function moderoSetPopupTimeout (dev panel, char popupName[], integer time
 }
 
 /*
- * Function:	moderoSetPopupShowEffect
+ * Function:    moderoSetPopupShowEffect
  * 
- * Arguments:	dev panel - touch panel
- * 				char popupName[] - popup page name
- * 					- 1-50 ASCII characters.
- *				char showEffect[] - show effect
+ * Arguments:   dev panel - touch panel
+ *              char popupName[] - popup page name (1-50 ASCII characters)
+ *              char showEffect[] - show effect
  * 
- * Description:	Set the show effect for the specified popup page to the named
- *		show effect.
+ * Description: Set the show effect for the specified popup page to the named
+ *              show effect.
  */
 define_function moderoSetPopupShowEffect (dev panel, char popupName[], char showEffect[])
 {
-    switch (showEffect)
-    {
+	switch (showEffect)
+	{
 		case MODERO_SHOW_EFFECT_NONE:
 		case MODERO_SHOW_EFFECT_FADE:
 		case MODERO_SHOW_EFFECT_SLIDE_FROM_LEFT:
@@ -378,58 +356,55 @@ define_function moderoSetPopupShowEffect (dev panel, char popupName[], char show
 		{
 			sendCommand (panel, "MODERO_COMMAND_POPUP_SHOW_EFFECT,popupName,';',showEffect")
 		}
-    }
+	}
 }
 
 /*
- * Function:	moderoSetPopupShowEffectPosition
+ * Function:    moderoSetPopupShowEffectPosition
  * 
- * Arguments:	dev panel - touch panel
- * 				char popupName[] - popup page name
- * 					- 1-50 ASCII characters.
- *				char showEffect[] - show effect
- *				integer coordX - X coordinate
- *				integer coordY - Y coordinate
+ * Arguments:   dev panel - touch panel
+ *              char popupName[] - popup page name (1-50 ASCII characters)
+ *              char showEffect[] - show effect
+ *              integer coordX - X coordinate
+ *              integer coordY - Y coordinate
  * 
- * Description:	Set the show effect position. Only 1 coordinate is ever needed 
- *		for an effect; however, the command will specify both. This command 
- *		sets the location at which the effect will begin.
+ * Description: Set the show effect position. Only 1 coordinate is ever needed 
+ *              for an effect; however, the command will specify both. This command 
+ *              sets the location at which the effect will begin.
  */
 define_function moderoSetPopupShowEffectPosition (dev panel, char popupName[], integer coordX, integer coordY)
 {
-    sendCommand (panel, "MODERO_COMMAND_POPUP_SHOW_EFFECT_POSITION,popupName,';',itoa(coordX),',',itoa(coordY)")
+	sendCommand (panel, "MODERO_COMMAND_POPUP_SHOW_EFFECT_POSITION,popupName,';',itoa(coordX),',',itoa(coordY)")
 }
 
 /*
- * Function:	moderoSetPopupShowEffectTime
+ * Function:    moderoSetPopupShowEffectTime
  * 
- * Arguments:	dev panel - touch panel
- * 				char popupName[] - popup page name
- * 					- 1-50 ASCII characters.
- *				integer timeInTenthsOfSeconds - show effect time in tenths of seconds
+ * Arguments:   dev panel - touch panel
+ *              char popupName[] - popup page name (1-50 ASCII characters)
+ *              integer timeInTenthsOfSeconds - show effect time in tenths of seconds
  * 
- * Description:	Set the show effect time for the specified popup page.
+ * Description: Set the show effect time for the specified popup page.
  */
 define_function moderoSetPopupShowEffectTime (dev panel, char popupName[], integer timeInTenthsOfSeconds)
 {
-    sendCommand (panel, "MODERO_COMMAND_POPUP_SHOW_EFFECT_TIME,popupName,';',itoa(timeInTenthsOfSeconds)")
+	sendCommand (panel, "MODERO_COMMAND_POPUP_SHOW_EFFECT_TIME,popupName,';',itoa(timeInTenthsOfSeconds)")
 }
 
 /*
- * Function:	moderoSetPopupHidewEffect
+ * Function:    moderoSetPopupHidewEffect
  * 
- * Arguments:	dev panel - touch panel
- * 				char popupName[] - popup page name
- * 					- 1-50 ASCII characters.
- *				char hideEffect[] - hide effect
+ * Arguments:   dev panel - touch panel
+ *              char popupName[] - popup page name (1-50 ASCII characters)
+ *              char hideEffect[] - hide effect
  * 
- * Description:	Set the hide effect for the specified popup page to the named
- *		hide effect.
+ * Description: Set the hide effect for the specified popup page to the named
+ *              hide effect.
  */
 define_function moderoSetPopupHideEffect (dev panel, char popupName[], char hideEffect[])
 {
-    switch (hideEffect)
-    {
+	switch (hideEffect)
+	{
 		case MODERO_HIDE_EFFECT_NONE:
 		case MODERO_HIDE_EFFECT_FADE:
 		case MODERO_HIDE_EFFECT_SLIDE_TO_LEFT:
@@ -443,41 +418,39 @@ define_function moderoSetPopupHideEffect (dev panel, char popupName[], char hide
 		{
 			sendCommand (panel, "MODERO_COMMAND_POPUP_HIDE_EFFECT,popupName,';',hideEffect")
 		}
-    }
+	}
 }
 
 /*
- * Function:	moderoSetPopupHideEffectPosition
+ * Function:    moderoSetPopupHideEffectPosition
  * 
- * Arguments:	dev panel - touch panel
- * 				char popupName[] - popup page name
- * 					- 1-50 ASCII characters.
- *				char hideEffect[] - hide effect
- *				integer coordX - X coordinate
- *				integer coordY - Y coordinate
+ * Arguments:   dev panel - touch panel
+ *              char popupName[] - popup page name (1-50 ASCII characters)
+ *              char hideEffect[] - hide effect
+ *              integer coordX - X coordinate
+ *              integer coordY - Y coordinate
  * 
- * Description:	Set the hide effect position. Only 1 coordinate is ever needed 
- *		for an effect; however, the command will specify both. This command 
- *		sets the location at which the effect will begin.
+ * Description: Set the hide effect position. Only 1 coordinate is ever needed 
+ *              for an effect; however, the command will specify both. This command 
+ *              sets the location at which the effect will begin.
  */
 define_function moderoSetPopupHideEffectPosition (dev panel, char popupName[], integer coordX, integer coordY)
 {
-    sendCommand (panel, "MODERO_COMMAND_POPUP_HIDE_EFFECT_POSITION,popupName,';',itoa(coordX),',',itoa(coordY)")
+	sendCommand (panel, "MODERO_COMMAND_POPUP_HIDE_EFFECT_POSITION,popupName,';',itoa(coordX),',',itoa(coordY)")
 }
 
 /*
- * Function:	moderoSetPopupHideEffectTime
+ * Function:    moderoSetPopupHideEffectTime
  * 
- * Arguments:	dev panel - touch panel
- * 				char popupName[] - popup page name
- * 					- 1-50 ASCII characters.
- *				integer timeInTenthsOfSeconds - hide effect time in tenths of seconds
+ * Arguments:   dev panel - touch panel
+ *              char popupName[] - popup page name (1-50 ASCII characters)
+ *              integer timeInTenthsOfSeconds - hide effect time in tenths of seconds
  * 
- * Description:	Set the hide effect time for the specified popup page.
+ * Description: Set the hide effect time for the specified popup page.
  */
 define_function moderoSetPopupHideEffectTime (dev panel, char popupName[], integer timeInTenthsOfSeconds)
 {
-    sendCommand (panel, "MODERO_COMMAND_POPUP_HIDE_EFFECT_TIME,popupName,';',itoa(timeInTenthsOfSeconds)")
+	sendCommand (panel, "MODERO_COMMAND_POPUP_HIDE_EFFECT_TIME,popupName,';',itoa(timeInTenthsOfSeconds)")
 }
 
 
@@ -488,15 +461,16 @@ define_function moderoSetPopupHideEffectTime (dev panel, char popupName[], integ
  */
 
 /*
- * Function:	moderoSetButtonFeedback
+ * Function:    moderoSetButtonFeedback
  * 
- * Arguments:	dev panel - touch panel
- * 				integer btnChanCde - button channel code
- *				integer status - feedback status (TRUE or FALSE)
- *					- TRUE turns button feedback on
- *					- FALSE turns button feedback off
+ * Arguments:   dev panel - touch panel
+ *              integer btnChanCde - button channel code
+ *              integer status - feedback status
+ *                      Values:
+ *                          TRUE turns button feedback on
+ *                          FALSE turns button feedback off
  * 
- * Description:	Sets button feedback on or off based on value of status param.
+ * Description: Sets button feedback on or off based on value of status param.
  */
 define_function moderoSetButtonFeedback (dev panel, integer btnChanCde, integer status)
 {
@@ -504,12 +478,12 @@ define_function moderoSetButtonFeedback (dev panel, integer btnChanCde, integer 
 }
 
 /*
- * Function:	moderoEnableButtonFeedback
+ * Function:    moderoEnableButtonFeedback
  * 
- * Arguments:	dev panel - touch panel
- * 				integer btnChanCde - button channel code
+ * Arguments:   dev panel - touch panel
+ *              integer btnChanCde - button channel code
  * 
- * Description:	Turns on button feedback.
+ * Description: Turns on button feedback.
  */
 define_function moderoEnableButtonFeedback (dev panel, integer btnChanCde)
 {
@@ -517,12 +491,12 @@ define_function moderoEnableButtonFeedback (dev panel, integer btnChanCde)
 }
 
 /*
- * Function:	moderoDisableButtonFeedback
+ * Function:    moderoDisableButtonFeedback
  * 
- * Arguments:	dev panel - touch panel
- * 				integer btnChanCde - button channel code
+ * Arguments:   dev panel - touch panel
+ *              integer btnChanCde - button channel code
  * 
- * Description:	Turns off button feedback.
+ * Description: Turns off button feedback.
  */
 define_function moderoDisableButtonFeedback (dev panel, integer btnChanCde)
 {
@@ -530,12 +504,12 @@ define_function moderoDisableButtonFeedback (dev panel, integer btnChanCde)
 }
 
 /*
- * Function:	moderoToggleButtonFeedback
+ * Function:    moderoToggleButtonFeedback
  * 
- * Arguments:	dev panel - touch panel
- * 				integer btnChanCde - button channel code
+ * Arguments:   dev panel - touch panel
+ *              integer btnChanCde - button channel code
  * 
- * Description:	Toggles button feedback (e.g, if on, turns button feedback off)
+ * Description: Toggles button feedback (e.g, if on, turns button feedback off)
  */
 define_function moderoToggleButtonFeedback (dev panel, integer btnChanCde)
 {
@@ -543,12 +517,12 @@ define_function moderoToggleButtonFeedback (dev panel, integer btnChanCde)
 }
 
 /*
- * Function:	moderoEnableButtonFeedbackPulse
+ * Function:    moderoEnableButtonFeedbackPulse
  * 
- * Arguments:	dev panel - touch panel
- * 				integer btnChanCde - button channel code
+ * Arguments:   dev panel - touch panel
+ *              integer btnChanCde - button channel code
  * 
- * Description:	Pulse button feedback on for short time (default is .5 seconds)
+ * Description: Pulse button feedback on for short time (default is .5 seconds)
  */
 define_function moderoEnableButtonFeedbackPulse (dev panel, integer btnChanCde)
 {
@@ -563,11 +537,11 @@ define_function moderoEnableButtonFeedbackPulse (dev panel, integer btnChanCde)
  */
 
 /*
- * Function:	moderoWake
+ * Function:    moderoWake
  * 
- * Arguments:	dev panel - touch panel
+ * Arguments:   dev panel - touch panel
  * 
- * Description:	Force the panel out of screensaver mode.
+ * Description: Force the panel out of screensaver mode.
  */
 define_function moderoWake (dev panel)
 {
@@ -575,11 +549,11 @@ define_function moderoWake (dev panel)
 }
 
 /*
- * Function:	moderoWake
+ * Function:    moderoWake
  * 
- * Arguments:	dev panel - touch panel
+ * Arguments:   dev panel - touch panel
  * 
- * Description:	Force the panel into screensaver mode.
+ * Description: Force the panel into screensaver mode.
  */
 define_function moderoSleep (dev panel)
 {
@@ -587,11 +561,11 @@ define_function moderoSleep (dev panel)
 }
 
 /*
- * Function:	moderoBeepSingle
+ * Function:    moderoBeepSingle
  * 
- * Arguments:	dev panel - touch panel
+ * Arguments:   dev panel - touch panel
  * 
- * Description:	Output a single beep even if beep is off.
+ * Description: Output a single beep even if beep is off.
  */
 define_function moderoBeepSingle (dev panel)
 {
@@ -599,11 +573,11 @@ define_function moderoBeepSingle (dev panel)
 }
 
 /*
- * Function:	moderoBeepDouble
+ * Function:    moderoBeepDouble
  * 
- * Arguments:	dev panel - touch panel
+ * Arguments:   dev panel - touch panel
  * 
- * Description:	Output a double beep even if beep is off.
+ * Description: Output a double beep even if beep is off.
  */
 define_function moderoBeepDouble (dev panel)
 {
@@ -611,13 +585,13 @@ define_function moderoBeepDouble (dev panel)
 }
 
 /*
- * Function:	moderoEnableKeyboard
+ * Function:    moderoEnableKeyboard
  * 
- * Arguments:	dev panel - touch panel
- *				char initialText[] - initial text string for the keyboard
+ * Arguments:   dev panel - touch panel
+ *              char initialText[] - initial text string for the keyboard
  * 
- * Description:	Pop up the keyboard icon and initialize the text string to that
- *		specified.
+ * Description: Pop up the keyboard icon and initialize the text string to that
+ *              specified.
  */
 define_function moderoEnableKeyboard (dev panel, char initialText[])
 {
@@ -625,14 +599,14 @@ define_function moderoEnableKeyboard (dev panel, char initialText[])
 }
 
 /*
- * Function:	moderoEnableKeyboardWithPrompt
+ * Function:    moderoEnableKeyboardWithPrompt
  * 
- * Arguments:	dev panel - touch panel
- *				char initialText[] - initial text string for the keyboard
- *				char prompt[] - prompt text
+ * Arguments:   dev panel - touch panel
+ *              char initialText[] - initial text string for the keyboard
+ *              char prompt[] - prompt text
  * 
- * Description:	Pop up the keyboard icon and initialize the text string to that
- *		specified.
+ * Description: Pop up the keyboard icon and initialize the text string to that
+ *              specified.
  */
 define_function moderoEnableKeyboardWithPrompt (dev panel, char initialText[], char prompt[])
 {
@@ -640,13 +614,13 @@ define_function moderoEnableKeyboardWithPrompt (dev panel, char initialText[], c
 }
 
 /*
- * Function:	moderoEnableKeypad
+ * Function:    moderoEnableKeypad
  * 
- * Arguments:	dev panel - touch panel
- *				char initialText[] - initial text string for the keypad
+ * Arguments:   dev panel - touch panel
+ *              char initialText[] - initial text string for the keypad
  * 
- * Description:	Pop up the keypad icon and initialize the text string to that
- *		specified.
+ * Description: Pop up the keypad icon and initialize the text string to that
+ *              specified.
  */
 define_function moderoEnableKeypad (dev panel, char initialText[])
 {
@@ -654,14 +628,14 @@ define_function moderoEnableKeypad (dev panel, char initialText[])
 }
 
 /*
- * Function:	moderoEnableKeypadWithPrompt
+ * Function:    moderoEnableKeypadWithPrompt
  * 
- * Arguments:	dev panel - touch panel
- *				char initialText[] - initial text string for the keypad
- *				char prompt[] - prompt text
+ * Arguments:   dev panel - touch panel
+ *              char initialText[] - initial text string for the keypad
+ *              char prompt[] - prompt text
  * 
- * Description:	Pop up the keypad icon and initialize the text string to that
- *		specified.
+ * Description: Pop up the keypad icon and initialize the text string to that
+ *              specified.
  */
 define_function moderoEnableKeypadWithPrompt (dev panel, char initialText[], char prompt[])
 {
@@ -669,11 +643,11 @@ define_function moderoEnableKeypadWithPrompt (dev panel, char initialText[], cha
 }
 
 /*
- * Function:	moderoDisableKeypad
+ * Function:    moderoDisableKeypad
  * 
- * Arguments:	dev panel - touch panel
+ * Arguments:   dev panel - touch panel
  * 
- * Description:	Remove keypad that is currently displayed.
+ * Description: Remove keypad that is currently displayed.
  */
 define_function moderoDisableKeypad (dev panel)
 {
@@ -681,11 +655,11 @@ define_function moderoDisableKeypad (dev panel)
 }
 
 /*
- * Function:	moderoDisableKeyboard
+ * Function:    moderoDisableKeyboard
  * 
- * Arguments:	dev panel - touch panel
+ * Arguments:   dev panel - touch panel
  * 
- * Description:	Remove keyboard that is currently displayed.
+ * Description: Remove keyboard that is currently displayed.
  */
 define_function moderoDisableKeyboard (dev panel)
 {
@@ -693,12 +667,12 @@ define_function moderoDisableKeyboard (dev panel)
 }
 
 /*
- * Function:	moderoSetBrightness
+ * Function:    moderoSetBrightness
  * 
- * Arguments:	dev panel - touch panel
- *				integer brightness - brightness level (0 - 100)
+ * Arguments:   dev panel - touch panel
+ *              integer brightness - brightness level (0 - 100)
  * 
- * Description:	Set the panel brightness.
+ * Description: Set the panel brightness.
  */
 define_function moderoSetBrightness (dev panel, integer brightness)
 {
@@ -706,14 +680,14 @@ define_function moderoSetBrightness (dev panel, integer brightness)
 }
 
 /*
- * Function:	moderoEnableKeypadExtended
+ * Function:    moderoEnableKeypadExtended
  * 
- * Arguments:	dev panel - touch panel
- *				char initialText[] - initial text string for the keypad
- *				char prompt[] - prompt text
+ * Arguments:   dev panel - touch panel
+ *              char initialText[] - initial text string for the keypad
+ *              char prompt[] - prompt text
  * 
- * Description:	Extend the Keypad.Pops up the keypad icon and initializes the 
- *		text string to that specified. The Prompt Text is optional.
+ * Description: Extend the Keypad.Pops up the keypad icon and initializes the 
+ *              text string to that specified. The Prompt Text is optional.
  */
 define_function moderoEnableKeypadExtended (dev panel, char initialText[], char prompt[])
 {
@@ -721,14 +695,14 @@ define_function moderoEnableKeypadExtended (dev panel, char initialText[], char 
 }
 
 /*
- * Function:	moderoEnableKeypadPrivate
+ * Function:    moderoEnableKeypadPrivate
  * 
- * Arguments:	dev panel - touch panel
- *				char initialText[] - initial text string for the keypad
- *				char prompt[] - prompt text
+ * Arguments:   dev panel - touch panel
+ *              char initialText[] - initial text string for the keypad
+ *              char prompt[] - prompt text
  * 
- * Description:	Extend the Keypad.Pops up the keypad icon and initializes the 
- *		text string to that specified. The Prompt Text is optional.
+ * Description: Extend the Keypad.Pops up the keypad icon and initializes the 
+ *              text string to that specified. The Prompt Text is optional.
  */
 define_function moderoEnableKeypadPrivate (dev panel, char initialText[], char prompt[])
 {
@@ -736,11 +710,11 @@ define_function moderoEnableKeypadPrivate (dev panel, char initialText[], char p
 }
 
 /*
- * Function:	moderoEnableSetup
+ * Function:    moderoEnableSetup
  * 
- * Arguments:	dev panel - touch panel
+ * Arguments:   dev panel - touch panel
  * 
- * Description:	Send panel to SETUP page.
+ * Description: Send panel to SETUP page.
  */
 define_function moderoEnableSetup (dev panel)
 {
@@ -748,12 +722,12 @@ define_function moderoEnableSetup (dev panel)
 }
 
 /*
- * Function:	moderoEnableShutdown
+ * Function:    moderoEnableShutdown
  * 
- * Arguments:	dev panel - touch panel
+ * Arguments:   dev panel - touch panel
  * 
- * Description:	Shut down the batteries providing power to the panel. This 
- *		function saves the battery from discharging.
+ * Description: Shut down the batteries providing power to the panel. This 
+ *              function saves the battery from discharging.
  */
 define_function moderoEnableShutdown (dev panel)
 {
@@ -761,13 +735,12 @@ define_function moderoEnableShutdown (dev panel)
 }
 
 /*
- * Function:	moderoPlaySoundFile
+ * Function:    moderoPlaySoundFile
  * 
- * Arguments:	dev panel - touch panel
- *				char soundFilename[] - sound file name.
- *					- supported formats are WAV & MP3
+ * Arguments:   dev panel - touch panel
+ *              char soundFilename[] - sound file name (filename.mp3 | filename.wav)
  * 
- * Description:	Play a sound file.
+ * Description: Play a sound file.
  */
 define_function moderoPlaySoundFile(dev panel, char soundFilename[])
 {
@@ -775,14 +748,14 @@ define_function moderoPlaySoundFile(dev panel, char soundFilename[])
 }
 
 /*
- * Function:	moderoEnableKeypadTelephone
+ * Function:    moderoEnableKeypadTelephone
  * 
- * Arguments:	dev panel - touch panel
- *				char initialText[] - initial text string for the keypad
- *				char prompt[] - prompt text
+ * Arguments:   dev panel - touch panel
+ *              char initialText[] - initial text string for the keypad
+ *              char prompt[] - prompt text
  * 
- * Description:	Present a telephone keypad. Pops up the keypad icon and 
- *		initializes the text string to that specified. The Prompt Text is optional.
+ * Description: Present a telephone keypad. Pops up the keypad icon and 
+ *              initializes the text string to that specified. The Prompt Text is optional.
  */
 define_function moderoEnableKeypadTelephone (dev panel, char initialText[], char prompt[])
 {
@@ -790,11 +763,11 @@ define_function moderoEnableKeypadTelephone (dev panel, char initialText[], char
 }
 
 /*
- * Function:	moderoEnablePageTracking
+ * Function:    moderoEnablePageTracking
  * 
- * Arguments:	dev panel - touch panel
+ * Arguments:   dev panel - touch panel
  * 
- * Description:	Turn On page tracking.
+ * Description: Turn On page tracking.
  */
 define_function moderoEnablePageTracking (dev panel)
 {
@@ -802,11 +775,11 @@ define_function moderoEnablePageTracking (dev panel)
 }
 
 /*
- * Function:	moderoDisablePageTracking
+ * Function:    moderoDisablePageTracking
  * 
- * Arguments:	dev panel - touch panel
+ * Arguments:   dev panel - touch panel
  * 
- * Description:	Turn On page tracking.
+ * Description: Turn On page tracking.
  */
 define_function moderoDisablePageTracking (dev panel)
 {
@@ -814,11 +787,11 @@ define_function moderoDisablePageTracking (dev panel)
 }
 
 /*
- * Function:	moderoEnableKeyboardVirtual
+ * Function:    moderoEnableKeyboardVirtual
  * 
- * Arguments:	dev panel - touch panel
+ * Arguments:   dev panel - touch panel
  * 
- * Description:	Popup the virtual keyboard.
+ * Description: Popup the virtual keyboard.
  */
 define_function moderoEnableKeyboardVirtual (dev panel)
 {
@@ -833,13 +806,13 @@ define_function moderoEnableKeyboardVirtual (dev panel)
  */
 
 /*
- * Function:	moderoSetPageFlipPassword
+ * Function:    moderoSetPageFlipPassword
  * 
- * Arguments:	dev panel - touch panel
- *				char userLevel[] - user level
- *				char password[] - new password
+ * Arguments:   dev panel - touch panel
+ *              char userLevel[] - user level
+ *              char password[] - new password
  * 
- * Description:	Sets the page flip password.
+ * Description: Sets the page flip password.
  */
 define_function moderoSetPageFlipPassword (dev panel, char userLevel[], char password[])
 {
@@ -854,12 +827,12 @@ define_function moderoSetPageFlipPassword (dev panel, char userLevel[], char pas
  */
 
 /*
- * Function:	moderoRequestPopupLocation
+ * Function:    moderoRequestPopupLocation
  * 
- * Arguments:	dev panel - touch panel
- *				char popupName[] - popup page name
+ * Arguments:   dev panel - touch panel
+ *              char popupName[] - popup page name
  * 
- * Description:	Request popup location.
+ * Description: Request popup location.
  */
 define_function moderoRequestPopupLocation (dev panel, char popupName[])
 {
@@ -867,12 +840,12 @@ define_function moderoRequestPopupLocation (dev panel, char popupName[])
 }
 
 /*
- * Function:	moderoRequestPopupSize
+ * Function:    moderoRequestPopupSize
  * 
- * Arguments:	dev panel - touch panel
- *				char popupName[] - popup page name
+ * Arguments:   dev panel - touch panel
+ *              char popupName[] - popup page name
  * 
- * Description:	Request popup size.
+ * Description: Request popup size.
  */
 define_function moderoRequestPopupSize (dev panel, char popupName[])
 {
@@ -887,13 +860,13 @@ define_function moderoRequestPopupSize (dev panel, char popupName[])
  */
 
 /*
- * Function:	moderoRequestButtonBorderColour
+ * Function:    moderoRequestButtonBorderColour
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				integer btnState - button state
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              integer btnState - button state
  * 
- * Description:	Request the buttons' current border colour.
+ * Description: Request the buttons' current border colour.
  */
 define_function moderoRequestButtonBorderColour (dev panel, integer btnAdrCde, integer btnState)
 {
@@ -901,13 +874,13 @@ define_function moderoRequestButtonBorderColour (dev panel, integer btnAdrCde, i
 }
 
 /*
- * Function:	moderoRequestButtonFillColour
+ * Function:    moderoRequestButtonFillColour
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				integer btnState - button state
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              integer btnState - button state
  * 
- * Description:	Request the buttons' current fill colour.
+ * Description: Request the buttons' current fill colour.
  */
 define_function moderoRequestButtonFillColour (dev panel, integer btnAdrCde, integer btnState)
 {
@@ -915,13 +888,13 @@ define_function moderoRequestButtonFillColour (dev panel, integer btnAdrCde, int
 }
 
 /*
- * Function:	moderoRequestButtonTextColour
+ * Function:    moderoRequestButtonTextColour
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				integer btnState - button state
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              integer btnState - button state
  * 
- * Description:	Request the buttons' current text colour.
+ * Description: Request the buttons' current text colour.
  */
 define_function moderoRequestButtonTextColour (dev panel, integer btnAdrCde, integer btnState)
 {
@@ -929,13 +902,13 @@ define_function moderoRequestButtonTextColour (dev panel, integer btnAdrCde, int
 }
 
 /*
- * Function:	moderoRequestButtonBitmapName
+ * Function:    moderoRequestButtonBitmapName
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				integer btnState - button state
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              integer btnState - button state
  * 
- * Description:	Request the buttons' current bitmap name.
+ * Description: Request the buttons' current bitmap name.
  */
 define_function moderoRequestButtonBitmapName (dev panel, integer btnAdrCde, integer btnState)
 {
@@ -943,13 +916,13 @@ define_function moderoRequestButtonBitmapName (dev panel, integer btnAdrCde, int
 }
 
 /*
- * Function:	moderoRequestButtonOpacity
+ * Function:    moderoRequestButtonOpacity
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				integer btnState - button state
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              integer btnState - button state
  * 
- * Description:	Request the buttons' current overall opacity.
+ * Description: Request the buttons' current overall opacity.
  */
 define_function moderoRequestButtonOpacity (dev panel, integer btnAdrCde, integer btnState)
 {
@@ -957,13 +930,13 @@ define_function moderoRequestButtonOpacity (dev panel, integer btnAdrCde, intege
 }
 
 /*
- * Function:	moderoRequestButtonBorderName
+ * Function:    moderoRequestButtonBorderName
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				integer btnState - button state
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              integer btnState - button state
  * 
- * Description:	Request the buttons' current border name.
+ * Description: Request the buttons' current border name.
  */
 define_function moderoRequestButtonBorderName (dev panel, integer btnAdrCde, integer btnState)
 {
@@ -971,13 +944,13 @@ define_function moderoRequestButtonBorderName (dev panel, integer btnAdrCde, int
 }
 
 /*
- * Function:	moderoRequestButtonWordWrapStatus
+ * Function:    moderoRequestButtonWordWrapStatus
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				integer btnState - button state
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              integer btnState - button state
  * 
- * Description:	Request the buttons' current word wrap status.
+ * Description: Request the buttons' current word wrap status.
  */
 define_function moderoRequestButtonWordWrapStatus (dev panel, integer btnAdrCde, integer btnState)
 {
@@ -985,13 +958,13 @@ define_function moderoRequestButtonWordWrapStatus (dev panel, integer btnAdrCde,
 }
 
 /*
- * Function:	moderoRequestButtonFontIndex
+ * Function:    moderoRequestButtonFontIndex
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				integer btnState - button state
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              integer btnState - button state
  * 
- * Description:	Request the buttons' current font index.
+ * Description: Request the buttons' current font index.
  */
 define_function moderoRequestButtonFontIndex (dev panel, integer btnAdrCde, integer btnState)
 {
@@ -999,13 +972,13 @@ define_function moderoRequestButtonFontIndex (dev panel, integer btnAdrCde, inte
 }
 
 /*
- * Function:	moderoRequestButtonIconIndex
+ * Function:    moderoRequestButtonIconIndex
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				integer btnState - button state
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              integer btnState - button state
  * 
- * Description:	Request the buttons' current icon index.
+ * Description: Request the buttons' current icon index.
  */
 define_function moderoRequestButtonIconIndex (dev panel, integer btnAdrCde, integer btnState)
 {
@@ -1014,13 +987,13 @@ define_function moderoRequestButtonIconIndex (dev panel, integer btnAdrCde, inte
 
 
 /*
- * Function:	moderoRequestButtonBitmapJustification
+ * Function:    moderoRequestButtonBitmapJustification
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				integer btnState - button state
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              integer btnState - button state
  * 
- * Description:	Request the buttons' current bitmap justification.
+ * Description: Request the buttons' current bitmap justification.
  */
 define_function moderoRequestButtonBitmapJustification (dev panel, integer btnAdrCde, integer btnState)
 {
@@ -1028,13 +1001,13 @@ define_function moderoRequestButtonBitmapJustification (dev panel, integer btnAd
 }
 
 /*
- * Function:	moderoRequestButtonIconJustification
+ * Function:    moderoRequestButtonIconJustification
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				integer btnState - button state
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              integer btnState - button state
  * 
- * Description:	Request the buttons' current icon justification.
+ * Description: Request the buttons' current icon justification.
  */
 define_function moderoRequestButtonIconJustification (dev panel, integer btnAdrCde, integer btnState)
 {
@@ -1042,13 +1015,13 @@ define_function moderoRequestButtonIconJustification (dev panel, integer btnAdrC
 }
 
 /*
- * Function:	moderoRequestButtonTextJustification
+ * Function:    moderoRequestButtonTextJustification
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				integer btnState - button state
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              integer btnState - button state
  * 
- * Description:	Request the buttons' current text justification.
+ * Description: Request the buttons' current text justification.
  */
 define_function moderoRequestButtonTextJustification (dev panel, integer btnAdrCde, integer btnState)
 {
@@ -1056,13 +1029,13 @@ define_function moderoRequestButtonTextJustification (dev panel, integer btnAdrC
 }
 
 /*
- * Function:	moderoRequestButtonTextEffectColour
+ * Function:    moderoRequestButtonTextEffectColour
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				integer btnState - button state
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              integer btnState - button state
  * 
- * Description:	Request the buttons' current text effect colour.
+ * Description: Request the buttons' current text effect colour.
  */
 define_function moderoRequestButtonTextEffectColour (dev panel, integer btnAdrCde, integer btnState)
 {
@@ -1070,13 +1043,13 @@ define_function moderoRequestButtonTextEffectColour (dev panel, integer btnAdrCd
 }
 
 /*
- * Function:	moderoRequestButtonTextEffectName
+ * Function:    moderoRequestButtonTextEffectName
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				integer btnState - button state
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              integer btnState - button state
  * 
- * Description:	Request the buttons' current text effect name.
+ * Description: Request the buttons' current text effect name.
  */
 define_function moderoRequestButtonTextEffectName (dev panel, integer btnAdrCde, integer btnState)
 {
@@ -1084,13 +1057,13 @@ define_function moderoRequestButtonTextEffectName (dev panel, integer btnAdrCde,
 }
 
 /*
- * Function:	moderoRequestButtonText
+ * Function:    moderoRequestButtonText
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				integer btnState - button state
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              integer btnState - button state
  * 
- * Description:	Request the buttons' current text.
+ * Description: Request the buttons' current text.
  */
 define_function moderoRequestButtonText (dev panel, integer btnAdrCde, integer btnState)
 {
@@ -1105,11 +1078,11 @@ define_function moderoRequestButtonText (dev panel, integer btnAdrCde, integer b
  */
 
 /*
- * Function:	moderoEnableGestureNotifications
+ * Function:    moderoEnableGestureNotifications
  * 
- * Arguments:	dev panel - touch panel
+ * Arguments:   dev panel - touch panel
  * 
- * Description:	Enable Gesture Notifications to the master via CUSTOM_EVENT.
+ * Description: Enable Gesture Notifications to the master via CUSTOM_EVENT.
  */
 define_function moderoEnableGestureNotifications (dev panel)
 {
@@ -1117,11 +1090,11 @@ define_function moderoEnableGestureNotifications (dev panel)
 }
 
 /*
- * Function:	moderoDisableGestureNotifications
+ * Function:    moderoDisableGestureNotifications
  * 
- * Arguments:	dev panel - touch panel
+ * Arguments:   dev panel - touch panel
  * 
- * Description:	Disable Gesture Notifications to the master via CUSTOM_EVENT.
+ * Description: Disable Gesture Notifications to the master via CUSTOM_EVENT.
  */
 define_function moderoDisableGestureNotifications (dev panel)
 {
@@ -1136,11 +1109,11 @@ define_function moderoDisableGestureNotifications (dev panel)
  */
 
 /*
- * Function:	moderoDisableKeyboardPassthru
+ * Function:    moderoDisableKeyboardPassthru
  * 
- * Arguments:	dev panel - touch panel
+ * Arguments:   dev panel - touch panel
  * 
- * Description:	Disables the keyboard.
+ * Description: Disables the keyboard.
  */
 define_function moderoDisableKeyboardPassthru (dev panel)
 {
@@ -1149,13 +1122,13 @@ define_function moderoDisableKeyboardPassthru (dev panel)
 }
 
 /*
- * Function:	moderoEnableKeyboardPassthruG4
+ * Function:    moderoEnableKeyboardPassthruG4
  * 
- * Arguments:	dev panel - touch panel
+ * Arguments:   dev panel - touch panel
  * 
- * Description:	Sends keyboard strokes (either USB or virtual) to the G4
- *		application running on the Modero.
- *		Note: this is the default behaviour on a Modero panel.
+ * Description: Sends keyboard strokes (either USB or virtual) to the G4
+ *              application running on the Modero.
+ *              Note: this is the default behaviour on a Modero panel.
  */
 define_function moderoEnableKeyboardPassthruG4 (dev panel)
 {
@@ -1164,12 +1137,12 @@ define_function moderoEnableKeyboardPassthruG4 (dev panel)
 }
 
 /*
- * Function:	moderoEnableKeyboardPassthruMaster
+ * Function:    moderoEnableKeyboardPassthruMaster
  * 
- * Arguments:	dev panel - touch panel
+ * Arguments:   dev panel - touch panel
  * 
- * Description:	Sends keyboard strokes (either USB or virtual) to master via 
- *		the send_string mechanism
+ * Description: Sends keyboard strokes (either USB or virtual) to master via 
+ *              the send_string mechanism
  */
 define_function moderoEnableKeyboardPassthruMaster (dev panel)
 {
@@ -1178,14 +1151,14 @@ define_function moderoEnableKeyboardPassthruMaster (dev panel)
 }
 
 /*
- * Function:	moderoSendVirtualKeystroke
+ * Function:    moderoSendVirtualKeystroke
  * 
- * Arguments:	dev panel - touch panel
- *				char keystrokes[] - virtual keyboard strokes
+ * Arguments:   dev panel - touch panel
+ *              char keystrokes[] - virtual keyboard strokes
  * 
- * Description:	Send one or more virtual key strokes to the G4 application. Key 
- *		presses and key releases are not distinguished except in the case of 
- *		CTRL, ALT, and SHIFT
+ * Description: Send one or more virtual key strokes to the G4 application. Key 
+ *              presses and key releases are not distinguished except in the case of 
+ *              CTRL, ALT, and SHIFT
  */
 define_function moderoSendVirtualKeystroke (dev panel, char keystrokes[])
 {
@@ -1200,11 +1173,11 @@ define_function moderoSendVirtualKeystroke (dev panel, char keystrokes[])
  */
 
 /*
- * Function:	moderoIntercomRequestModel
+ * Function:    moderoIntercomRequestModel
  * 
- * Arguments:	dev panel - touch panel
+ * Arguments:   dev panel - touch panel
  * 
- * Description:	Request model name.
+ * Description: Request model name.
  */
 define_function moderoIntercomRequestModel (dev panel)
 {
@@ -1212,19 +1185,19 @@ define_function moderoIntercomRequestModel (dev panel)
 }
 
 /*
- * Function:	moderoIntercomStartCall
+ * Function:    moderoIntercomStartCall
  * 
- * Arguments:	dev panel - touch panel
- *				char dstIp[] - IP Address of panel to connect with on an Intercom call
- *				integer txUdpPort - UDP port to transmit to
- *				integer rxUdpPort - UDP port to receive from
- *				char initalMode[] - initial mode
- *					Values:
- *						MODERO_INTERCOM_MODE_LISTEN
- *						MODERO_INTERCOM_MODE_TALK
- *						MODERO_INTERCOM_MODE_HANDSFREE
+ * Arguments:   dev panel - touch panel
+ *              char dstIp[] - IP Address of panel to connect with on an Intercom call
+ *              integer txUdpPort - UDP port to transmit to
+ *              integer rxUdpPort - UDP port to receive from
+ *              char initalMode[] - initial mode
+ *                      Values:
+ *                          MODERO_INTERCOM_MODE_LISTEN
+ *                          MODERO_INTERCOM_MODE_TALK
+ *                          MODERO_INTERCOM_MODE_HANDSFREE
  * 
- * Description:	Starts a call to the specified IP address and ports.
+ * Description: Starts a call to the specified IP address and ports.
  */
 define_function moderoIntercomStartCall (dev panel, char dstIp[], integer txUdpPort, integer rxUdpPort, char initalMode[])
 {
@@ -1240,11 +1213,11 @@ define_function moderoIntercomStartCall (dev panel, char dstIp[], integer txUdpP
 }
 
 /*
- * Function:	moderoIntercomEndCall
+ * Function:    moderoIntercomEndCall
  * 
- * Arguments:	dev panel - touch panel
+ * Arguments:   dev panel - touch panel
  * 
- * Description:	Terminates an intercom call/connection.
+ * Description: Terminates an intercom call/connection.
  */
 define_function moderoIntercomEndCall (dev panel)
 {
@@ -1252,11 +1225,11 @@ define_function moderoIntercomEndCall (dev panel)
 }
 
 /*
- * Function:	moderoIntercomListen
+ * Function:    moderoIntercomListen
  * 
- * Arguments:	dev panel - touch panel
+ * Arguments:   dev panel - touch panel
  * 
- * Description:	?????.
+ * Description: ?????.
  */
 define_function moderoIntercomListen (dev panel)
 {
@@ -1264,11 +1237,11 @@ define_function moderoIntercomListen (dev panel)
 }
 
 /*
- * Function:	moderoIntercomTalk
+ * Function:    moderoIntercomTalk
  * 
- * Arguments:	dev panel - touch panel
+ * Arguments:   dev panel - touch panel
  * 
- * Description:	?????.
+ * Description: ?????.
  */
 #warn '@TODO - amx-modero-control - find out more about the Intercom Talk function - lacking documentation'
 define_function moderoIntercomTalk (dev panel)
@@ -1277,12 +1250,12 @@ define_function moderoIntercomTalk (dev panel)
 }
 
 /*
- * Function:	moderoIntercomSetMicLevel
+ * Function:    moderoIntercomSetMicLevel
  * 
- * Arguments:	dev panel - touch panel
- *				integer micLevel - microphone level (0 - 100)
+ * Arguments:   dev panel - touch panel
+ *              integer micLevel - microphone level (0 - 100)
  * 
- * Description:	Sets the microphone level during an intercom call.
+ * Description: Sets the microphone level during an intercom call.
  */
 define_function moderoIntercomSetMicLevel (dev panel, integer micLevel)
 {
@@ -1290,12 +1263,12 @@ define_function moderoIntercomSetMicLevel (dev panel, integer micLevel)
 }
 
 /*
- * Function:	moderoIntercomEnableMute
+ * Function:    moderoIntercomEnableMute
  * 
- * Arguments:	dev panel - touch panel
+ * Arguments:   dev panel - touch panel
  * 
- * Description:	Sets the state of the microphone on muted.
- *		Note: At the start of each call, the microphone starts out unmuted.
+ * Description: Sets the state of the microphone on muted.
+ *              Note: At the start of each call, the microphone starts out unmuted.
  */
 define_function moderoIntercomEnableMute (dev panel)
 {
@@ -1303,12 +1276,12 @@ define_function moderoIntercomEnableMute (dev panel)
 }
 
 /*
- * Function:	moderoIntercomDisableMute
+ * Function:    moderoIntercomDisableMute
  * 
- * Arguments:	dev panel - touch panel
+ * Arguments:   dev panel - touch panel
  * 
- * Description:	Sets the state of the microphone on unmuted.
- *		Note: At the start of each call, the microphone starts out unmuted.
+ * Description: Sets the state of the microphone on unmuted.
+ *              Note: At the start of each call, the microphone starts out unmuted.
  */
 define_function moderoIntercomDisableMute (dev panel)
 {
@@ -1316,12 +1289,12 @@ define_function moderoIntercomDisableMute (dev panel)
 }
 
 /*
- * Function:	moderoIntercomSetSpeakerLevel
+ * Function:    moderoIntercomSetSpeakerLevel
  * 
- * Arguments:	dev panel - touch panel
- *				integer speakerLevel - speaker level (0 - 100)
+ * Arguments:   dev panel - touch panel
+ *              integer speakerLevel - speaker level (0 - 100)
  * 
- * Description:	Sets the speaker level during an intercom call.
+ * Description: Sets the speaker level during an intercom call.
  */
 define_function moderoIntercomSetSpeakerLevel (dev panel, integer speakerLevel)
 {
@@ -1336,11 +1309,11 @@ define_function moderoIntercomSetSpeakerLevel (dev panel, integer speakerLevel)
  */
 
 /*
- * Function:	moderoSipEnableAutoAnswer
+ * Function:    moderoSipEnableAutoAnswer
  * 
- * Arguments:	dev panel - touch panel
+ * Arguments:   dev panel - touch panel
  * 
- * Description:	Enables the auto-answer feature on the phone.
+ * Description: Enables the auto-answer feature on the phone.
  */
 define_function moderoSipEnableAutoAnswer (dev panel)
 {
@@ -1348,11 +1321,11 @@ define_function moderoSipEnableAutoAnswer (dev panel)
 }
 
 /*
- * Function:	moderoSipDisableAutoAnswer
+ * Function:    moderoSipDisableAutoAnswer
  * 
- * Arguments:	dev panel - touch panel
+ * Arguments:   dev panel - touch panel
  * 
- * Description:	Disables the auto-answer feature on the phone.
+ * Description: Disables the auto-answer feature on the phone.
  */
 define_function moderoSipDisableAutoAnswer (dev panel)
 {
@@ -1360,11 +1333,11 @@ define_function moderoSipDisableAutoAnswer (dev panel)
 }
 
 /*
- * Function:	moderoSipRequestAutoAnswerStatus
+ * Function:    moderoSipRequestAutoAnswerStatus
  * 
- * Arguments:	dev panel - touch panel
+ * Arguments:   dev panel - touch panel
  * 
- * Description:	Queries the state of the auto- answer feature.
+ * Description: Queries the state of the auto- answer feature.
  */
 define_function moderoSipRequestAutoAnswerStatus (dev panel)
 {
@@ -1372,12 +1345,12 @@ define_function moderoSipRequestAutoAnswerStatus (dev panel)
 }
 
 /*
- * Function:	moderoSipAnswerCall
+ * Function:    moderoSipAnswerCall
  * 
- * Arguments:	dev panel - touch panel
- *				char connectionId[] - connection id
+ * Arguments:   dev panel - touch panel
+ *              char connectionId[] - connection id
  * 
- * Description:	Answers the call.
+ * Description: Answers the call.
  */
 define_function moderoSipAnswerCall (dev panel, char connectionId[])
 {
@@ -1385,12 +1358,12 @@ define_function moderoSipAnswerCall (dev panel, char connectionId[])
 }
 
 /*
- * Function:	moderoSipCallNumber
+ * Function:    moderoSipCallNumber
  * 
- * Arguments:	dev panel - touch panel
- *				char phoneNumber[] - phone number
+ * Arguments:   dev panel - touch panel
+ *              char phoneNumber[] - phone number
  * 
- * Description:	Calls the provided number.
+ * Description: Calls the provided number.
  */
 define_function moderoSipCallNumber (dev panel, char phoneNumber[])
 {
@@ -1398,12 +1371,12 @@ define_function moderoSipCallNumber (dev panel, char phoneNumber[])
 }
 
 /*
- * Function:	moderoSipSendDtmfCode
+ * Function:    moderoSipSendDtmfCode
  * 
- * Arguments:	dev panel - touch panel
- *				char dtmfCode[] - DTMF codes
+ * Arguments:   dev panel - touch panel
+ *              char dtmfCode[] - DTMF codes
  * 
- * Description:	Sends DTMF codes.
+ * Description: Sends DTMF codes.
  */
 define_function moderoSipSendDtmfCode (dev panel, char dtmfCode[])
 {
@@ -1411,12 +1384,12 @@ define_function moderoSipSendDtmfCode (dev panel, char dtmfCode[])
 }
 
 /*
- * Function:	moderoSipHangupCall
+ * Function:    moderoSipHangupCall
  * 
- * Arguments:	dev panel - touch panel
- *				char connectionId[] - connection id
+ * Arguments:   dev panel - touch panel
+ *              char connectionId[] - connection id
  * 
- * Description:	Hangs up the call.
+ * Description: Hangs up the call.
  */
 define_function moderoSipHangupCall (dev panel, char connectionId[])
 {
@@ -1424,12 +1397,12 @@ define_function moderoSipHangupCall (dev panel, char connectionId[])
 }
 
 /*
- * Function:	moderoSipHoldCall
+ * Function:    moderoSipHoldCall
  * 
- * Arguments:	dev panel - touch panel
- *				char connectionId[] - connection id
+ * Arguments:   dev panel - touch panel
+ *              char connectionId[] - connection id
  * 
- * Description:	Places the call on hold.
+ * Description: Places the call on hold.
  */
 define_function moderoSipHoldCall (dev panel, char connectionId[])
 {
@@ -1437,11 +1410,11 @@ define_function moderoSipHoldCall (dev panel, char connectionId[])
 }
 
 /*
- * Function:	moderoSipRequestLineState
+ * Function:    moderoSipRequestLineState
  * 
- * Arguments:	dev panel - touch panel
+ * Arguments:   dev panel - touch panel
  * 
- * Description:	Queries the state of each of the connections used by the SIP device.
+ * Description: Queries the state of each of the connections used by the SIP device.
  */
 define_function moderoSipRequestLineState (dev panel)
 {
@@ -1449,11 +1422,11 @@ define_function moderoSipRequestLineState (dev panel)
 }
 
 /*
- * Function:	moderSipoEnablePrivacyFeature
+ * Function:    moderSipoEnablePrivacyFeature
  * 
- * Arguments:	dev panel - touch panel
+ * Arguments:   dev panel - touch panel
  * 
- * Description:	Enables the privacy (do not disturb) feature on the phone.
+ * Description: Enables the privacy (do not disturb) feature on the phone.
  */
 define_function moderSipoEnablePrivacyFeature (dev panel)
 {
@@ -1461,11 +1434,11 @@ define_function moderSipoEnablePrivacyFeature (dev panel)
 }
 
 /*
- * Function:	moderoSipDisablePrivacyFeature
+ * Function:    moderoSipDisablePrivacyFeature
  * 
- * Arguments:	dev panel - touch panel
+ * Arguments:   dev panel - touch panel
  * 
- * Description:	Disables the privacy (do not disturb) feature on the phone.
+ * Description: Disables the privacy (do not disturb) feature on the phone.
  */
 define_function moderoSipDisablePrivacyFeature (dev panel)
 {
@@ -1473,11 +1446,11 @@ define_function moderoSipDisablePrivacyFeature (dev panel)
 }
 
 /*
- * Function:	moderoSipRequestPrivacyFeature
+ * Function:    moderoSipRequestPrivacyFeature
  * 
- * Arguments:	dev panel - touch panel
+ * Arguments:   dev panel - touch panel
  * 
- * Description:	Queries the state of the privacy feature.
+ * Description: Queries the state of the privacy feature.
  */
 define_function moderoSipRequestPrivacyFeature (dev panel)
 {
@@ -1485,11 +1458,11 @@ define_function moderoSipRequestPrivacyFeature (dev panel)
 }
 
 /*
- * Function:	moderoSipRedial
+ * Function:    moderoSipRedial
  * 
- * Arguments:	dev panel - touch panel
+ * Arguments:   dev panel - touch panel
  * 
- * Description:	Redials the last number.
+ * Description: Redials the last number.
  */
 define_function moderoSipRedial (dev panel)
 {
@@ -1497,13 +1470,13 @@ define_function moderoSipRedial (dev panel)
 }
 
 /*
- * Function:	moderoSipTransfer
+ * Function:    moderoSipTransfer
  * 
- * Arguments:	dev panel - touch panel
- *				char connectionId[] - connection id
- *				char phoneNumber[] - phone number
+ * Arguments:   dev panel - touch panel
+ *              char connectionId[] - connection id
+ *              char phoneNumber[] - phone number
  * 
- * Description:	Transfers the call to the provided number.
+ * Description: Transfers the call to the provided number.
  */
 define_function moderoSipTransfer (dev panel, char connectionId[], char phoneNumber[])
 {
@@ -1518,12 +1491,12 @@ define_function moderoSipTransfer (dev panel, char connectionId[], char phoneNum
  */
 
 /*
- * Function:	moderoSetAudioDevice
+ * Function:    moderoSetAudioDevice
  * 
- * Arguments:	dev panel - touch panel
- *				char audioDevice[] - audio device
+ * Arguments:   dev panel - touch panel
+ *              char audioDevice[] - audio device
  * 
- * Description:	Selects the audio device to use.
+ * Description: Selects the audio device to use.
  */
 define_function moderoSetAudioDevice (dev panel, char audioDevice[])
 {
@@ -1539,11 +1512,11 @@ define_function moderoSetAudioDevice (dev panel, char audioDevice[])
 }
 
 /*
- * Function:	moderoRequestAudioDevice
+ * Function:    moderoRequestAudioDevice
  * 
- * Arguments:	dev panel - touch panel
+ * Arguments:   dev panel - touch panel
  * 
- * Description:	Queries the currently selected audio device.
+ * Description: Queries the currently selected audio device.
  */
 define_function moderoRequestAudioDevice (dev panel)
 {
@@ -1551,13 +1524,13 @@ define_function moderoRequestAudioDevice (dev panel)
 }
 
 /*
- * Function:	moderoSetMicLeveInCall
+ * Function:    moderoSetMicLeveInCall
  * 
- * Arguments:	dev panel - touch panel
- *				char audioDevice[] - audio device
- *				integer micLevel - microphone level (0 - 100)
+ * Arguments:   dev panel - touch panel
+ *              char audioDevice[] - audio device
+ *              integer micLevel - microphone level (0 - 100)
  * 
- * Description:	Set the microphone level during an intercom call.
+ * Description: Set the microphone level during an intercom call.
  */
 define_function moderoSetMicLeveInCall (dev panel, char audioDevice[], integer micLevel)
 {
@@ -1565,13 +1538,13 @@ define_function moderoSetMicLeveInCall (dev panel, char audioDevice[], integer m
 }
 
 /*
- * Function:	moderoSetSpeakerLevelInCall
+ * Function:    moderoSetSpeakerLevelInCall
  * 
- * Arguments:	dev panel - touch panel
- *				char audioDevice[] - audio device
- *				integer speakerLevel - speaker level (0 - 100)
+ * Arguments:   dev panel - touch panel
+ *              char audioDevice[] - audio device
+ *              integer speakerLevel - speaker level (0 - 100)
  * 
- * Description:	Set the speaker level during an intercom call.
+ * Description: Set the speaker level during an intercom call.
  */
 define_function moderoSetSpeakerLevelInCall (dev panel, char audioDevice[], integer speakerLevel)
 {
@@ -1579,12 +1552,12 @@ define_function moderoSetSpeakerLevelInCall (dev panel, char audioDevice[], inte
 }
 
 /*
- * Function:	moderoRequestMuteStatus
+ * Function:    moderoRequestMuteStatus
  * 
- * Arguments:	dev panel - touch panel
- *				integer audioDevice - audio device
+ * Arguments:   dev panel - touch panel
+ *              integer audioDevice - audio device
  * 
- * Description:	Query the panel mute status.
+ * Description: Query the panel mute status.
  */
 define_function moderoRequestMuteStatus (dev panel, integer audioDevice)
 {
@@ -1601,12 +1574,12 @@ define_function moderoRequestMuteStatus (dev panel, integer audioDevice)
 }
 
 /*
- * Function:	moderoEnableMute
+ * Function:    moderoEnableMute
  * 
- * Arguments:	dev panel - touch panel
- *				integer audioDevice - audio device
+ * Arguments:   dev panel - touch panel
+ *              integer audioDevice - audio device
  * 
- * Description:	Mute the panel.
+ * Description: Mute the panel.
  */
 define_function moderoEnableMute (dev panel, integer audioDevice)
 {
@@ -1623,12 +1596,12 @@ define_function moderoEnableMute (dev panel, integer audioDevice)
 }
 
 /*
- * Function:	moderoDisableMute
+ * Function:    moderoDisableMute
  * 
- * Arguments:	dev panel - touch panel
- *				integer audioDevice - audio device
+ * Arguments:   dev panel - touch panel
+ *              integer audioDevice - audio device
  * 
- * Description:	Unmute the panel.
+ * Description: Unmute the panel.
  */
 define_function moderoDisableMute (dev panel, integer audioDevice)
 {
@@ -1645,12 +1618,12 @@ define_function moderoDisableMute (dev panel, integer audioDevice)
 }
 
 /*
- * Function:	moderoRequestVolume
+ * Function:    moderoRequestVolume
  * 
- * Arguments:	dev panel - touch panel
- *				integer audioDevice - audio device
+ * Arguments:   dev panel - touch panel
+ *              integer audioDevice - audio device
  * 
- * Description:	Queries the panel volume.
+ * Description: Queries the panel volume.
  */
 define_function moderoRequestVolume (dev panel, integer audioDevice)
 {
@@ -1667,13 +1640,13 @@ define_function moderoRequestVolume (dev panel, integer audioDevice)
 }
 
 /*
- * Function:	moderoSetVolume
+ * Function:    moderoSetVolume
  * 
- * Arguments:	dev panel - touch panel
- *				integer audioDevice - audio device
- *				integer volume - volume (0 - 100)
+ * Arguments:   dev panel - touch panel
+ *              integer audioDevice - audio device
+ *              integer volume - volume (0 - 100)
  * 
- * Description:	Sets the panel volume.
+ * Description: Sets the panel volume.
  */
 define_function moderoSetVolume (dev panel, integer audioDevice, integer volume)
 {
@@ -1697,11 +1670,11 @@ define_function moderoSetVolume (dev panel, integer audioDevice, integer volume)
  */
 
 /*
- * Function:	moderoRequestCameraSupportAndStatus
+ * Function:    moderoRequestCameraSupportAndStatus
  * 
- * Arguments:	dev panel - touch panel
+ * Arguments:   dev panel - touch panel
  * 
- * Description:	Queries the panel for camera support and status.
+ * Description: Queries the panel for camera support and status.
  */
 define_function moderoRequestCameraSupportAndStatus (dev panel)
 {
@@ -1709,11 +1682,11 @@ define_function moderoRequestCameraSupportAndStatus (dev panel)
 }
 
 /*
- * Function:	moderoDisableVideoCall
+ * Function:    moderoDisableVideoCall
  * 
- * Arguments:	dev panel - touch panel
+ * Arguments:   dev panel - touch panel
  * 
- * Description:	Ends Videocom communication. Stop sending H.264/RTP data.
+ * Description: Ends Videocom communication. Stop sending H.264/RTP data.
  */
 define_function moderoDisableVideoCall (dev panel)
 {
@@ -1721,14 +1694,14 @@ define_function moderoDisableVideoCall (dev panel)
 }
 
 /*
- * Function:	moderoEnableVideoCall
+ * Function:    moderoEnableVideoCall
  * 
- * Arguments:	dev panel - touch panel
- *				char dstIp[] - destination IP address
- *				integer dstPort - destination port
+ * Arguments:   dev panel - touch panel
+ *              char dstIp[] - destination IP address
+ *              integer dstPort - destination port
  * 
- * Description:	Starts Videocom communication. Start sending h264/rtp data to 
- *		dstIp:port
+ * Description: Starts Videocom communication. Start sending h264/rtp data to 
+ *              dstIp:port
  */
 define_function moderoEnableVideoCall (dev panel, char dstIp[], integer dstPort)
 {
@@ -1743,13 +1716,13 @@ define_function moderoEnableVideoCall (dev panel, char dstIp[], integer dstPort)
  */
 
 /*
- * Function:	moderoRequestMultiPreviewInfo
+ * Function:    moderoRequestMultiPreviewInfo
  * 
- * Arguments:	dev panel - touch panel
- *				char statusField[] - status field
- *				char id[] - id
+ * Arguments:   dev panel - touch panel
+ *              char statusField[] - status field
+ *              char id[] - id
  * 
- * Description:	Queries the multi-preview for info.
+ * Description: Queries the multi-preview for info.
  */
 define_function moderoRequestMultiPreviewInfo (dev panel, char statusField[], char id[])
 {
@@ -1760,14 +1733,14 @@ define_function moderoRequestMultiPreviewInfo (dev panel, char statusField[], ch
 }
 
 /*
- * Function:	moderoSetStreamingAudioVideoMuteStatus
+ * Function:    moderoSetStreamingAudioVideoMuteStatus
  * 
- * Arguments:	dev panel - touch panel
- *				char audioMuteStatus[] - audio mute status
- *				char videoMuteStatus[] - video mute status
- *				char streamUrl[] - stream URL
+ * Arguments:   dev panel - touch panel
+ *              char audioMuteStatus[] - audio mute status
+ *              char videoMuteStatus[] - video mute status
+ *              char streamUrl[] - stream URL
  * 
- * Description:	Set the audio/video mute status for a given stream URL.
+ * Description: Set the audio/video mute status for a given stream URL.
  */
 define_function moderoSetStreamingAudioVideoMuteStatus (dev panel, char audioMuteStatus[], char videoMuteStatus[], char streamUrl[])
 {
@@ -1775,13 +1748,13 @@ define_function moderoSetStreamingAudioVideoMuteStatus (dev panel, char audioMut
 }
 
 /*
- * Function:	moderoEnableStreamSession
+ * Function:    moderoEnableStreamSession
  * 
- * Arguments:	dev panel - touch panel
- *				char streamUrl[] - stream url
- *				integer streamPort - stream port
+ * Arguments:   dev panel - touch panel
+ *              char streamUrl[] - stream url
+ *              integer streamPort - stream port
  * 
- * Description:	Start a streaming session.
+ * Description: Start a streaming session.
  */
 define_function moderoEnableStreamSession (dev panel, char streamUrl[], integer streamPort)
 {
@@ -1789,11 +1762,11 @@ define_function moderoEnableStreamSession (dev panel, char streamUrl[], integer 
 }
 
 /*
- * Function:	moderoEnableStreamSessionCamera
+ * Function:    moderoEnableStreamSessionCamera
  * 
- * Arguments:	dev panel - touch panel
+ * Arguments:   dev panel - touch panel
  * 
- * Description:	Start a streaming session from the built-in camera.
+ * Description: Start a streaming session from the built-in camera.
  */
 define_function moderoEnableStreamSessionCamera (dev panel)
 {
@@ -1801,13 +1774,13 @@ define_function moderoEnableStreamSessionCamera (dev panel)
 }
 
 /*
- * Function:	moderoDisableStreamSession
+ * Function:    moderoDisableStreamSession
  * 
- * Arguments:	dev panel - touch panel
- *				char streamUrl[] - stream url
- *				integer streamPort - stream port
+ * Arguments:   dev panel - touch panel
+ *              char streamUrl[] - stream url
+ *              integer streamPort - stream port
  * 
- * Description:	Stop a streaming session.
+ * Description: Stop a streaming session.
  */
 define_function moderoDisableStreamSession (dev panel, char streamAdr[], integer streamPort)
 {
@@ -1815,11 +1788,11 @@ define_function moderoDisableStreamSession (dev panel, char streamAdr[], integer
 }
 
 /*
- * Function:	moderoDisableStreamSessionCurrent
+ * Function:    moderoDisableStreamSessionCurrent
  * 
- * Arguments:	dev panel - touch panel
+ * Arguments:   dev panel - touch panel
  * 
- * Description:	Stop the current streaming session.
+ * Description: Stop the current streaming session.
  */
 define_function moderoDisableStreamSessionCurrent (dev panel)
 {
@@ -1827,11 +1800,11 @@ define_function moderoDisableStreamSessionCurrent (dev panel)
 }
 
 /*
- * Function:	moderoDisableStreamSessionCamera
+ * Function:    moderoDisableStreamSessionCamera
  * 
- * Arguments:	dev panel - touch panel
+ * Arguments:   dev panel - touch panel
  * 
- * Description:	Stop the current streaming session from the camera.
+ * Description: Stop the current streaming session from the camera.
  */
 define_function moderoDisableStreamSessionCamera (dev panel)
 {
@@ -1839,16 +1812,16 @@ define_function moderoDisableStreamSessionCamera (dev panel)
 }
 
 /*
- * Function:	moderoEnableMultiPreviewReboot
+ * Function:    moderoEnableMultiPreviewReboot
  * 
- * Arguments:	dev panel - touch panel
- *				char rebootFirmwareMode[] - action to take regarding MP/MPL firmware after reboot
- *					- values:
- *							MODERO_MULTI_PREVIEW_REBOOT_FIRMWARE_CURRENT
- *							MODERO_MULTI_PREVIEW_REBOOT_FIRMWARE_PREVIOUS
- *							MODERO_MULTI_PREVIEW_REBOOT_FIRMWARE_FACTORY
+ * Arguments:   dev panel - touch panel
+ *              char rebootFirmwareMode[] - action to take regarding MP/MPL firmware after reboot
+ *                      Values:
+ *                          MODERO_MULTI_PREVIEW_REBOOT_FIRMWARE_CURRENT
+ *                          MODERO_MULTI_PREVIEW_REBOOT_FIRMWARE_PREVIOUS
+ *                          MODERO_MULTI_PREVIEW_REBOOT_FIRMWARE_FACTORY
  * 
- * Description:	Reboot the Multi-Preview.
+ * Description: Reboot the Multi-Preview.
  */
 define_function moderoEnableMultiPreviewReboot (dev panel, char rebootFirmwareMode[])
 {
@@ -1864,11 +1837,11 @@ define_function moderoEnableMultiPreviewReboot (dev panel, char rebootFirmwareMo
 }
 
 /*
- * Function:	moderoEnableMultiPreviewStreamVideoOnly
+ * Function:    moderoEnableMultiPreviewStreamVideoOnly
  * 
- * Arguments:	dev panel - touch panel
+ * Arguments:   dev panel - touch panel
  * 
- * Description:	Enable video-only streaming from the multi-preview.
+ * Description: Enable video-only streaming from the multi-preview.
  */
 define_function moderoEnableMultiPreviewStreamVideoOnly (dev panel)
 {
@@ -1876,11 +1849,11 @@ define_function moderoEnableMultiPreviewStreamVideoOnly (dev panel)
 }
 
 /*
- * Function:	moderoEnableMultiPreviewStreamVideoAndAudio
+ * Function:    moderoEnableMultiPreviewStreamVideoAndAudio
  * 
- * Arguments:	dev panel - touch panel
+ * Arguments:   dev panel - touch panel
  * 
- * Description:	Enable video and audio streaming from the multi-preview.
+ * Description: Enable video and audio streaming from the multi-preview.
  */
 define_function moderoEnableMultiPreviewStreamVideoAndAudio (dev panel)
 {
@@ -1888,11 +1861,11 @@ define_function moderoEnableMultiPreviewStreamVideoAndAudio (dev panel)
 }
 
 /*
- * Function:	moderoEnableMultiPreviewVideoInput
+ * Function:    moderoEnableMultiPreviewVideoInput
  * 
- * Arguments:	dev panel - touch panel
+ * Arguments:   dev panel - touch panel
  * 
- * Description:	Enable the video input port on the multi-preview.
+ * Description: Enable the video input port on the multi-preview.
  */
 define_function moderoEnableMultiPreviewVideoInput (dev panel)
 {
@@ -1900,11 +1873,11 @@ define_function moderoEnableMultiPreviewVideoInput (dev panel)
 }
 
 /*
- * Function:	moderoDisableMultiPreviewVideoInput
+ * Function:    moderoDisableMultiPreviewVideoInput
  * 
- * Arguments:	dev panel - touch panel
+ * Arguments:   dev panel - touch panel
  * 
- * Description:	Disable the video input port on the multi-preview.
+ * Description: Disable the video input port on the multi-preview.
  */
 define_function moderoDisableMultiPreviewVideoInput (dev panel)
 {
@@ -1912,12 +1885,12 @@ define_function moderoDisableMultiPreviewVideoInput (dev panel)
 }
 
 /*
- * Function:	moderoSetMultiPreviewInputFormatAndResolution
+ * Function:    moderoSetMultiPreviewInputFormatAndResolution
  * 
- * Arguments:	dev panel - touch panel
+ * Arguments:   dev panel - touch panel
  * 
- * Description:	Set the video format and expected resolution on the video
- *		input port of the multi-preview.
+ * Description: Set the video format and expected resolution on the video
+ *              input port of the multi-preview.
  */
 define_function moderoSetMultiPreviewInputFormatAndResolution (dev panel, char inputFormat[], char inputResolution[])
 {
@@ -2029,15 +2002,15 @@ define_function moderoSetMultiPreviewInputFormatAndResolution (dev panel, char i
  */
 
 /*
- * Function:	moderoEnableSubpageExecutePushOnRelease
+ * Function:    moderoEnableSubpageExecutePushOnRelease
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
  * 
- * Description:	Enable execute push on release on subpage view. A push will not
- *		be sent to the master until a touch release is received. Any movement of
- *		the finger during the screen press will cause neither the press nor the
- *		release to be sent.
+ * Description: Enable execute push on release on subpage view. A push will not
+ *              be sent to the master until a touch release is received. Any movement of
+ *              the finger during the screen press will cause neither the press nor the
+ *              release to be sent.
  */
 define_function moderoEnableSubpageExecutePushOnRelease (dev panel, integer btnAdrCde)
 {
@@ -2045,12 +2018,12 @@ define_function moderoEnableSubpageExecutePushOnRelease (dev panel, integer btnA
 }
 
 /*
- * Function:	moderoDisableSubpageExecutePushOnRelease
+ * Function:    moderoDisableSubpageExecutePushOnRelease
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
  * 
- * Description:	Disable execute push on release on subpage view.
+ * Description: Disable execute push on release on subpage view.
  */
 define_function moderoDisableSubpageExecutePushOnRelease (dev panel, integer btnAdrCde)
 {
@@ -2058,12 +2031,12 @@ define_function moderoDisableSubpageExecutePushOnRelease (dev panel, integer btn
 }
 
 /*
- * Function:	moderoEnableSubpageNotification
+ * Function:    moderoEnableSubpageNotification
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
  * 
- * Description:	Enable custom events for subview button.
+ * Description: Enable custom events for subview button.
  */
 define_function moderoEnableSubpageNotification (dev panel, integer btnAdrCde)
 {
@@ -2075,12 +2048,12 @@ define_function moderoEnableSubpageNotification (dev panel, integer btnAdrCde)
 }
 
 /*
- * Function:	moderoDisableSubpageNotification
+ * Function:    moderoDisableSubpageNotification
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
  * 
- * Description:	Disable custom events for subview button.
+ * Description: Disable custom events for subview button.
  */
 define_function moderoDisableSubpageNotification (dev panel, integer btnAdrCde)
 {
@@ -2092,16 +2065,15 @@ define_function moderoDisableSubpageNotification (dev panel, integer btnAdrCde)
 }
 
 /*
- * Function:	moderoEnableSubpageDynamicReordering
+ * Function:    moderoEnableSubpageDynamicReordering
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				integer holdTime - hold time (in tenths of seconds)
- *					- specifies the amount of time a user must press and hold a
- *					  subpage with a single finger to trigger a dynamic reordering
- *					  operation.
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              integer holdTime - hold time (in tenths of seconds)
  * 
- * Description:	Enable dynamic reordering on a subpage.
+ * Description: Enable dynamic reordering on a subpage. Hold time specifies
+ *              the amount of time a user must press and hold a subpage
+ *              with a single finger to trigger a dynamic reordering operation.
  */
 define_function moderoEnableSubpageDynamicReordering (dev panel, integer btnAdrCde, integer holdTime)
 {
@@ -2109,12 +2081,12 @@ define_function moderoEnableSubpageDynamicReordering (dev panel, integer btnAdrC
 }
 
 /*
- * Function:	moderoDisableSubpageDynamicReordering
+ * Function:    moderoDisableSubpageDynamicReordering
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
  * 
- * Description:	Disable dynamic reordering on a subpage.
+ * Description: Disable dynamic reordering on a subpage.
  */
 define_function moderoDisableSubpageDynamicReordering (dev panel, integer btnAdrCde)
 {
@@ -2122,17 +2094,17 @@ define_function moderoDisableSubpageDynamicReordering (dev panel, integer btnAdr
 }
 
 /*
- * Function:	moderoHideSubpage
+ * Function:    moderoHideSubpage
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				char subpageName[] - subpage name
- *				integer position - position to add the subpage to the subpage view
- *				integer reorderTime - reorder time (0 - 30)
- *					- amount of time (in tenths of seconds) to move the subpages around
- *					  when subpages are added/removed from a subpage view button
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              char subpageName[] - subpage name
+ *              integer position - position to add the subpage to the subpage view
+ *              integer reorderTime - reorder time (0 - 30, in tenths of seconds)
  * 
- * Description:	Hide a subpage.
+ * Description: Hide a subpage. The reorder time specifies the amount of
+ *              time to move the subpages around when subpages are added/removed
+ *              from a subpage view button.
  */
 define_function moderoHideSubpage (dev panel, integer btnAdrCde, char subpageName[], integer reorderTime)
 {
@@ -2140,17 +2112,17 @@ define_function moderoHideSubpage (dev panel, integer btnAdrCde, char subpageNam
 }
 
 /*
- * Function:	moderoShowSubpage
+ * Function:    moderoShowSubpage
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				char subpageName[] - subpage name
- *				integer position - position to add the subpage to the subpage view
- *				integer reorderTime - reorder time (0 - 30)
- *					- amount of time (in tenths of seconds) to move the subpages around
- *					  when subpages are added/removed from a subpage view button
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              char subpageName[] - subpage name
+ *              integer position - position to add the subpage to the subpage view
+ *              integer reorderTime - reorder time (0 - 30, in tenths of seconds)
  * 
- * Description:	Show a subpage.
+ * Description: Show a subpage. The reorder time specifies the amount of
+ *              time to move the subpages around when subpages are added/removed
+ *              from a subpage view button.
  */
 define_function moderoShowSubpage (dev panel, integer btnAdrCde, char subpageName[], integer position, integer reorderTime)
 {
@@ -2158,17 +2130,17 @@ define_function moderoShowSubpage (dev panel, integer btnAdrCde, char subpageNam
 }
 
 /*
- * Function:	moderoToggleSubpage
+ * Function:    moderoToggleSubpage
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				char subpageName[] - subpage name
- *				integer position - position to add the subpage to the subpage view
- *				integer reorderTime - reorder time (0 - 30)
- *					- amount of time (in tenths of seconds) to move the subpages around
- *					  when subpages are added/removed from a subpage view button
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              char subpageName[] - subpage name
+ *              integer position - position to add the subpage to the subpage view
+ *              integer reorderTime - reorder time (0 - 30, in tenths of seconds)
  * 
- * Description:	Toggle's a subpage show/hide.
+ * Description: Toggle's a subpage show/hide. The reorder time specifies the amount of
+ *              time to move the subpages around when subpages are added/removed
+ *              from a subpage view button.
  */
 define_function moderoToggleSubpage (dev panel, integer btnAdrCde, char subpageName[], integer position, integer reorderTime)
 {
@@ -2183,15 +2155,15 @@ define_function moderoToggleSubpage (dev panel, integer btnAdrCde, char subpageN
  */
 
 /*
- * Function:	moderoEnableLeds
+ * Function:    moderoEnableLeds
  * 
- * Arguments:	dev panel - touch panel
- *				char ledColour[] - LED colour
- *					- Values:
- *						MODERO_LED_COLOUR_RED
- *						MODERO_LED_COLOUR_GREEN
+ * Arguments:   dev panel - touch panel
+ *              char ledColour[] - LED colour
+ *                      Values:
+ *                          MODERO_LED_COLOUR_RED
+ *                          MODERO_LED_COLOUR_GREEN
  * 
- * Description:	Enable LED's on panel
+ * Description: Enable LED's on panel
  */
 define_function moderoEnableLeds (dev panel, char ledColour[])
 {
@@ -2199,15 +2171,15 @@ define_function moderoEnableLeds (dev panel, char ledColour[])
 }
 
 /*
- * Function:	moderoDisableLeds
+ * Function:    moderoDisableLeds
  * 
- * Arguments:	dev panel - touch panel
- *				char ledColour[] - LED colour
- *					- Values:
- *						MODERO_LED_COLOUR_RED
- *						MODERO_LED_COLOUR_GREEN
+ * Arguments:   dev panel - touch panel
+ *              char ledColour[] - LED colour
+ *                      Values:
+ *                          MODERO_LED_COLOUR_RED
+ *                          MODERO_LED_COLOUR_GREEN
  * 
- * Description:	Enable LED's on panel
+ * Description: Enable LED's on panel
  */
 define_function moderoDisableLeds (dev panel, char ledColour[])
 {
@@ -2222,55 +2194,55 @@ define_function moderoDisableLeds (dev panel, char ledColour[])
  */
 
 /*
- * Function:	moderoEnableTouchCoordinateTrackingPressRelease
+ * Function:    moderoEnableTouchCoordinateTrackingPressRelease
  * 
- * Arguments:	dev panel - touch panel
+ * Arguments:   dev panel - touch panel
  * 
- * Description:	Enables the reporting of (X,Y) touch coordinates from the panel 
- *		for push and release.
+ * Description: Enables the reporting of (X,Y) touch coordinates from the panel 
+ *              for push and release.
  */
 define_function moderoEnableTouchCoordinateTrackingPressRelease (dev panel)
 {
-    sendCommand (panel, "MODERO_COMMAND_BUTTON_TOUCH_INFO_SEND_TO_MASTER,MODERO_TOUCH_TRACKING_PRESS_RELEASE")
+	sendCommand (panel, "MODERO_COMMAND_BUTTON_TOUCH_INFO_SEND_TO_MASTER,MODERO_TOUCH_TRACKING_PRESS_RELEASE")
 }
 
 /*
- * Function:	moderoEnableTouchCoordinateTrackingMoveOnly
+ * Function:    moderoEnableTouchCoordinateTrackingMoveOnly
  * 
- * Arguments:	dev panel - touch panel
+ * Arguments:   dev panel - touch panel
  * 
- * Description:	Enables the reporting of (X,Y) touch coordinates from the panel 
- *		for moves.
+ * Description: Enables the reporting of (X,Y) touch coordinates from the panel 
+ *              for moves.
  */
 define_function moderoEnableTouchCoordinateTrackingMoveOnly (dev panel)
 {
-    sendCommand (panel, "MODERO_COMMAND_BUTTON_TOUCH_INFO_SEND_TO_MASTER,MODERO_TOUCH_TRACKING_MOVE")
+	sendCommand (panel, "MODERO_COMMAND_BUTTON_TOUCH_INFO_SEND_TO_MASTER,MODERO_TOUCH_TRACKING_MOVE")
 }
 
 /*
- * Function:	moderoEnableTouchCoordinateTrackingPressReleaseMove
+ * Function:    moderoEnableTouchCoordinateTrackingPressReleaseMove
  * 
- * Arguments:	dev panel - touch panel
+ * Arguments:   dev panel - touch panel
  * 
- * Description:	Enables the reporting of (X,Y) touch coordinates from the panel 
- *		for push, move, and release.
+ * Description: Enables the reporting of (X,Y) touch coordinates from the panel 
+ *              for push, move, and release.
  */
 define_function moderoEnableTouchCoordinateTrackingPressReleaseMove (dev panel)
 {
-    sendCommand (panel, "MODERO_COMMAND_BUTTON_TOUCH_INFO_SEND_TO_MASTER,MODERO_TOUCH_TRACKING_PRESS_MOVE_RELEASE")
+	sendCommand (panel, "MODERO_COMMAND_BUTTON_TOUCH_INFO_SEND_TO_MASTER,MODERO_TOUCH_TRACKING_PRESS_MOVE_RELEASE")
 }
 
 /*
- * Function:	moderoDisableTouchCoordinateTracking
+ * Function:    moderoDisableTouchCoordinateTracking
  * 
- * Arguments:	dev panel - touch panel
+ * Arguments:   dev panel - touch panel
  * 
- * Description:	Disables the reporting of (X,Y) touch coordinates from the panel 
- *		for push and release.
+ * Description: Disables the reporting of (X,Y) touch coordinates from the panel 
+ *              for push and release.
  */
 define_function moderoDisableTouchCoordinateTracking (dev panel)
 {
-    sendCommand (panel, "MODERO_COMMAND_BUTTON_TOUCH_INFO_SEND_TO_MASTER,MODERO_TOUCH_TRACKING_OFF")
+	sendCommand (panel, "MODERO_COMMAND_BUTTON_TOUCH_INFO_SEND_TO_MASTER,MODERO_TOUCH_TRACKING_OFF")
 }
 
 
@@ -2284,16 +2256,16 @@ define_function moderoDisableTouchCoordinateTracking (dev panel)
 #warn '@TODO - amx-modero-control - comment all button configuration functions'
 
 /*
- * Function:	moderoEnableButtonAnimate
+ * Function:    moderoEnableButtonAnimate
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				integer startState - animation start state
- *				integer endState - animation end state
- *				integer duration - animation duration, in tenths of seconds
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              integer startState - animation start state
+ *              integer endState - animation end state
+ *              integer duration - animation duration, in tenths of seconds
  * 
- * Description:	Begin button animation from the specified start start to the
- *		specified end state over the specified duration.
+ * Description: Begin button animation from the specified start start to the
+ *              specified end state over the specified duration.
  */
 define_function moderoEnableButtonAnimate (dev panel, integer btnAdrCde, integer startState, integer endState, integer duration)
 {
@@ -2301,15 +2273,15 @@ define_function moderoEnableButtonAnimate (dev panel, integer btnAdrCde, integer
 }
 
 /*
- * Function:	moderoEnableButtonAnimateFromCurrentState
+ * Function:    moderoEnableButtonAnimateFromCurrentState
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				integer endState - animation end state
- *				integer duration - animation duration, in tenths of seconds
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              integer endState - animation end state
+ *              integer duration - animation duration, in tenths of seconds
  * 
- * Description:	Begin button animation from the current start to the
- *		specified end state over the specified duration.
+ * Description: Begin button animation from the current start to the
+ *              specified end state over the specified duration.
  */
 define_function moderoEnableButtonAnimateFromCurrentState (dev panel, integer btnAdrCde, integer endState, integer duration)
 {
@@ -2317,13 +2289,13 @@ define_function moderoEnableButtonAnimateFromCurrentState (dev panel, integer bt
 }
 
 /*
- * Function:	moderoEnableButtonPageFlipActionStandard
+ * Function:    moderoEnableButtonPageFlipActionStandard
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				char pageName[] - page name
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              char pageName[] - page name
  * 
- * Description:	Add a standard page flip action to the button when pressed.
+ * Description: Add a standard page flip action to the button when pressed.
  */
 define_function moderoEnableButtonPageFlipActionStandard (dev panel, integer btnAdrCde, char pageName[])
 {
@@ -2331,15 +2303,15 @@ define_function moderoEnableButtonPageFlipActionStandard (dev panel, integer btn
 }
 
 /*
- * Function:	moderoEnableButtonPageFlipActionAnimated
+ * Function:    moderoEnableButtonPageFlipActionAnimated
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				char pageName[] - page name
- *				char pageFlipAnimation[] - page flip animation
- *				integer duration - animation duration, in tenths of seconds
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              char pageName[] - page name
+ *              char pageFlipAnimation[] - page flip animation
+ *              integer duration - animation duration, in tenths of seconds
  * 
- * Description:	Add an animated page flip action to the button when pressed.
+ * Description: Add an animated page flip action to the button when pressed.
  */
 define_function moderoEnableButtonPageFlipActionAnimated (dev panel, integer btnAdrCde, char pageName[], char pageFlipAnimation[], integer duration)
 {
@@ -2401,13 +2373,13 @@ define_function moderoEnableButtonPageFlipActionAnimated (dev panel, integer btn
 }
 
 /*
- * Function:	moderoEnableButtonPageFlipActionShowPopup
+ * Function:    moderoEnableButtonPageFlipActionShowPopup
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				char popupName[] - popup name
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              char popupName[] - popup name
  * 
- * Description:	Add a "show popup" page flip action to the button when pressed.
+ * Description: Add a "show popup" page flip action to the button when pressed.
  */
 define_function moderoEnableButtonPageFlipActionShowPopup (dev panel, integer btnAdrCde, char popupName[])
 {
@@ -2415,13 +2387,13 @@ define_function moderoEnableButtonPageFlipActionShowPopup (dev panel, integer bt
 }
 
 /*
- * Function:	moderoEnableButtonPageFlipActionHidePopup
+ * Function:    moderoEnableButtonPageFlipActionHidePopup
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				char popupName[] - popup name
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              char popupName[] - popup name
  * 
- * Description:	Add a "hide popup" page flip action to the button when pressed.
+ * Description: Add a "hide popup" page flip action to the button when pressed.
  */
 define_function moderoEnableButtonPageFlipActionHidePopup (dev panel, integer btnAdrCde, char popupName[])
 {
@@ -2429,13 +2401,13 @@ define_function moderoEnableButtonPageFlipActionHidePopup (dev panel, integer bt
 }
 
 /*
- * Function:	moderoEnableButtonPageFlipActionTogglePopup
+ * Function:    moderoEnableButtonPageFlipActionTogglePopup
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				char popupName[] - popup name
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              char popupName[] - popup name
  * 
- * Description:	Add a "toggle popup" page flip action to the button when pressed.
+ * Description: Add a "toggle popup" page flip action to the button when pressed.
  */
 define_function moderoEnableButtonPageFlipActionTogglePopup (dev panel, integer btnAdrCde, char popupName[])
 {
@@ -2443,14 +2415,14 @@ define_function moderoEnableButtonPageFlipActionTogglePopup (dev panel, integer 
 }
 
 /*
- * Function:	moderoEnableButtonPageFlipActionHidePopupGroupAllPages
+ * Function:    moderoEnableButtonPageFlipActionHidePopupGroupAllPages
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				char popupGroupName[] - popup group name
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              char popupGroupName[] - popup group name
  * 
- * Description:	Add a "hide popup group on all pages" page flip action to the 
- *		button when pressed.
+ * Description: Add a "hide popup group on all pages" page flip action to the 
+ *              button when pressed.
  */
 define_function moderoEnableButtonPageFlipActionHidePopupGroupAllPages (dev panel, integer btnAdrCde, char popupGroupName[])
 {
@@ -2458,14 +2430,14 @@ define_function moderoEnableButtonPageFlipActionHidePopupGroupAllPages (dev pane
 }
 
 /*
- * Function:	moderoEnableButtonPageFlipActionHideAllPopupsOnPage
+ * Function:    moderoEnableButtonPageFlipActionHideAllPopupsOnPage
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				char pageName[] - page name
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              char pageName[] - page name
  * 
- * Description:	Add a "hide all popups on page" page flip action to the button
- *		when pressed.
+ * Description: Add a "hide all popups on page" page flip action to the button
+ *              when pressed.
  */
 define_function moderoEnableButtonPageFlipActionHideAllPopupsOnPage (dev panel, integer btnAdrCde, char pageName[])
 {
@@ -2473,13 +2445,13 @@ define_function moderoEnableButtonPageFlipActionHideAllPopupsOnPage (dev panel, 
 }
 
 /*
- * Function:	moderoEnablebuttonPageFlipActionHideAllPopupsAllPages
+ * Function:    moderoEnablebuttonPageFlipActionHideAllPopupsAllPages
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
  * 
- * Description:	Add a "hide all popups on all pages" page flip action to the 
- *		button when pressed.
+ * Description: Add a "hide all popups on all pages" page flip action to the 
+ *              button when pressed.
  */
 define_function moderoEnablebuttonPageFlipActionHideAllPopupsAllPages (dev panel, integer btnAdrCde)
 {
@@ -2487,12 +2459,12 @@ define_function moderoEnablebuttonPageFlipActionHideAllPopupsAllPages (dev panel
 }
 
 /*
- * Function:	moderoDisableButtonAllPageFlips
+ * Function:    moderoDisableButtonAllPageFlips
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
  * 
- * Description:	Clear all page flip actions from a button.
+ * Description: Clear all page flip actions from a button.
  */
 define_function moderoDisableButtonAllPageFlips (dev panel, integer btnAdrCde)
 {
@@ -2500,14 +2472,14 @@ define_function moderoDisableButtonAllPageFlips (dev panel, integer btnAdrCde)
 }
 
 /*
- * Function:	moderoDisableButtonPageFlipActionStandard
+ * Function:    moderoDisableButtonPageFlipActionStandard
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				char pageName[] - page name
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              char pageName[] - page name
  * 
- * Description:	Delete a standard page flip action to a specified page from a 
- *		button.
+ * Description: Delete a standard page flip action to a specified page from a 
+ *              button.
  */
 define_function moderoDisableButtonPageFlipActionStandard (dev panel, integer btnAdrCde, char pageName[])
 {
@@ -2515,15 +2487,15 @@ define_function moderoDisableButtonPageFlipActionStandard (dev panel, integer bt
 }
 
 /*
- * Function:	moderoDisableButtonPageFlipActionAnimated
+ * Function:    moderoDisableButtonPageFlipActionAnimated
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				char pageName[] - page name
- *				char pageFlipAnimation[] - page flip animation
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              char pageName[] - page name
+ *              char pageFlipAnimation[] - page flip animation
  * 
- * Description:	Delete an animated page flip action to a specified page from a 
- *		button.
+ * Description: Delete an animated page flip action to a specified page from a 
+ *              button.
  */
 define_function moderoDisableButtonPageFlipActionAnimated (dev panel, integer btnAdrCde, char pageName[], char pageFlipAnimation[])
 {
@@ -2585,13 +2557,13 @@ define_function moderoDisableButtonPageFlipActionAnimated (dev panel, integer bt
 }
 
 /*
- * Function:	moderoDisableButtonPageFlipActionShowPopup
+ * Function:    moderoDisableButtonPageFlipActionShowPopup
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				char popupName[] - popup name
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              char popupName[] - popup name
  * 
- * Description:	Delete a "show popup" action from a button.
+ * Description: Delete a "show popup" action from a button.
  */
 define_function moderoDisableButtonPageFlipActionShowPopup (dev panel, integer btnAdrCde, char popupName[])
 {
@@ -2599,13 +2571,13 @@ define_function moderoDisableButtonPageFlipActionShowPopup (dev panel, integer b
 }
 
 /*
- * Function:	moderoDisableButtonPageFlipActionHidePopup
+ * Function:    moderoDisableButtonPageFlipActionHidePopup
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				char popupName[] - popup name
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              char popupName[] - popup name
  * 
- * Description:	Delete a "hide popup" action from a button.
+ * Description: Delete a "hide popup" action from a button.
  */
 define_function moderoDisableButtonPageFlipActionHidePopup (dev panel, integer btnAdrCde, char popupName[])
 {
@@ -2613,13 +2585,13 @@ define_function moderoDisableButtonPageFlipActionHidePopup (dev panel, integer b
 }
 
 /*
- * Function:	moderoDisableButtonPageFlipActionTogglePopup
+ * Function:    moderoDisableButtonPageFlipActionTogglePopup
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				char popupName[] - popup name
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              char popupName[] - popup name
  * 
- * Description:	Delete a "toggle popup" action from a button.
+ * Description: Delete a "toggle popup" action from a button.
  */
 define_function moderoDisableButtonPageFlipActionTogglePopup (dev panel, integer btnAdrCde, char popupName[])
 {
@@ -2627,13 +2599,13 @@ define_function moderoDisableButtonPageFlipActionTogglePopup (dev panel, integer
 }
 
 /*
- * Function:	moderoDisableButtonPageFlipActionHidePopupGroupAllPages
+ * Function:    moderoDisableButtonPageFlipActionHidePopupGroupAllPages
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				char popupGroupName[] - popup group name
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              char popupGroupName[] - popup group name
  * 
- * Description:	Delete a "hide popup group from all pages" action from a button.
+ * Description: Delete a "hide popup group from all pages" action from a button.
  */
 define_function moderoDisableButtonPageFlipActionHidePopupGroupAllPages (dev panel, integer btnAdrCde, char popupGroupName[])
 {
@@ -2641,13 +2613,13 @@ define_function moderoDisableButtonPageFlipActionHidePopupGroupAllPages (dev pan
 }
 
 /*
- * Function:	moderoDisableButtonPageFlipActionHideAllPopupsOnPage
+ * Function:    moderoDisableButtonPageFlipActionHideAllPopupsOnPage
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				char pageName[] - page name
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              char pageName[] - page name
  * 
- * Description:	Delete a "hide all popups from page" action from a button.
+ * Description: Delete a "hide all popups from page" action from a button.
  */
 define_function moderoDisableButtonPageFlipActionHideAllPopupsOnPage (dev panel, integer btnAdrCde, char pageName[])
 {
@@ -2655,12 +2627,12 @@ define_function moderoDisableButtonPageFlipActionHideAllPopupsOnPage (dev panel,
 }
 
 /*
- * Function:	moderoDisablebuttonPageFlipActionHideAllPopupsAllPages
+ * Function:    moderoDisablebuttonPageFlipActionHideAllPopupsAllPages
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
  * 
- * Description:	Delete a "hide all popups from all pages" action from a button.
+ * Description: Delete a "hide all popups from all pages" action from a button.
  */
 define_function moderoDisablebuttonPageFlipActionHideAllPopupsAllPages (dev panel, integer btnAdrCde)
 {
@@ -2668,13 +2640,13 @@ define_function moderoDisablebuttonPageFlipActionHideAllPopupsAllPages (dev pane
 }
 
 /*
- * Function:	moderoEnableButtonPageFlipPassword
+ * Function:    moderoEnableButtonPageFlipPassword
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				integer userLevel - user level
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              integer userLevel - user level
  * 
- * Description:	Add a page flip password to a button.
+ * Description: Add a page flip password to a button.
  */
 define_function moderoEnableButtonPageFlipPassword (dev panel, integer btnAdrCde, integer userLevel)
 {
@@ -2692,13 +2664,13 @@ define_function moderoEnableButtonPageFlipPassword (dev panel, integer btnAdrCde
 }
 
 /*
- * Function:	moderoDisableButtonPageFlipPassword
+ * Function:    moderoDisableButtonPageFlipPassword
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				integer userLevel - user level
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              integer userLevel - user level
  * 
- * Description:	Delete a page flip password from a button.
+ * Description: Delete a page flip password from a button.
  */
 define_function moderoDisableButtonPageFlipPassword (dev panel, integer btnAdrCde, integer userLevel)
 {
@@ -2706,100 +2678,100 @@ define_function moderoDisableButtonPageFlipPassword (dev panel, integer btnAdrCd
 }
 
 /*
- * Function:	moderoSetButtonShow
+ * Function:    moderoSetButtonShow
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
  * 
- * Description:	Show a button.
+ * Description: Show a button.
  */
 define_function moderoSetButtonShow (dev panel, integer btnAdrCde)
 {
-    sendCommand (panel, "MODERO_COMMAND_BUTTON_SHOW_HIDE,itoa(btnAdrCde),',',MODERO_BUTTON_SHOW")
+	sendCommand (panel, "MODERO_COMMAND_BUTTON_SHOW_HIDE,itoa(btnAdrCde),',',MODERO_BUTTON_SHOW")
 }
 
 /*
- * Function:	moderoSetButtonHide
+ * Function:    moderoSetButtonHide
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
  * 
- * Description:	Hide a button.
+ * Description: Hide a button.
  */
 define_function moderoSetButtonHide (dev panel, integer btnAdrCde)
 {
-    sendCommand (panel, "MODERO_COMMAND_BUTTON_SHOW_HIDE,itoa(btnAdrCde),',',MODERO_BUTTON_HIDE")
+	sendCommand (panel, "MODERO_COMMAND_BUTTON_SHOW_HIDE,itoa(btnAdrCde),',',MODERO_BUTTON_HIDE")
 }
 
 /*
- * Function:	moderoSetButtonText
+ * Function:    moderoSetButtonText
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				integer btnState - button state
- *				char nonUnicodeTextString[] - non-unicode text string
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              integer btnState - button state
+ *              char nonUnicodeTextString[] - non-unicode text string
  * 
- * Description:	Set the text of a button to a non-unicode string.
+ * Description: Set the text of a button to a non-unicode string.
  */
 define_function moderoSetButtonText (dev panel, integer btnAdrCde, integer btnState, char nonUnicodeTextString[])
 {
-    sendCommand (panel, "MODERO_COMMAND_BUTTON_ASSIGN_TEXT,itoa(btnAdrCde),',',itoa(btnState),',',nonUnicodeTextString")
+	sendCommand (panel, "MODERO_COMMAND_BUTTON_ASSIGN_TEXT,itoa(btnAdrCde),',',itoa(btnState),',',nonUnicodeTextString")
 }
 
 /*
- * Function:	moderoSetButtonTextAppend
+ * Function:    moderoSetButtonTextAppend
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				integer btnState - button state
- *				char nonUnicodeTextString[] - non-unicode text string
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              integer btnState - button state
+ *              char nonUnicodeTextString[] - non-unicode text string
  * 
- * Description:	Append non-unicode text to the existing text of a button.
+ * Description: Append non-unicode text to the existing text of a button.
  */
 define_function moderoSetButtonTextAppend (dev panel, integer btnAdrCde, integer btnState, char nonUnicodeTextString[])
 {
-    sendCommand (panel, "MODERO_COMMAND_BUTTON_APPEND_TEXT,itoa(btnAdrCde),',',itoa(btnState),',',nonUnicodeTextString")
+	sendCommand (panel, "MODERO_COMMAND_BUTTON_APPEND_TEXT,itoa(btnAdrCde),',',itoa(btnState),',',nonUnicodeTextString")
 }
 
 /*
- * Function:	moderoSetButtonTextUnicode
+ * Function:    moderoSetButtonTextUnicode
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				integer btnState - button state
- *				char unicodeTextString[] - unicode text string
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              integer btnState - button state
+ *              char unicodeTextString[] - unicode text string
  * 
- * Description:	Set the text of a button to a unicode string.
+ * Description: Set the text of a button to a unicode string.
  */
 define_function moderoSetButtonTextUnicode (dev panel, integer btnAdrCde, integer btnState, char unicodeTextString[])
 {
-    sendCommand (panel, "MODERO_COMMAND_BUTTON_ASSIGN_UNICODE_TEXT,itoa(btnAdrCde),',',itoa(btnState),',',unicodeTextString")
+	sendCommand (panel, "MODERO_COMMAND_BUTTON_ASSIGN_UNICODE_TEXT,itoa(btnAdrCde),',',itoa(btnState),',',unicodeTextString")
 }
 
 /*
- * Function:	moderoSetButtonTextUnicodeAppend
+ * Function:    moderoSetButtonTextUnicodeAppend
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				integer btnState - button state
- *				char unicodeTextString[] - unicode text string
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              integer btnState - button state
+ *              char unicodeTextString[] - unicode text string
  * 
- * Description:	Append unicode text to the existing text of a button.
+ * Description: Append unicode text to the existing text of a button.
  */
 define_function moderoSetButtonTextUnicodeAppend (dev panel, integer btnAdrCde, integer btnState, char unicodeTextString[])
 {
-    sendCommand (panel, "MODERO_COMMAND_BUTTON_APPEND_UNICODE_TEXT,itoa(btnAdrCde),',',itoa(btnState),',',unicodeTextString")
+	sendCommand (panel, "MODERO_COMMAND_BUTTON_APPEND_UNICODE_TEXT,itoa(btnAdrCde),',',itoa(btnState),',',unicodeTextString")
 }
 
 /*
- * Function:	moderoSetButtonOpacity
+ * Function:    moderoSetButtonOpacity
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				integer btnState - button state
- *				integer opacityValue - opacity value (0 - 255)
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              integer btnState - button state
+ *              integer opacityValue - opacity value (0 - 255)
  * 
- * Description:	Set button opacity.
+ * Description: Set button opacity.
  */
 define_function moderoSetButtonOpacity (dev panel, integer btnAdrCde, integer btnState, integer opacityValue)
 {
@@ -2810,14 +2782,14 @@ define_function moderoSetButtonOpacity (dev panel, integer btnAdrCde, integer bt
 }
 
 /*
- * Function:	moderoSetButtonsOpacity
+ * Function:    moderoSetButtonsOpacity
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCdes[] - button address code array
- *				integer btnState - button state
- *				integer opacityValue - opacity value (0 - 255)
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCdes[] - button address code array
+ *              integer btnState - button state
+ *              integer opacityValue - opacity value (0 - 255)
  * 
- * Description:	Set the opacity of multiple buttons simultaneously.
+ * Description: Set the opacity of multiple buttons simultaneously.
  */
 define_function moderoSetButtonsOpacity (dev panel, integer btnAdrCdes[], integer btnState, integer opacityValue)
 {
@@ -2833,13 +2805,13 @@ define_function moderoSetButtonsOpacity (dev panel, integer btnAdrCdes[], intege
 }
 
 /*
- * Function:	moderoDeleteButtonVideoSnapshot
+ * Function:    moderoDeleteButtonVideoSnapshot
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				integer btnState - button state
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              integer btnState - button state
  * 
- * Description:	Delete video snapshot from button.
+ * Description: Delete video snapshot from button.
  */
 define_function moderoDeleteButtonVideoSnapshot (dev panel, integer btnAdrCde, integer btnState)
 {
@@ -2847,19 +2819,19 @@ define_function moderoDeleteButtonVideoSnapshot (dev panel, integer btnAdrCde, i
 }
 
 /*
- * Function:	moderoSetButtonDrawOrder
+ * Function:    moderoSetButtonDrawOrder
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				integer btnState - button state
- *				char layer1Bottom[] - layer at bottom of draw order
- *				char layer2[] - next layer on top
- *				char layer3[] - next layer on top
- *				char layer4[] - next layer on top
- *				char layer5Top[] - final and top-most layer
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              integer btnState - button state
+ *              char layer1Bottom[] - layer at bottom of draw order
+ *              char layer2[] - next layer on top
+ *              char layer3[] - next layer on top
+ *              char layer4[] - next layer on top
+ *              char layer5Top[] - final and top-most layer
  * 
- * Description:	Set the draw order for each of the 5 layers (fill, image, icon,
-*		 text, & border).
+ * Description: Set the draw order for each of the 5 layers (fill, image, icon,
+*               text, & border).
  */
 define_function moderoSetButtonDrawOrder (dev panel, integer btnAdrCde, integer btnState, char layer1Bottom[], char layer2[], char layer3[], char layer4[], char layer5Top[])
 {
@@ -2867,13 +2839,13 @@ define_function moderoSetButtonDrawOrder (dev panel, integer btnAdrCde, integer 
 }
 
 /*
- * Function:	moderoSetButtonFeedbackType
+ * Function:    moderoSetButtonFeedbackType
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				char feedbackType[] - feedback type
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              char feedbackType[] - feedback type
  * 
- * Description:	Set the button feedback type.
+ * Description: Set the button feedback type.
  */
 define_function moderoSetButtonFeedbackType (dev panel, integer btnAdrCde, char feedbackType[])
 {
@@ -2892,13 +2864,13 @@ define_function moderoSetButtonFeedbackType (dev panel, integer btnAdrCde, char 
 }
 
 /*
- * Function:	moderoSetButtonInputMaskTextArea
+ * Function:    moderoSetButtonInputMaskTextArea
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				char inputMask[] - text input mask
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              char inputMask[] - text input mask
  * 
- * Description:	Set the input mask for the text area button.
+ * Description: Set the input mask for the text area button.
  */
 #warn '@TODO - amx-modero-control - put more info in commenting for moderoSetButtonInputMaskTextArea function'
 define_function moderoSetButtonInputMaskTextArea (dev panel, integer btnAdrCde, char inputMask[])
@@ -2907,13 +2879,13 @@ define_function moderoSetButtonInputMaskTextArea (dev panel, integer btnAdrCde, 
 }
 
 /*
- * Function:	moderoSetButtonMaskImage
+ * Function:    moderoSetButtonMaskImage
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				char maskImage[] - mask image file name
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              char maskImage[] - mask image file name
  * 
- * Description:	Set the mask image for the text area button.
+ * Description: Set the mask image for the text area button.
  */
 define_function moderoSetButtonMaskImage (dev panel, integer btnAdrCde, integer btnState, char maskImage[])
 {
@@ -2921,17 +2893,17 @@ define_function moderoSetButtonMaskImage (dev panel, integer btnAdrCde, integer 
 }
 
 /*
- * Function:	moderoSetButtonCompositeVideoLinesToRemove
+ * Function:    moderoSetButtonCompositeVideoLinesToRemove
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				integer btnState - button state
- *				integer lineCount - line count
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              integer btnState - button state
+ *              integer lineCount - line count
  * 
- * Description:	Set the number of lines to remove equally from the top and bottom
- *		of a composite video signal. A line count of zero (0) will display the
- *		incoming video signal unaffected. Use this function to scale non 4x3
- *		video images into non 4x4 video buttons.
+ * Description: Set the number of lines to remove equally from the top and bottom
+ *              of a composite video signal. A line count of zero (0) will display the
+ *              incoming video signal unaffected. Use this function to scale non 4x3
+ *              video images into non 4x4 video buttons.
  */
 define_function moderoSetButtonCompositeVideoLinesToRemove (dev panel, integer btnAdrCde, integer btnState, integer lineCount)
 {
@@ -2939,13 +2911,13 @@ define_function moderoSetButtonCompositeVideoLinesToRemove (dev panel, integer b
 }
 
 /*
- * Function:	moderoSetButtonMaximumLengthTextArea
+ * Function:    moderoSetButtonMaximumLengthTextArea
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				integer textLength - text length
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              integer textLength - text length
  * 
- * Description:	Set the maximum length of the text area button.
+ * Description: Set the maximum length of the text area button.
  */
 define_function moderoSetButtonMaximumLengthTextArea (dev panel, integer btnAdrCde, integer textLength)
 {
@@ -2953,12 +2925,12 @@ define_function moderoSetButtonMaximumLengthTextArea (dev panel, integer btnAdrC
 }
 
 /*
- * Function:	moderoClearButtonTakenoteAnnotations
+ * Function:    moderoClearButtonTakenoteAnnotations
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
  * 
- * Description:	Clear current TakeNote annotations.
+ * Description: Clear current TakeNote annotations.
  */
 define_function moderoClearButtonTakenoteAnnotations (dev panel, integer btnAdrCde)
 {
@@ -2966,12 +2938,12 @@ define_function moderoClearButtonTakenoteAnnotations (dev panel, integer btnAdrC
 }
 
 /*
- * Function:	moderoClearButtonTakenoteAnnotationsAll
+ * Function:    moderoClearButtonTakenoteAnnotationsAll
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
  * 
- * Description:	Clear all TakeNote annotations.
+ * Description: Clear all TakeNote annotations.
  */
 define_function moderoClearButtonTakenoteAnnotationsAll (dev panel, integer btnAdrCde)
 {
@@ -2979,13 +2951,13 @@ define_function moderoClearButtonTakenoteAnnotationsAll (dev panel, integer btnA
 }
 
 /*
- * Function:	moderoSetButtonTakenoteNetworkName
+ * Function:    moderoSetButtonTakenoteNetworkName
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				char ipOrHostname[] - ip address or hostname
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              char ipOrHostname[] - ip address or hostname
  * 
- * Description:	Set the TakeNote network name for a button.
+ * Description: Set the TakeNote network name for a button.
  */
 define_function moderoSetButtonTakenoteNetworkName (dev panel, integer btnAdrCde, char ipOrHostname[])
 {
@@ -2993,13 +2965,13 @@ define_function moderoSetButtonTakenoteNetworkName (dev panel, integer btnAdrCde
 }
 
 /*
- * Function:	moderoSetButtonTakenoteNetworkPort
+ * Function:    moderoSetButtonTakenoteNetworkPort
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				integer port - network port (1 - 65535)
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              integer port - network port (1 - 65535)
  * 
- * Description:	Set the TakeNote network port for a button.
+ * Description: Set the TakeNote network port for a button.
  */
 define_function moderoSetButtonTakenoteNetworkPort (dev panel, integer btnAdrCde, integer port)
 {
@@ -3007,13 +2979,13 @@ define_function moderoSetButtonTakenoteNetworkPort (dev panel, integer btnAdrCde
 }
 
 /*
- * Function:	moderoSetButtonBorderStyleNameAllStates
+ * Function:    moderoSetButtonBorderStyleNameAllStates
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				char borderStyleName[] - border style name
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              char borderStyleName[] - border style name
  * 
- * Description:	Set the button border style (note: applies to all states).
+ * Description: Set the button border style (note: applies to all states).
  */
 define_function moderoSetButtonBorderStyleNameAllStates (dev panel, integer btnAdrCde, char borderStyleName[])
 {
@@ -3021,14 +2993,14 @@ define_function moderoSetButtonBorderStyleNameAllStates (dev panel, integer btnA
 }
 
 /*
- * Function:	moderoSetButtonBorderStyleName
+ * Function:    moderoSetButtonBorderStyleName
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				integer btnState - button state
- *				char borderStyleName[] - border style name
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              integer btnState - button state
+ *              char borderStyleName[] - border style name
  * 
- * Description:	Set the button border style.
+ * Description: Set the button border style.
  */
 define_function moderoSetButtonBorderStyleName (dev panel, integer btnAdrCde, integer btnState, char borderStyleName[])
 {
@@ -3036,13 +3008,13 @@ define_function moderoSetButtonBorderStyleName (dev panel, integer btnAdrCde, in
 }
 
 /*
- * Function:	moderoSetButtonDisplayVideoWindow
+ * Function:    moderoSetButtonDisplayVideoWindow
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				integer btnState - button state
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              integer btnState - button state
  * 
- * Description:	Set the button to display a video window.
+ * Description: Set the button to display a video window.
  */
 define_function moderoSetButtonDisplayVideoWindow (dev panel, integer btnAdrCde, integer btnState)
 {
@@ -3050,13 +3022,13 @@ define_function moderoSetButtonDisplayVideoWindow (dev panel, integer btnAdrCde,
 }
 
 /*
- * Function:	moderoSetButtonDisplayNonVideoWindow
+ * Function:    moderoSetButtonDisplayNonVideoWindow
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				integer btnState - button state
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              integer btnState - button state
  * 
- * Description:	Set the button to display a non-video window.
+ * Description: Set the button to display a non-video window.
  */
 define_function moderoSetButtonDisplayNonVideoWindow (dev panel, integer btnAdrCde, integer btnState)
 {
@@ -3064,12 +3036,12 @@ define_function moderoSetButtonDisplayNonVideoWindow (dev panel, integer btnAdrC
 }
 
 /*
- * Function:	moderoEnableButtonFocusTextArea
+ * Function:    moderoEnableButtonFocusTextArea
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
  * 
- * Description:	Enable focus to a text area button.
+ * Description: Enable focus to a text area button.
  */
 define_function moderoEnableButtonFocusTextArea (dev panel, integer btnAdrCde)
 {
@@ -3077,12 +3049,12 @@ define_function moderoEnableButtonFocusTextArea (dev panel, integer btnAdrCde)
 }
 
 /*
- * Function:	moderoDisableButtonFocusTextArea
+ * Function:    moderoDisableButtonFocusTextArea
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
  * 
- * Description:	Disable focus to a text area button.
+ * Description: Disable focus to a text area button.
  */
 define_function moderoDisableButtonFocusTextArea (dev panel, integer btnAdrCde)
 {
@@ -3090,13 +3062,13 @@ define_function moderoDisableButtonFocusTextArea (dev panel, integer btnAdrCde)
 }
 
 /*
- * Function:	moderoButtonTextAreaSubmitTextToMaster
+ * Function:    moderoButtonTextAreaSubmitTextToMaster
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
  * 
- * Description:	Submit text for text area buttons. This causes the text areas 
- *		to send their text as strings to the NetLinx Master.
+ * Description: Submit text for text area buttons. This causes the text areas 
+ *              to send their text as strings to the NetLinx Master.
  */
 define_function moderoButtonTextAreaSubmitTextToMaster (dev panel, integer btnAdrCde)
 {
@@ -3104,13 +3076,13 @@ define_function moderoButtonTextAreaSubmitTextToMaster (dev panel, integer btnAd
 }
 
 /*
- * Function:	moderoEnableButtonSoundWhenPressed
+ * Function:    moderoEnableButtonSoundWhenPressed
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				char soundFileName[] - sound file name
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              char soundFileName[] - sound file name
  * 
- * Description:	Set the sound played when a button is pressed.
+ * Description: Set the sound played when a button is pressed.
  */
 define_function moderoEnableButtonSoundWhenPressed (dev panel, integer btnAdrCde, char soundFileName[])
 {
@@ -3118,12 +3090,12 @@ define_function moderoEnableButtonSoundWhenPressed (dev panel, integer btnAdrCde
 }
 
 /*
- * Function:	moderoDisableButtonSoundWhenPressed
+ * Function:    moderoDisableButtonSoundWhenPressed
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
  * 
- * Description:	Clear the sound played when a button is pressed.
+ * Description: Clear the sound played when a button is pressed.
  */
 define_function moderoDisableButtonSoundWhenPressed (dev panel, integer btnAdrCde)
 {
@@ -3131,16 +3103,16 @@ define_function moderoDisableButtonSoundWhenPressed (dev panel, integer btnAdrCd
 }
 
 /*
- * Function:	moderoSetButtonSizeAndPosition
+ * Function:    moderoSetButtonSizeAndPosition
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				integer xCoordLeftEdge - x coordinate for the left edge
- *				integer yCoordTopEdge - y coordinate for the top edge
- *				integer xCoordRightEdge - x coordinate for the right edge
- *				integer yCoordBottomEdge - y coordinate for the bottom edge
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              integer xCoordLeftEdge - x coordinate for the left edge
+ *              integer yCoordTopEdge - y coordinate for the top edge
+ *              integer xCoordRightEdge - x coordinate for the right edge
+ *              integer yCoordBottomEdge - y coordinate for the bottom edge
  * 
- * Description:	Set the button size and its position on the page.
+ * Description: Set the button size and its position on the page.
  */
 define_function moderoSetButtonSizeAndPosition (dev panel, integer btnAdrCde, integer xCoordLeftEdge, integer yCoordTopEdge, integer xCoordRightEdge, integer yCoordBottomEdge)
 {
@@ -3148,12 +3120,12 @@ define_function moderoSetButtonSizeAndPosition (dev panel, integer btnAdrCde, in
 }
 
 /*
- * Function:	moderoButtonLogOnComputerControl
+ * Function:    moderoButtonLogOnComputerControl
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
  * 
- * Description:	Log-On to the buttons' computer control connection.
+ * Description: Log-On to the buttons' computer control connection.
  */
 define_function moderoButtonLogOnComputerControl (dev panel, integer btnAdrCde)
 {
@@ -3161,12 +3133,12 @@ define_function moderoButtonLogOnComputerControl (dev panel, integer btnAdrCde)
 }
 
 /*
- * Function:	moderoButtonLogOffComputerControl
+ * Function:    moderoButtonLogOffComputerControl
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
  * 
- * Description:	Log-Off from the buttons' computer control connection.
+ * Description: Log-Off from the buttons' computer control connection.
  */
 define_function moderoButtonLogOffComputerControl (dev panel, integer btnAdrCde)
 {
@@ -3174,14 +3146,14 @@ define_function moderoButtonLogOffComputerControl (dev panel, integer btnAdrCde)
 }
 
 /*
- * Function:	moderoSetButtonComputerControlRemoteHost
+ * Function:    moderoSetButtonComputerControlRemoteHost
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				char remoteHost[] - remote host
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              char remoteHost[] - remote host
  * 
- * Description:	Set the computer control remote host for the specified computer
- *		control button.
+ * Description: Set the computer control remote host for the specified computer
+ *              control button.
  */
 define_function moderoSetButtonComputerControlRemoteHost (dev panel, integer btnAdrCde, char remoteHost[])
 {
@@ -3189,13 +3161,13 @@ define_function moderoSetButtonComputerControlRemoteHost (dev panel, integer btn
 }
 
 /*
- * Function:	moderoSetButtonComputerControlNetworkPassword
+ * Function:    moderoSetButtonComputerControlNetworkPassword
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				char password[] - network password
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              char password[] - network password
  * 
- * Description:	Set the network password for the specified computer control button.
+ * Description: Set the network password for the specified computer control button.
  */
 define_function moderoSetButtonComputerControlNetworkPassword (dev panel, integer btnAdrCde, char password[])
 {
@@ -3203,13 +3175,13 @@ define_function moderoSetButtonComputerControlNetworkPassword (dev panel, intege
 }
 
 /*
- * Function:	moderoSetButtonComputerControlNetworkPort
+ * Function:    moderoSetButtonComputerControlNetworkPort
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				integer port - network port
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              integer port - network port
  * 
- * Description:	Set the network port for the specified computer control button.
+ * Description: Set the network port for the specified computer control button.
  */
 define_function moderoSetButtonComputerControlNetworkPort (dev panel, integer btnAdrCde, integer port)
 {
@@ -3217,13 +3189,13 @@ define_function moderoSetButtonComputerControlNetworkPort (dev panel, integer bt
 }
 
 /*
- * Function:	moderoEnableButtonWordWrap
+ * Function:    moderoEnableButtonWordWrap
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				integer btnState - button state
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              integer btnState - button state
  * 
- * Description:	Enable the buttons' word wrap feature.
+ * Description: Enable the buttons' word wrap feature.
  */
 define_function moderoEnableButtonWordWrap (dev panel, integer btnAdrCde, integer btnState)
 {
@@ -3231,13 +3203,13 @@ define_function moderoEnableButtonWordWrap (dev panel, integer btnAdrCde, intege
 }
 
 /*
- * Function:	moderoDisableButtonWordWrap
+ * Function:    moderoDisableButtonWordWrap
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				integer btnState - button state
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              integer btnState - button state
  * 
- * Description:	Disable the buttons' word wrap feature.
+ * Description: Disable the buttons' word wrap feature.
  */
 define_function moderoDisableButtonWordWrap (dev panel, integer btnAdrCde, integer btnState)
 {
@@ -3245,12 +3217,12 @@ define_function moderoDisableButtonWordWrap (dev panel, integer btnAdrCde, integ
 }
 
 /*
- * Function:	moderoEnableButtonPushes
+ * Function:    moderoEnableButtonPushes
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
  * 
- * Description:	Enable pushes on a button.
+ * Description: Enable pushes on a button.
  */
 define_function moderoEnableButtonPushes (dev panel, integer btnAdrCde)
 {
@@ -3258,12 +3230,12 @@ define_function moderoEnableButtonPushes (dev panel, integer btnAdrCde)
 }
 
 /*
- * Function:	moderoDisableButtonPushes
+ * Function:    moderoDisableButtonPushes
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
  * 
- * Description:	Disable pushes on a button.
+ * Description: Disable pushes on a button.
  */
 define_function moderoDisableButtonPushes (dev panel, integer btnAdrCde)
 {
@@ -3271,14 +3243,14 @@ define_function moderoDisableButtonPushes (dev panel, integer btnAdrCde)
 }
 
 /*
- * Function:	moderoSetButtonFontId
+ * Function:    moderoSetButtonFontId
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				integer btnState - button state
- *				integer fontId - font id
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              integer btnState - button state
+ *              integer fontId - font id
  * 
- * Description:	Set a buttons' font to a specific Font ID value.
+ * Description: Set a buttons' font to a specific Font ID value.
  */
 define_function moderoSetButtonFontId (dev panel, integer btnAdrCde, integer btnState, integer fontId)
 {
@@ -3286,13 +3258,13 @@ define_function moderoSetButtonFontId (dev panel, integer btnAdrCde, integer btn
 }
 
 /*
- * Function:	moderoSetButtonBargraphDragIncrement
+ * Function:    moderoSetButtonBargraphDragIncrement
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				integer dragIncrement - drag increment
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              integer dragIncrement - drag increment
  * 
- * Description:	Change a button bargraphs drag increment.
+ * Description: Change a button bargraphs drag increment.
  */
 define_function moderoSetButtonBargraphDragIncrement (dev panel, integer btnAdrCde, integer dragIncrement)
 {
@@ -3300,14 +3272,14 @@ define_function moderoSetButtonBargraphDragIncrement (dev panel, integer btnAdrC
 }
 
 /*
- * Function:	moderoEnableButtonInvertJoystickAxis
+ * Function:    moderoEnableButtonInvertJoystickAxis
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				integer joystickAxisToInvert - joystick axis to invert
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              integer joystickAxisToInvert - joystick axis to invert
  * 
- * Description:	Invert the joystick buttons' axis to move the origin to another 
- *		corner.
+ * Description: Invert the joystick buttons' axis to move the origin to another 
+ *              corner.
  */
 define_function moderoEnableButtonInvertJoystickAxis (dev panel, integer btnAdrCde, integer joystickAxisToInvert)
 {
@@ -3323,12 +3295,12 @@ define_function moderoEnableButtonInvertJoystickAxis (dev panel, integer btnAdrC
 }
 
 /*
- * Function:	moderoDisableButtonInvertJoystickAxis
+ * Function:    moderoDisableButtonInvertJoystickAxis
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
  * 
- * Description:	Disable invert on joystick button.
+ * Description: Disable invert on joystick button.
  */
 define_function moderoDisableButtonInvertJoystickAxis (dev panel, integer btnAdrCde)
 {
@@ -3336,12 +3308,12 @@ define_function moderoDisableButtonInvertJoystickAxis (dev panel, integer btnAdr
 }
 
 /*
- * Function:	moderoEnableButtonInvertBargraph
+ * Function:    moderoEnableButtonInvertBargraph
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
  * 
- * Description:	Enable invert on bargraph button.
+ * Description: Enable invert on bargraph button.
  */
 define_function moderoEnableButtonInvertBargraph (dev panel, integer btnAdrCde)
 {
@@ -3349,12 +3321,12 @@ define_function moderoEnableButtonInvertBargraph (dev panel, integer btnAdrCde)
 }
 
 /*
- * Function:	moderoDisableButtonInvertBargraph
+ * Function:    moderoDisableButtonInvertBargraph
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
  * 
- * Description:	Disable invert on bargraph button.
+ * Description: Disable invert on bargraph button.
  */
 define_function moderoDisableButtonInvertBargraph (dev panel, integer btnAdrCde)
 {
@@ -3362,15 +3334,15 @@ define_function moderoDisableButtonInvertBargraph (dev panel, integer btnAdrCde)
 }
 
 /*
- * Function:	moderoSetButtonTextEffectColour
+ * Function:    moderoSetButtonTextEffectColour
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				integer btnState - button state
- *				char colourName[] - colour name
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              integer btnState - button state
+ *              char colourName[] - colour name
  * 
- * Description:	Set the text effect color for the buttons' specified addresses
- *		and state to the specified color.
+ * Description: Set the text effect color for the buttons' specified addresses
+ *              and state to the specified color.
  */
 define_function moderoSetButtonTextEffectColour (dev panel, integer btnAdrCde, integer btnState, char colourName[])
 {
@@ -3378,14 +3350,14 @@ define_function moderoSetButtonTextEffectColour (dev panel, integer btnAdrCde, i
 }
 
 /*
- * Function:	moderoSetButtonTextEffect
+ * Function:    moderoSetButtonTextEffect
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				integer btnState - button state
- *				char textEffect[] - text effect
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              integer btnState - button state
+ *              char textEffect[] - text effect
  * 
- * Description:	Set the button text effect.
+ * Description: Set the button text effect.
  */
 define_function moderoSetButtonTextEffect (dev panel, integer btnAdrCde, integer btnState, char textEffect[])
 {
@@ -3393,15 +3365,15 @@ define_function moderoSetButtonTextEffect (dev panel, integer btnAdrCde, integer
 }
 
 /*
- * Function:	moderoSetButtonBoderColour
+ * Function:    moderoSetButtonBoderColour
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				integer btnState - button state
- *				char colourName[] - colour name
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              integer btnState - button state
+ *              char colourName[] - colour name
  * 
- * Description:	Set the border color for the buttons' specified addresses and
- *		state to the specified color.
+ * Description: Set the border color for the buttons' specified addresses and
+ *              state to the specified color.
  */
 define_function moderoSetButtonBoderColour (dev panel, integer btnAdrCde, integer btnState, char colourName[])
 {
@@ -3409,15 +3381,15 @@ define_function moderoSetButtonBoderColour (dev panel, integer btnAdrCde, intege
 }
 
 /*
- * Function:	moderoSetButtonFillColour
+ * Function:    moderoSetButtonFillColour
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				integer btnState - button state
- *				char colourName[] - colour name
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              integer btnState - button state
+ *              char colourName[] - colour name
  * 
- * Description:	Set the fill color for the buttons' specified addresses and
- *		state to the specified color.
+ * Description: Set the fill color for the buttons' specified addresses and
+ *              state to the specified color.
  */
 define_function moderoSetButtonFillColour (dev panel, integer btnAdrCde, integer btnState, char colourName[])
 {
@@ -3425,15 +3397,15 @@ define_function moderoSetButtonFillColour (dev panel, integer btnAdrCde, integer
 }
 
 /*
- * Function:	moderoSetButtonTextColour
+ * Function:    moderoSetButtonTextColour
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				integer btnState - button state
- *				char colourName[] - colour name
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              integer btnState - button state
+ *              char colourName[] - colour name
  * 
- * Description:	Set the text color for the buttons' specified addresses and
- *		state to the specified color.
+ * Description: Set the text color for the buttons' specified addresses and
+ *              state to the specified color.
  */
 define_function moderoSetButtonTextColour (dev panel, integer btnAdrCde, integer btnState, char colourName[])
 {
@@ -3441,14 +3413,14 @@ define_function moderoSetButtonTextColour (dev panel, integer btnAdrCde, integer
 }
 
 /*
- * Function:	moderoSetButtonBitmap
+ * Function:    moderoSetButtonBitmap
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				integer btnState - button state
- *				char imageFileName[] - image file name
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              integer btnState - button state
+ *              char imageFileName[] - image file name
  * 
- * Description:	Set button picture.
+ * Description: Set button picture.
  */
 define_function moderoSetButtonBitmap (dev panel, integer btnAdrCde, integer btnState, char imageFileName[])
 {
@@ -3456,14 +3428,14 @@ define_function moderoSetButtonBitmap (dev panel, integer btnAdrCde, integer btn
 }
 
 /*
- * Function:	moderoSetButtonBitmapResource
+ * Function:    moderoSetButtonBitmapResource
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				integer btnState - button state
- *				char resourceName[] - resource name
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              integer btnState - button state
+ *              char resourceName[] - resource name
  * 
- * Description:	Set button picture to use a dynamic image resource.
+ * Description: Set button picture to use a dynamic image resource.
  */
 define_function moderoSetButtonBitmapResource (dev panel, integer btnAdrCde, integer btnState, char resourceName[])
 {
@@ -3471,35 +3443,35 @@ define_function moderoSetButtonBitmapResource (dev panel, integer btnAdrCde, int
 }
 
 /*
- * Function:	moderoSetButtonBitmapAlignmentAbsolute
+ * Function:    moderoSetButtonBitmapAlignmentAbsolute
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				integer btnState - button state
- *				integer xCoordLeft - x coordinate for left
- *				integer yCoordTop - y coordinate for top
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              integer btnState - button state
+ *              integer xCoordLeft - x coordinate for left
+ *              integer yCoordTop - y coordinate for top
  * 
- * Description:	Set button bitmap/picture alignment to absolute x/y values.
+ * Description: Set button bitmap/picture alignment to absolute x/y values.
  */
 define_function moderoSetButtonBitmapAlignmentAbsolute (dev panel, integer btnAdrCde, integer btnState, integer xCoordLeft, integer yCoordTop)
 {
-    sendCommand (panel, "MODERO_COMMAND_BUTTON_PICTURE_ALIGNMENT,itoa(btnAdrCde),',',itoa(btnState),',',itoa(MODERO_ALIGNMENT_OPTION_ABSOLUTE),',',itoa(xCoordLeft),',',itoa(yCoordTop)")
+	sendCommand (panel, "MODERO_COMMAND_BUTTON_PICTURE_ALIGNMENT,itoa(btnAdrCde),',',itoa(btnState),',',itoa(MODERO_ALIGNMENT_OPTION_ABSOLUTE),',',itoa(xCoordLeft),',',itoa(yCoordTop)")
 }
 
 /*
- * Function:	moderoSetButtonBitmapAlignmentJustified
+ * Function:    moderoSetButtonBitmapAlignmentJustified
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				integer btnState - button state
- *				integer alignmentOption - alignment option
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              integer btnState - button state
+ *              integer alignmentOption - alignment option
  * 
- * Description:	Set button bitmap/picture alignment to justified.
+ * Description: Set button bitmap/picture alignment to justified.
  */
 define_function moderoSetButtonBitmapAlignmentJustified (dev panel, integer btnAdrCde, integer btnState, integer alignmentOption)
 {
-    switch (alignmentOption)
-    {
+	switch (alignmentOption)
+	{
 		case MODERO_ALIGNMENT_OPTION_TOP_LEFT:
 		case MODERO_ALIGNMENT_OPTION_TOP_MIDDLE:
 		case MODERO_ALIGNMENT_OPTION_TOP_RIGHT:
@@ -3512,39 +3484,39 @@ define_function moderoSetButtonBitmapAlignmentJustified (dev panel, integer btnA
 		{
 			sendCommand (panel, "MODERO_COMMAND_BUTTON_PICTURE_ALIGNMENT,itoa(btnAdrCde),',',itoa(btnState),',',itoa(alignmentOption)")
 		}
-    }
+	}
 }
 
 /*
- * Function:	moderoSetButtonIconAlignmentAbsolute
+ * Function:    moderoSetButtonIconAlignmentAbsolute
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				integer btnState - button state
- *				integer xCoordLeft - x coordinate for left
- *				integer yCoordTop - y coordinate for top
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              integer btnState - button state
+ *              integer xCoordLeft - x coordinate for left
+ *              integer yCoordTop - y coordinate for top
  * 
- * Description:	Set button icon alignment to absolute x/y values.
+ * Description: Set button icon alignment to absolute x/y values.
  */
 define_function moderoSetButtonIconAlignmentAbsolute (dev panel, integer btnAdrCde, integer btnState, integer left, integer top)
 {
-    sendCommand (panel, "MODERO_COMMAND_BUTTON_ICON_ALIGNMENT,itoa(btnAdrCde),',',itoa(btnState),',',itoa(MODERO_ALIGNMENT_OPTION_ABSOLUTE),',',itoa(left),',',itoa(top)")
+	sendCommand (panel, "MODERO_COMMAND_BUTTON_ICON_ALIGNMENT,itoa(btnAdrCde),',',itoa(btnState),',',itoa(MODERO_ALIGNMENT_OPTION_ABSOLUTE),',',itoa(left),',',itoa(top)")
 }
 
 /*
- * Function:	moderoSetButtonIconAlignmentJustified
+ * Function:    moderoSetButtonIconAlignmentJustified
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				integer btnState - button state
- *				integer alignmentOption - alignment option
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              integer btnState - button state
+ *              integer alignmentOption - alignment option
  * 
- * Description:	Set button icon alignment to justified.
+ * Description: Set button icon alignment to justified.
  */
 define_function moderoSetButtonIconAlignmentJustified (dev panel, integer btnAdrCde, integer btnState, integer alignmentOption)
 {
-    switch (alignmentOption)
-    {
+	switch (alignmentOption)
+	{
 		case MODERO_ALIGNMENT_OPTION_TOP_LEFT:
 		case MODERO_ALIGNMENT_OPTION_TOP_MIDDLE:
 		case MODERO_ALIGNMENT_OPTION_TOP_RIGHT:
@@ -3557,39 +3529,39 @@ define_function moderoSetButtonIconAlignmentJustified (dev panel, integer btnAdr
 		{
 			sendCommand (panel, "MODERO_COMMAND_BUTTON_ICON_ALIGNMENT,itoa(btnAdrCde),',',itoa(btnState),',',itoa(alignmentOption)")
 		}
-    }
+	}
 }
 
 /*
- * Function:	moderoSetButtonTextAlignmentAbsolute
+ * Function:    moderoSetButtonTextAlignmentAbsolute
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				integer btnState - button state
- *				integer xCoordLeft - x coordinate for left
- *				integer yCoordTop - y coordinate for top
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              integer btnState - button state
+ *              integer xCoordLeft - x coordinate for left
+ *              integer yCoordTop - y coordinate for top
  * 
- * Description:	Set button text alignment to absolute x/y values.
+ * Description: Set button text alignment to absolute x/y values.
  */
 define_function moderoSetButtonTextAlignmentAbsolute (dev panel, integer btnAdrCde, integer btnState, integer left, integer top)
 {
-    sendCommand (panel, "MODERO_COMMAND_BUTTON_TEXT_ALIGNMENT,itoa(btnAdrCde),',',itoa(btnState),',',itoa(MODERO_ALIGNMENT_OPTION_ABSOLUTE),',',itoa(left),',',itoa(top)")
+	sendCommand (panel, "MODERO_COMMAND_BUTTON_TEXT_ALIGNMENT,itoa(btnAdrCde),',',itoa(btnState),',',itoa(MODERO_ALIGNMENT_OPTION_ABSOLUTE),',',itoa(left),',',itoa(top)")
 }
 
 /*
- * Function:	moderoSetButtonTextAlignmentJustified
+ * Function:    moderoSetButtonTextAlignmentJustified
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				integer btnState - button state
- *				integer alignmentOption - alignment option
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              integer btnState - button state
+ *              integer alignmentOption - alignment option
  * 
- * Description:	Set button text alignment to justified.
+ * Description: Set button text alignment to justified.
  */
 define_function moderoSetButtonTextAlignmentJustified (dev panel, integer btnAdrCde, integer btnState, integer alignmentOption)
 {
-    switch (alignmentOption)
-    {
+	switch (alignmentOption)
+	{
 		case MODERO_ALIGNMENT_OPTION_TOP_LEFT:
 		case MODERO_ALIGNMENT_OPTION_TOP_MIDDLE:
 		case MODERO_ALIGNMENT_OPTION_TOP_RIGHT:
@@ -3602,26 +3574,26 @@ define_function moderoSetButtonTextAlignmentJustified (dev panel, integer btnAdr
 		{
 			sendCommand (panel, "MODERO_COMMAND_BUTTON_TEXT_ALIGNMENT,itoa(btnAdrCde),',',itoa(btnState),',',itoa(alignmentOption)")
 		}
-    }
+	}
 }
 
 /*
- * Function:	moderoButtonCopyAttribute
+ * Function:    moderoButtonCopyAttribute
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrPortSource - address port of button to copy from
- *				integer btnAdrCdeSource - address code of button to copy from
- *				integer btnStateSource - state of button to copy from
- *				integer btnAdrCdeDest - address code of button to copy to
- *				integer btnStateDest - state of button to copy to
- *				char attribute[] - attribute to copy
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrPortSource - address port of button to copy from
+ *              integer btnAdrCdeSource - address code of button to copy from
+ *              integer btnStateSource - state of button to copy from
+ *              integer btnAdrCdeDest - address code of button to copy to
+ *              integer btnStateDest - state of button to copy to
+ *              char attribute[] - attribute to copy
  * 
- * Description:	Copy attribute of the source button to the destination button.
+ * Description: Copy attribute of the source button to the destination button.
  */
 define_function moderoButtonCopyAttribute (dev panel, integer btnAdrPortSource, integer btnAdrCdeSource, integer btnStateSource, integer btnAdrCdeDest, integer btnStateDest, char attribute[])
 {
-    switch (attribute)
-    {
+	switch (attribute)
+	{
 		case MODERO_BUTTON_ATTRIBUTE_BITMAP:
 		case MODERO_BUTTON_ATTRIBUTE_BORDER:
 		case MODERO_BUTTON_ATTRIBUTE_BORDER_COLOR:
@@ -3643,16 +3615,16 @@ define_function moderoButtonCopyAttribute (dev panel, integer btnAdrPortSource, 
 		{
 			sendCommand (panel, "MODERO_COMMAND_BUTTON_COPY_ATTRIBUTES,itoa(btnAdrCdeDest),',',itoa(btnStateDest),',',itoa(btnAdrPortSource),',',itoa(btnAdrCdeSource),',',itoa(btnStateSource),',%',attribute")
 		}
-    }
+	}
 }
 
 /*
- * Function:	moderoSetVirtualPcMouseMode
+ * Function:    moderoSetVirtualPcMouseMode
  * 
- * Arguments:	dev panel - touch panel
- *				integer mouseMode - mouse mode
+ * Arguments:   dev panel - touch panel
+ *              integer mouseMode - mouse mode
  * 
- * Description:	Set the mouse button mode for the virtual PC.
+ * Description: Set the mouse button mode for the virtual PC.
  */
 define_function moderoSetVirtualPcMouseMode (dev panel, integer mouseMode)
 {
@@ -3669,11 +3641,11 @@ define_function moderoSetVirtualPcMouseMode (dev panel, integer mouseMode)
 }
 
 /*
- * Function:	moderoEnableVirtualPcMouseDoubleClick
+ * Function:    moderoEnableVirtualPcMouseDoubleClick
  * 
- * Arguments:	dev panel - touch panel
+ * Arguments:   dev panel - touch panel
  * 
- * Description:	Turn on the ’mouse double-click’ feature for the virtual PC.
+ * Description: Turn on the ’mouse double-click’ feature for the virtual PC.
  */
 define_function moderoEnableVirtualPcMouseDoubleClick (dev panel)
 {
@@ -3681,13 +3653,13 @@ define_function moderoEnableVirtualPcMouseDoubleClick (dev panel)
 }
 
 /*
- * Function:	moderoEnableButtonScaleToFit
+ * Function:    moderoEnableButtonScaleToFit
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				integer btnState - button state
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              integer btnState - button state
  * 
- * Description:	Enable button image scale-to-fit feature (only for dynamic images).
+ * Description: Enable button image scale-to-fit feature (only for dynamic images).
  */
 define_function moderoEnableButtonScaleToFit (dev panel, integer btnAdrCde, integer btnState)
 {
@@ -3695,13 +3667,13 @@ define_function moderoEnableButtonScaleToFit (dev panel, integer btnAdrCde, inte
 }
 
 /*
- * Function:	moderoDisableButtonScaleToFit
+ * Function:    moderoDisableButtonScaleToFit
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				integer btnState - button state
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              integer btnState - button state
  * 
- * Description:	Disable button image scale-to-fit feature.
+ * Description: Disable button image scale-to-fit feature.
  */
 define_function moderoDisableButtonScaleToFit (dev panel, integer btnAdrCde, integer btnState)
 {
@@ -3709,13 +3681,13 @@ define_function moderoDisableButtonScaleToFit (dev panel, integer btnAdrCde, int
 }
 
 /*
- * Function:	moderoSetButtonBargraphUpperLimit
+ * Function:    moderoSetButtonBargraphUpperLimit
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				integer upperLimit - upperLimit
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              integer upperLimit - upperLimit
  * 
- * Description:	Set bargraph button upper limit.
+ * Description: Set bargraph button upper limit.
  */
 define_function moderoSetButtonBargraphUpperLimit (dev panel, integer btnAdrCde, /*integer btnState,*/ integer upperLimit)
 {
@@ -3724,13 +3696,13 @@ define_function moderoSetButtonBargraphUpperLimit (dev panel, integer btnAdrCde,
 }
 
 /*
- * Function:	moderoSetButtonBargraphLowerLimit
+ * Function:    moderoSetButtonBargraphLowerLimit
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				integer lowerLimit - lowerLimit
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              integer lowerLimit - lowerLimit
  * 
- * Description:	Set bargraph button lower limit.
+ * Description: Set bargraph button lower limit.
  */
 define_function moderoSetButtonBargraphLowerLimit (dev panel, integer btnAdrCde, /*integer btnState,*/ integer lowerLimit)
 {
@@ -3739,13 +3711,13 @@ define_function moderoSetButtonBargraphLowerLimit (dev panel, integer btnAdrCde,
 }
 
 /*
- * Function:	moderoSetButtonBargraphRampDownTime
+ * Function:    moderoSetButtonBargraphRampDownTime
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				integer rampDownTime - rampd down time, in tenths (1/10ths) of seconds
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              integer rampDownTime - rampd down time, in tenths (1/10ths) of seconds
  * 
- * Description:	Set the button bargraph ramp-down time in 1/10th of a second.
+ * Description: Set the button bargraph ramp-down time in 1/10th of a second.
  */
 define_function moderoSetButtonBargraphRampDownTime (dev panel, integer btnAdrCde, integer rampDownTime)
 {
@@ -3753,13 +3725,13 @@ define_function moderoSetButtonBargraphRampDownTime (dev panel, integer btnAdrCd
 }
 
 /*
- * Function:	moderoSetButtonBargraphRampUpTime
+ * Function:    moderoSetButtonBargraphRampUpTime
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				integer rampUpTime - rampd up time, in tenths (1/10ths) of seconds
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              integer rampUpTime - rampd up time, in tenths (1/10ths) of seconds
  * 
- * Description:	Set the button bargraph ramp-up time in 1/10th of a second.
+ * Description: Set the button bargraph ramp-up time in 1/10th of a second.
  */
 define_function moderoSetButtonBargraphRampUpTime (dev panel, integer btnAdrCde, integer rampUpTime)
 {
@@ -3767,13 +3739,13 @@ define_function moderoSetButtonBargraphRampUpTime (dev panel, integer btnAdrCde,
 }
 
 /*
- * Function:	moderoSetButtonBargraphSliderColourIndex
+ * Function:    moderoSetButtonBargraphSliderColourIndex
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				integer colourIndex - colour index
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              integer colourIndex - colour index
  * 
- * Description:	Set the button bargraph slider color.
+ * Description: Set the button bargraph slider color.
  */
 define_function moderoSetButtonBargraphSliderColourIndex (dev panel, integer btnAdrCde, integer colourIndex)
 {
@@ -3781,13 +3753,13 @@ define_function moderoSetButtonBargraphSliderColourIndex (dev panel, integer btn
 }
 
 /*
- * Function:	moderoSetButtonBargraphSliderColourName
+ * Function:    moderoSetButtonBargraphSliderColourName
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				char colourName[] - colour name
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              char colourName[] - colour name
  * 
- * Description:	Set the button bargraph slider color.
+ * Description: Set the button bargraph slider color.
  */
 define_function moderoSetButtonBargraphSliderColourName (dev panel, integer btnAdrCde, char colourName[])
 {
@@ -3795,13 +3767,13 @@ define_function moderoSetButtonBargraphSliderColourName (dev panel, integer btnA
 }
 
 /*
- * Function:	moderoSetButtonJoystickCursorColourIndex
+ * Function:    moderoSetButtonJoystickCursorColourIndex
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				integer colourIndex - colour index
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              integer colourIndex - colour index
  * 
- * Description:	Set the button joystick cursor color.
+ * Description: Set the button joystick cursor color.
  */
 define_function moderoSetButtonJoystickCursorColourIndex (dev panel, integer btnAdrCde, integer colourIndex)
 {
@@ -3811,13 +3783,13 @@ define_function moderoSetButtonJoystickCursorColourIndex (dev panel, integer btn
 #warn '@TODO - amx-modero-control - create colour name, index, and hex value functions for font, text, border, fill, slider, joystick'
 
 /*
- * Function:	moderoSetButtonJoystickCursorColourName
+ * Function:    moderoSetButtonJoystickCursorColourName
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				char colourName[] - colour name
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              char colourName[] - colour name
  * 
- * Description:	Set the button joystick cursor color.
+ * Description: Set the button joystick cursor color.
  */
 define_function moderoSetButtonJoystickCursorColourName (dev panel, integer btnAdrCde, char colourName[])
 {
@@ -3825,13 +3797,13 @@ define_function moderoSetButtonJoystickCursorColourName (dev panel, integer btnA
 }
 
 /*
- * Function:	moderoSetButtonBargraphSliderName
+ * Function:    moderoSetButtonBargraphSliderName
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				char sliderName[] - slider name
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              char sliderName[] - slider name
  * 
- * Description:	Set the button bargraph slider name.
+ * Description: Set the button bargraph slider name.
  */
 define_function moderoSetButtonBargraphSliderName (dev panel, integer btnAdrCde, char sliderName[])
 {
@@ -3855,13 +3827,13 @@ define_function moderoSetButtonBargraphSliderName (dev panel, integer btnAdrCde,
 }
 
 /*
- * Function:	moderoSetButtonJoystickCursorName
+ * Function:    moderoSetButtonJoystickCursorName
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				char cursorName[] - cursor name
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              char cursorName[] - cursor name
  * 
- * Description:	Set the button joystick cursor name.
+ * Description: Set the button joystick cursor name.
  */
 define_function moderoSetButtonJoystickCursorName (dev panel, integer btnAdrCde, char cursorName[])
 {
@@ -3885,14 +3857,14 @@ define_function moderoSetButtonJoystickCursorName (dev panel, integer btnAdrCde,
 }
 
 /*
- * Function:	moderoSetButtonIconIndex
+ * Function:    moderoSetButtonIconIndex
  * 
- * Arguments:	dev panel - touch panel
- *				integer btnAdrCde - button address code
- *				integer btnState - button state
- *				integer iconIndex - icon index
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *              integer btnState - button state
+ *              integer iconIndex - icon index
  * 
- * Description:	Set the button icon index.
+ * Description: Set the button icon index.
  */
 define_function moderoSetButtonIconIndex (dev panel, integer btnAdrCde, integer btnState, integer iconIndex)
 {
@@ -3900,15 +3872,15 @@ define_function moderoSetButtonIconIndex (dev panel, integer btnAdrCde, integer 
 }
 
 /*
- * Function:	moderoSetIrChannelPulse
+ * Function:    moderoSetIrChannelPulse
  * 
- * Arguments:	dev panel - touch panel
- *				integer irPort - port that ir file is stored in
- *				integer irChannel - ir channel
- *				integer onTime - pulse on time, in tenths (1/10ths) of seconds
- *				integer offTime - pulse off time, in tenths (1/10ths) of seconds
+ * Arguments:   dev panel - touch panel
+ *              integer irPort - port that ir file is stored in
+ *              integer irChannel - ir channel
+ *              integer onTime - pulse on time, in tenths (1/10ths) of seconds
+ *              integer offTime - pulse off time, in tenths (1/10ths) of seconds
  * 
- * Description:	Pulse the given IR channel for onTime in tenths of seconds.
+ * Description: Pulse the given IR channel for onTime in tenths of seconds.
  */
 define_function moderoSetIrChannelPulse (dev panel, integer irPort, integer irChannel, integer onTime, integer offTime)
 {
@@ -3916,11 +3888,11 @@ define_function moderoSetIrChannelPulse (dev panel, integer irPort, integer irCh
 }
 
 /*
- * Function:	moderoEnablePictureViewStartOnUsbInsert
+ * Function:    moderoEnablePictureViewStartOnUsbInsert
  * 
- * Arguments:	dev panel - touch panel
+ * Arguments:   dev panel - touch panel
  * 
- * Description:	Enable picture view startup on USB insert.
+ * Description: Enable picture view startup on USB insert.
  */
 define_function moderoEnablePictureViewStartOnUsbInsert (dev panel)
 {
@@ -3928,11 +3900,11 @@ define_function moderoEnablePictureViewStartOnUsbInsert (dev panel)
 }
 
 /*
- * Function:	moderoDisablePictureViewStartOnUsbInsert
+ * Function:    moderoDisablePictureViewStartOnUsbInsert
  * 
- * Arguments:	dev panel - touch panel
+ * Arguments:   dev panel - touch panel
  * 
- * Description:	Disable picture view startup on USB insert.
+ * Description: Disable picture view startup on USB insert.
  */
 define_function moderoDisablePictureViewStartOnUsbInsert (dev panel)
 {
@@ -3940,11 +3912,11 @@ define_function moderoDisablePictureViewStartOnUsbInsert (dev panel)
 }
 
 /*
- * Function:	moderoEnablePictureViewInPreviewMode
+ * Function:    moderoEnablePictureViewInPreviewMode
  * 
- * Arguments:	dev panel - touch panel
+ * Arguments:   dev panel - touch panel
  * 
- * Description:	Start picture view in preview mode.
+ * Description: Start picture view in preview mode.
  */
 define_function moderoEnablePictureViewInPreviewMode (dev panel)
 {
@@ -3952,11 +3924,11 @@ define_function moderoEnablePictureViewInPreviewMode (dev panel)
 }
 
 /*
- * Function:	moderoEnablePictureViewInNormalMode
+ * Function:    moderoEnablePictureViewInNormalMode
  * 
- * Arguments:	dev panel - touch panel
+ * Arguments:   dev panel - touch panel
  * 
- * Description:	Start picture view in normal mode.
+ * Description: Start picture view in normal mode.
  */
 define_function moderoEnablePictureViewInNormalMode (dev panel)
 {
@@ -3964,11 +3936,11 @@ define_function moderoEnablePictureViewInNormalMode (dev panel)
 }
 
 /*
- * Function:	moderoDisablePictureView
+ * Function:    moderoDisablePictureView
  * 
- * Arguments:	dev panel - touch panel
+ * Arguments:   dev panel - touch panel
  * 
- * Description:	Stop running picture view.
+ * Description: Stop running picture view.
  */
 define_function moderoDisablePictureView (dev panel)
 {
@@ -3983,39 +3955,39 @@ define_function moderoDisablePictureView (dev panel)
  */
 
 /*
- * Function:	moderoResourceForceRefresh
+ * Function:    moderoResourceForceRefresh
  * 
- * Arguments:	dev panel - touch panel
- *				char resourceName[] - resource name
- *				notificationType[] - notification type
- *					- Values:
- *						MODERO_RESOURCE_NOTIFICATION_ON
- *						MODERO_RESOURCE_NOTIFICATION_OFF
- *						MODERO_RESOURCE_NOTIFICATION_ONCE
+ * Arguments:   dev panel - touch panel
+ *              char resourceName[] - resource name
+ *              char notificationType[] - notification type
+ *                      Values:
+ *                          MODERO_RESOURCE_NOTIFICATION_ON
+ *                          MODERO_RESOURCE_NOTIFICATION_OFF
+ *                          MODERO_RESOURCE_NOTIFICATION_ONCE
  * 
- * Description:	Force a refresh for a given resource, if the resource is 
- *		visible onscreen. If it is not onscreen, it will be deferred until it 
- *		is visible to do the refresh.
+ * Description: Force a refresh for a given resource, if the resource is 
+ *              visible onscreen. If it is not onscreen, it will be deferred until it 
+ *              is visible to do the refresh.
  */
 define_function moderoResourceForceRefresh (dev panel, char resourceName[], char notificationType[])
 {
-    sendCommand (panel, "MODERO_COMMAND_DYNAMIC_IMAGE_FORCE_REFRESH_IF_VISIBLE,resourceName,',',notificationType")
+	sendCommand (panel, "MODERO_COMMAND_DYNAMIC_IMAGE_FORCE_REFRESH_IF_VISIBLE,resourceName,',',notificationType")
 }
 
 /*
- * Function:	moderoResourceForceRefreshPrefetchFromCache
+ * Function:    moderoResourceForceRefreshPrefetchFromCache
  * 
- * Arguments:	dev panel - touch panel
- *				char resourceName[] - resource name
- *				notificationType[] - notification type
- *					- Values:
- *						MODERO_RESOURCE_NOTIFICATION_ON
- *						MODERO_RESOURCE_NOTIFICATION_OFF
- *						MODERO_RESOURCE_NOTIFICATION_ONCE
+ * Arguments:   dev panel - touch panel
+ *              char resourceName[] - resource name
+ *              char notificationType[] - notification type
+ *                      Values:
+ *                          MODERO_RESOURCE_NOTIFICATION_ON
+ *                          MODERO_RESOURCE_NOTIFICATION_OFF
+ *                          MODERO_RESOURCE_NOTIFICATION_ONCE
  * 
- * Description:	Force a refresh of the given resource, prefetching the resource.
- *		The resource will be pre-fetched from the cache even if it is not
- *		currently visible.
+ * Description: Force a refresh of the given resource, prefetching the resource.
+ *              The resource will be pre-fetched from the cache even if it is not
+ *              currently visible.
  */
 define_function moderoResourceForceRefreshPrefetchFromCache (dev panel, char resourceName[], char notificationType[])
 {
@@ -4023,74 +3995,74 @@ define_function moderoResourceForceRefreshPrefetchFromCache (dev panel, char res
 }
 
 /*
- * Function:	moderoSetResourceParameter
+ * Function:    moderoSetResourceParameter
  * 
- * Arguments:	dev panel - touch panel
- *				char resourceName[] - resource name
- *				char embeddedCode[] - embedded code
- *				char value[] - data value
+ * Arguments:   dev panel - touch panel
+ *              char resourceName[] - resource name
+ *              char embeddedCode[] - embedded code
+ *              char value[] - data value
  * 
- * Description:	Sets a resource parameter value.
+ * Description: Sets a resource parameter value.
  */
 define_function moderoSetResourceParameter (dev panel, char resourceName[], char embeddedCode[], char value[])
 {
-    sendCommand (panel, "MODERO_COMMAND_DYNAMIC_IMAGE_ADD_PARAMETER,resourceName,',',embeddedCode,value")
+	sendCommand (panel, "MODERO_COMMAND_DYNAMIC_IMAGE_ADD_PARAMETER,resourceName,',',embeddedCode,value")
 }
 
 /*
- * Function:	moderoSetResourceFilePath
+ * Function:    moderoSetResourceFilePath
  * 
- * Arguments:	dev panel - touch panel
- *				char resourceName[] - resource name
- *				char hostName[] - host name
+ * Arguments:   dev panel - touch panel
+ *              char resourceName[] - resource name
+ *              char hostName[] - host name
  * 
- * Description:	Change the host name property for a given resource.
+ * Description: Change the host name property for a given resource.
  */
 define_function moderoSetResourceHostName (dev panel, char resourceName[], char hostName[])
 {
-    sendCommand (panel, "MODERO_COMMAND_DYNAMIC_IMAGE_MODIFY_PARAMETER,resourceName,',',MODERO_EMBEDDED_CODE_RESOURCE_PARAMETER_HOST,hostName")
+	sendCommand (panel, "MODERO_COMMAND_DYNAMIC_IMAGE_MODIFY_PARAMETER,resourceName,',',MODERO_EMBEDDED_CODE_RESOURCE_PARAMETER_HOST,hostName")
 }
 
 /*
- * Function:	moderoSetResourceFilePath
+ * Function:    moderoSetResourceFilePath
  * 
- * Arguments:	dev panel - touch panel
- *				char resourceName[] - resource name
- *				char filePath[] - file path
+ * Arguments:   dev panel - touch panel
+ *              char resourceName[] - resource name
+ *              char filePath[] - file path
  * 
- * Description:	Change the file path property for a given resource.
+ * Description: Change the file path property for a given resource.
  */
 define_function moderoSetResourceFilePath (dev panel, char resourceName[], char filePath[])
 {
-    sendCommand (panel, "MODERO_COMMAND_DYNAMIC_IMAGE_MODIFY_PARAMETER,resourceName,',',MODERO_EMBEDDED_CODE_RESOURCE_PARAMETER_PATH,filePath")
+	sendCommand (panel, "MODERO_COMMAND_DYNAMIC_IMAGE_MODIFY_PARAMETER,resourceName,',',MODERO_EMBEDDED_CODE_RESOURCE_PARAMETER_PATH,filePath")
 }
 
 /*
- * Function:	moderoSetResourceFileName
+ * Function:    moderoSetResourceFileName
  * 
- * Arguments:	dev panel - touch panel
- *				char resourceName[] - resource name
- *				char fileName[] - file name
+ * Arguments:   dev panel - touch panel
+ *              char resourceName[] - resource name
+ *              char fileName[] - file name
  * 
- * Description:	Change the file name property for a given resource.
+ * Description: Change the file name property for a given resource.
  */
 define_function moderoSetResourceFileName (dev panel, char resourceName[], char fileName[])
 {
-    sendCommand (panel, "MODERO_COMMAND_DYNAMIC_IMAGE_MODIFY_PARAMETER,resourceName,',',MODERO_EMBEDDED_CODE_RESOURCE_PARAMETER_FILE,fileName")
+	sendCommand (panel, "MODERO_COMMAND_DYNAMIC_IMAGE_MODIFY_PARAMETER,resourceName,',',MODERO_EMBEDDED_CODE_RESOURCE_PARAMETER_FILE,fileName")
 }
 
 /*
- * Function:	moderoSetResourceRefreshRate
+ * Function:    moderoSetResourceRefreshRate
  * 
- * Arguments:	dev panel - touch panel
- *				char resourceName[] - resource name
- *				integer seconds - refresh rate in seconds
+ * Arguments:   dev panel - touch panel
+ *              char resourceName[] - resource name
+ *              integer seconds - refresh rate in seconds
  * 
- * Description:	Change the refresh rate for a given resource.
+ * Description: Change the refresh rate for a given resource.
  */
 define_function moderoSetResourceRefreshRate (dev panel, char resourceName[], integer seconds)
 {
-    sendCommand (panel, "MODERO_COMMAND_DYNAMIC_IMAGE_CHANGE_REFRESH_RATE,resourceName,',',itoa(seconds)")
+	sendCommand (panel, "MODERO_COMMAND_DYNAMIC_IMAGE_CHANGE_REFRESH_RATE,resourceName,',',itoa(seconds)")
 }
 
 #end_if

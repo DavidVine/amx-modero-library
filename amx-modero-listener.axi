@@ -36,11 +36,11 @@ dev dvPanelsCoordinateTracking[] = { 10001:1:0 }
 #end_if
 
 #if_not_defined dvPanelsNfc
-dev dvPanelsNfc[]	= { 10001:1:0 }
+dev dvPanelsNfc[] = { 10001:1:0 }
 #end_if
 
 #if_not_defined dvPanelsUserTextInput
-dev dvPanelsUserTextInput[]	= { 10001:1:0 }
+dev dvPanelsUserTextInput[] = { 10001:1:0 }
 #end_if
 
 #if_not_defined dvPanelsStreaming
@@ -82,7 +82,6 @@ dev dvPanelsButtons[] = { 10001:1:0 }
 // Note: If push/release coordinate reporting is enabled a push anywhere on the panel will trigger this function
 define_function moderoNotifyTouchCoordinatesPress (dev panel, integer nX, integer nY)
 {
-    
 }
 */
 
@@ -92,7 +91,6 @@ define_function moderoNotifyTouchCoordinatesPress (dev panel, integer nX, intege
 // Note: If push/release coordinate reporting is enabled a movement in user touch anywhere on the panel will trigger this function
 define_function moderoNotifyTouchCoordinatesMove (dev panel, integer nX, integer nY)
 {
-    
 }
 */
 
@@ -102,7 +100,6 @@ define_function moderoNotifyTouchCoordinatesMove (dev panel, integer nX, integer
 // Note: If push/release coordinate reporting is enabled a release anywhere on the panel will trigger this function
 define_function moderoNotifyTouchCoordinatesRelease (dev panel, integer nX, integer nY)
 {
-    
 }
 */
 
@@ -255,7 +252,6 @@ define_function moderoNotifyNfcTagRead (dev panel, char nfcUid[])
 #define INCLUDE_MODERO_NOTIFY_STREAM_START
 define_function moderoNotifyStreamStart (dev panel, integer btnAdrCde, integer btnAdrPort, char streamUrl[], integer numOfStreamStarts)
 {
-	
 }
 */
 
@@ -263,14 +259,13 @@ define_function moderoNotifyStreamStart (dev panel, integer btnAdrCde, integer b
 #define INCLUDE_MODERO_NOTIFY_STREAM_STOP
 define_function moderoNotifyStreamStop (dev panel, integer btnAdrCde, integer btnAdrPort, char streamUrl[], integer numOfStreamStops)
 {
-	
 }
 */
+
 /*
 #define INCLUDE_MODERO_NOTIFY_STREAM_ERROR
 define_function moderoNotifyStreamError (dev panel, integer btnAdrCde, integer btnAdrPort, char streamUrl[], integer numOfStreamErrors)
 {
-	
 }
 */
 
@@ -278,7 +273,6 @@ define_function moderoNotifyStreamError (dev panel, integer btnAdrCde, integer b
 #define INCLUDE_MODERO_NOTIFY_RESOURCE_LOAD
 define_function moderoNotifyResourceLoad (dev panel, char resourceName[])
 {
-	
 }
 */
 
@@ -286,7 +280,6 @@ define_function moderoNotifyResourceLoad (dev panel, char resourceName[])
 #define INCLUDE_MODERO_NOTIFY_BLUETOOTH_HANDSET
 define_function moderoNotifyBluetoothHandset (dev panel, integer status)
 {
-	
 }
 */
 
@@ -294,7 +287,6 @@ define_function moderoNotifyBluetoothHandset (dev panel, integer status)
 #define INCLUDE_MODERO_NOTIFY_AUDIO_DEVICE
 define_function moderoNotifyAudioDevice (dev panel, integer audioDevice)
 {
-	
 }
 */
 
@@ -302,7 +294,6 @@ define_function moderoNotifyAudioDevice (dev panel, integer audioDevice)
 #define INCLUDE_MODERO_NOTIFY_AUDIO_MUTE_STATUS
 define_function moderoNotifyAudioMuteStatus (dev panel, integer muteStatus)
 {
-	
 }
 */
 
@@ -310,7 +301,6 @@ define_function moderoNotifyAudioMuteStatus (dev panel, integer muteStatus)
 #define INCLUDE_MODERO_NOTIFY_VOLUME
 define_function moderoNotifyVolume (dev panel, integer volume)
 {
-	
 }
 */
 
@@ -333,7 +323,7 @@ define_function moderoNotifySmartCardRemove (dev panel)
 define_function moderoNotifySmartCardInsert (dev panel, char chuid[])
 {
 }
-*/	
+*/
 
 /*
 #define INCLUDE_MODERO_NOTIFY_SMART_CARD_READER_REMOVE
@@ -425,9 +415,9 @@ define_event
 
 data_event[dvPanelsCoordinateTracking]
 {
-    string:
-    {
-		if (find_string(data.text, 'Press,' ,1) == 1)	// Starts with 'Press,'
+	string:
+	{
+		if (find_string(data.text, 'Press,' ,1) == 1)    // Starts with 'Press,'
 		{
 			// String is in format 'Press,X,Y' where X and Y are the (X,Y) coordinates of the touch
 			
@@ -445,7 +435,7 @@ data_event[dvPanelsCoordinateTracking]
 			
 		}
 		
-		if (find_string(data.text, 'Move,' ,1) == 1)	// Starts with 'Move,'
+		if (find_string(data.text, 'Move,' ,1) == 1)    // Starts with 'Move,'
 		{
 			// String is in format 'Press,X,Y' where X and Y are the (X,Y) coordinates of the touch
 			
@@ -462,7 +452,7 @@ data_event[dvPanelsCoordinateTracking]
 			#end_if
 		}
 		
-		else if (find_string(data.text, 'Release,' ,1) == 1)	// Starts with 'Release,'
+		else if (find_string(data.text, 'Release,' ,1) == 1)    // Starts with 'Release,'
 		{
 			// String is in format 'Press,X,Y' where X and Y are the (X,Y) coordinates of the release
 			
@@ -478,7 +468,7 @@ data_event[dvPanelsCoordinateTracking]
 			moderoNotifyTouchCoordinatesRelease (data.device, coordX, coordY)
 			#end_if
 		}
-    }
+	}
 }
 
 data_event[dvPanelsUserTextInput]
@@ -850,14 +840,14 @@ custom_event [dvPanelsStreaming, 0, MODERO_CUSTOM_EVENT_ID_STREAMING_VIDEO]
 	switch (custom.flag)
 	{
 		#if_defined INCLUDE_MODERO_NOTIFY_STREAM_START
-		case MODERO_STREAMING_NOTIFY_FLAG_START:	// start
+		case MODERO_STREAMING_NOTIFY_FLAG_START:    // start
 		{
 			//moderoNotifyStreamStart (custom.device, type_cast(custom.value2), type_cast(custom.value3), custom.text, type_cast(custom.value1))
 		}
 		#end_if
 		
 		#if_defined INCLUDE_MODERO_NOTIFY_STREAM_STOP
-		case MODERO_STREAMING_NOTIFY_FLAG_STOP:	// stop
+		case MODERO_STREAMING_NOTIFY_FLAG_STOP:    // stop
 		{
 			moderoNotifyStreamStop (custom.device, type_cast(custom.value2), type_cast(custom.value3), custom.text, type_cast(custom.value1))
 		}
@@ -946,8 +936,8 @@ custom_event [dvPanelsMain, 0, MODERO_CUSTOM_EVENT_ID_GESTURE]
 	// custom.value1 (SLONG) - gesture number
 	// custom.value2 (SLONG) - simplified gesture velocity
 	// custom.value3 (SLONG) - precise gesture velocity
-	//						- for swipes and circles, this represents pixels per second
-	//						- for double-taps, this is the time in milliseconds from the first press to the second release)
+	//                             - for swipes and circles, this represents pixels per second
+	//                             - for double-taps, this is the time in milliseconds from the first press to the second release)
 	#if_defined INCLUDE_MODERO_NOTIFY_GESTURE
 	moderoNotifyGesture (custom.device, type_cast(custom.value1), type_cast(custom.value2), custom.value3)
 	#end_if
@@ -984,7 +974,7 @@ custom_event [dvPanelsMain, 0, MODERO_CUSTOM_EVENT_ID_SMART_CARD_INSERT_REMOVE]
 		}
 		#end_if
 		
-		default:	// unhandled, ignore
+		default:  // unhandled, ignore
 		{
 		}
 	}
@@ -1013,7 +1003,7 @@ custom_event [dvPanelsMain, 0, MODERO_CUSTOM_EVENT_ID_SMART_CARD_READER_INSERT_R
 		}
 		#end_if
 		
-		default:	// unhandled, ignore
+		default:  // unhandled, ignore
 		{
 		}
 	}
@@ -1058,20 +1048,5 @@ custom_event [dvPanelsMain, 0, MODERO_CUSTOM_EVENT_ID_SUBPAGE_REORDER_NOTIFICATI
 	// custom.text (CHAR []) - pipe character seperated list of subpage names
 	#warn '@TODO: amx-modero-listener - custom_event for subpage reorder notification, could come in over multiple custom_events'
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 #end_if

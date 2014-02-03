@@ -1253,7 +1253,7 @@ char MODERO_MULTI_PREVIEW_INPUT_RESOLUTION_XGA_1024x768p30HZ[]      = '1024x768p
 //char MODERO_MULTI_PREVIEW_INPUT_RESOLUTION_WXGA_720x576p25HZ[]    = '720x576p@25'     // can configure MPL to this format/res but not supported
 //char MODERO_MULTI_PREVIEW_INPUT_RESOLUTION_WXGA_720x576p50HZ[]    = '720x576p@50'     // can configure MPL to this format/res but not supported
 //char MODERO_MULTI_PREVIEW_INPUT_RESOLUTION_WXGA_1024x768p30HZ[]   = '1024x768p@30'    // can configure MPL to this format/res but not supported
-//char MODERO_MULTI_PREVIEW_INPUT_RESOLUTION_WXGA_1280x720p30HZ[]   = '1280x720p@30'    // can configure MPL to this format/res but not supported	
+//char MODERO_MULTI_PREVIEW_INPUT_RESOLUTION_WXGA_1280x720p30HZ[]   = '1280x720p@30'    // can configure MPL to this format/res but not supported
 char MODERO_MULTI_PREVIEW_INPUT_RESOLUTION_WXGA_1280x768p30HZ[]     = '1280x768p@30'
 //char MODERO_MULTI_PREVIEW_INPUT_RESOLUTION_WXGA_1920x1080p30HZ[]  = '1920x1080p@30'   // can configure MPL to this format/res but not supported
 

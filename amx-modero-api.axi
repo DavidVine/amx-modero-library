@@ -919,7 +919,7 @@ integer MODERO_GESTURE_TYPE_DOUBLE_TAP                  = 7
 integer MODERO_GESTURE_TYPE_2_FINGER_SWIPE_UP           = 9
 integer MODERO_GESTURE_TYPE_2_FINGER_SWIPE_DOWN         = 10
 integer MODERO_GESTURE_TYPE_2_FINGER_SWIPE_RIGHT        = 11
-integer MODERO_GESTURE_TYPE_2_FINGER_SWIPE_LEFT     = 12
+integer MODERO_GESTURE_TYPE_2_FINGER_SWIPE_LEFT         = 12
 
 // Gesture simple velocity's
 integer MODERO_GESTURE_VELOCITY_FAST    = 1
@@ -988,7 +988,7 @@ char MODERO_INTERCOM_SPEAKER_LEVEL[]    = 'SPEAKERLEVEL'
 char MODERO_INTERCOM_TALK[]             = 'TALK'
 
 // Intercom mute options
-char MODERO_INTERCOM_MUTE_ENABLE[]      = '1'
+char MODERO_INTERCOM_MUTE_ENABLE[]  = '1'
 char MODERO_INTERCOM_MUTE_DISABLE[] = '0'
 
 // Opacity levels

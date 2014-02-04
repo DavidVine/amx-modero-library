@@ -82,6 +82,9 @@ dev dvPanelsButtons[] = { 10001:1:0 }
 // Note: If push/release coordinate reporting is enabled a push anywhere on the panel will trigger this function
 define_function moderoNotifyTouchCoordinatesPress (dev panel, integer nX, integer nY)
 {
+	// panel is the touch panel
+	// nX is the X coordinate
+	// nY is the Y Coordinate
 }
 */
 
@@ -91,6 +94,9 @@ define_function moderoNotifyTouchCoordinatesPress (dev panel, integer nX, intege
 // Note: If push/release coordinate reporting is enabled a movement in user touch anywhere on the panel will trigger this function
 define_function moderoNotifyTouchCoordinatesMove (dev panel, integer nX, integer nY)
 {
+	// panel is the touch panel
+	// nX is the X coordinate
+	// nY is the Y Coordinate
 }
 */
 
@@ -100,6 +106,9 @@ define_function moderoNotifyTouchCoordinatesMove (dev panel, integer nX, integer
 // Note: If push/release coordinate reporting is enabled a release anywhere on the panel will trigger this function
 define_function moderoNotifyTouchCoordinatesRelease (dev panel, integer nX, integer nY)
 {
+	// panel is the touch panel
+	// nX is the X coordinate
+	// nY is the Y Coordinate
 }
 */
 
@@ -107,6 +116,8 @@ define_function moderoNotifyTouchCoordinatesRelease (dev panel, integer nX, inte
 #define INCLUDE_MODERO_NOTIFY_KEYBOARD_ENTRY
 define_function moderoNotifyKeyboardEntry (dev panel, char text[])
 {
+	// panel is the touch panel
+	// text is the text entry string entered into the keyboard
 }
 */
 
@@ -115,6 +126,7 @@ define_function moderoNotifyKeyboardEntry (dev panel, char text[])
 #define INCLUDE_MODERO_NOTIFY_KEYBOARD_ABORT
 define_function moderoNotifyKeyboardAbort (dev panel)
 {
+	// panel is the touch panel
 }
 */
 
@@ -122,6 +134,8 @@ define_function moderoNotifyKeyboardAbort (dev panel)
 #define INCLUDE_MODERO_NOTIFY_KEYPAD_ENTRY
 define_function moderoNotifyKeypadEntry (dev panel, char text[])
 {
+	// panel is the touch panel
+	// text is the text entry string entered into the keypad
 }
 */
 
@@ -129,6 +143,7 @@ define_function moderoNotifyKeypadEntry (dev panel, char text[])
 #define INCLUDE_MODERO_NOTIFY_KEYPAD_ABORT
 define_function moderoNotifyKeypadAbort (dev panel)
 {
+	// panel is the touch panel
 }
 */
 
@@ -136,6 +151,10 @@ define_function moderoNotifyKeypadAbort (dev panel)
 #define INCLUDE_MODERO_NOTIFY_BUTTON_TEXT
 define_function moderoNotifyButtonText (dev panel, integer btnArdCde, integer nbtnState, char text[])
 {
+	// panel is the touch panel
+	// btnAdrCde is the button address code
+	// btnState is the button state
+	// text is the button text
 }
 */
 
@@ -143,6 +162,10 @@ define_function moderoNotifyButtonText (dev panel, integer btnArdCde, integer nb
 #define INCLUDE_MODERO_NOTIFY_BUTTON_BITMAP_NAME
 define_function moderoNotifyButtonBitmapName (dev panel, integer btnArdCde, integer nbtnState, char bitmapName[])
 {
+	// panel is the touch panel
+	// btnAdrCde is the button address code
+	// btnState is the button state
+	// bitmapName is the name of the image assigned to the button
 }
 */
 
@@ -150,6 +173,10 @@ define_function moderoNotifyButtonBitmapName (dev panel, integer btnArdCde, inte
 #define INCLUDE_MODERO_NOTIFY_BUTTON_ICON_INDEX
 define_function moderoNotifyButtonIconIndex (dev panel, integer btnArdCde, integer nbtnState, integer iconIndex)
 {
+	// panel is the touch panel
+	// btnAdrCde is the button address code
+	// btnState is the button state
+	// iconIndex is the index of the icon assigned to the button
 }
 */
 
@@ -157,6 +184,10 @@ define_function moderoNotifyButtonIconIndex (dev panel, integer btnArdCde, integ
 #define INCLUDE_MODERO_NOTIFY_BUTTON_TEXT_JUSTIFICATION
 define_function moderoNotifyButtonTextJustification (dev panel, integer btnArdCde, integer nbtnState, integer justification)
 {
+	// panel is the touch panel
+	// btnAdrCde is the button address code
+	// btnState is the button state
+	// justification is the buttons' text justification setting (MODERO_JUSTIFICATION_ABSOLUTE | MODERO_JUSTIFICATION_TOP_LEFT | MODERO_JUSTIFICATION_TOP_MIDDLE | MODERO_JUSTIFICATION_TOP_RIGHT | MODERO_JUSTIFICATION_CENTER_LEFT | MODERO_JUSTIFICATION_CENTER_MIDDLE | MODERO_JUSTIFICATION_CENTER_RIGHT | MODERO_JUSTIFICATION_BOTTOM_LEFT | MODERO_JUSTIFICATION_BOTTOM_MIDDLE | MODERO_JUSTIFICATION_BOTTOM_RIGHT)
 }
 */
 
@@ -164,6 +195,10 @@ define_function moderoNotifyButtonTextJustification (dev panel, integer btnArdCd
 #define INCLUDE_MODERO_NOTIFY_BUTTON_BITMAP_JUSTIFICATION
 define_function moderoNotifyButtonBitmapJustification (dev panel, integer btnArdCde, integer nbtnState, integer justification)
 {
+	// panel is the touch panel
+	// btnAdrCde is the button address code
+	// btnState is the button state
+	// justification is the buttons' bitmap justification setting (MODERO_JUSTIFICATION_ABSOLUTE | MODERO_JUSTIFICATION_TOP_LEFT | MODERO_JUSTIFICATION_TOP_MIDDLE | MODERO_JUSTIFICATION_TOP_RIGHT | MODERO_JUSTIFICATION_CENTER_LEFT | MODERO_JUSTIFICATION_CENTER_MIDDLE | MODERO_JUSTIFICATION_CENTER_RIGHT | MODERO_JUSTIFICATION_BOTTOM_LEFT | MODERO_JUSTIFICATION_BOTTOM_MIDDLE | MODERO_JUSTIFICATION_BOTTOM_RIGHT)
 }
 */
 
@@ -171,6 +206,10 @@ define_function moderoNotifyButtonBitmapJustification (dev panel, integer btnArd
 #define INCLUDE_MODERO_NOTIFY_BUTTON_ICON_JUSTIFICATION
 define_function moderoNotifyButtonIconJustification (dev panel, integer btnArdCde, integer nbtnState, integer justification)
 {
+	// panel is the touch panel
+	// btnAdrCde is the button address code
+	// btnState is the button state
+	// justification is the buttons' icon justification setting (MODERO_JUSTIFICATION_ABSOLUTE | MODERO_JUSTIFICATION_TOP_LEFT | MODERO_JUSTIFICATION_TOP_MIDDLE | MODERO_JUSTIFICATION_TOP_RIGHT | MODERO_JUSTIFICATION_CENTER_LEFT | MODERO_JUSTIFICATION_CENTER_MIDDLE | MODERO_JUSTIFICATION_CENTER_RIGHT | MODERO_JUSTIFICATION_BOTTOM_LEFT | MODERO_JUSTIFICATION_BOTTOM_MIDDLE | MODERO_JUSTIFICATION_BOTTOM_RIGHT)
 }
 */
 
@@ -178,6 +217,10 @@ define_function moderoNotifyButtonIconJustification (dev panel, integer btnArdCd
 #define INCLUDE_MODERO_NOTIFY_BUTTON_FONT_INDEX
 define_function moderoNotifyButtonFontIndex (dev panel, integer btnArdCde, integer nbtnState, integer index)
 {
+	// panel is the touch panel
+	// btnAdrCde is the button address code
+	// btnState is the button state
+	// index is the font index used by the button
 }
 */
 
@@ -185,6 +228,10 @@ define_function moderoNotifyButtonFontIndex (dev panel, integer btnArdCde, integ
 #define INCLUDE_MODERO_NOTIFY_BUTTON_TEXT_EFFECT_NAME
 define_function moderoNotifyButtonTextEffectName (dev panel, integer btnArdCde, integer nbtnState, char name[])
 {
+	// panel is the touch panel
+	// btnAdrCde is the button address code
+	// btnState is the button state
+	// name is the name of the text effect used by the button
 }
 */
 
@@ -192,6 +239,9 @@ define_function moderoNotifyButtonTextEffectName (dev panel, integer btnArdCde, 
 #define INCLUDE_MODERO_NOTIFY_BUTTON_TEXT_EFFECT_COLOUR
 define_function moderoNotifyButtonTextEffectColour (dev panel, integer btnArdCde, integer nbtnState, char colour[])
 {
+	// panel is the touch panel
+	// btnAdrCde is the button address code
+	// btnState is the button state
 	// colour is in hex string format (e.g., #5088f2AE)
 }
 */
@@ -200,6 +250,10 @@ define_function moderoNotifyButtonTextEffectColour (dev panel, integer btnArdCde
 #define INCLUDE_MODERO_NOTIFY_BUTTON_WORD_WRAP_STATUS
 define_function moderoNotifyButtonWordWrapStatus (dev panel, integer btnArdCde, integer nbtnState, integer status)
 {
+	// panel is the touch panel
+	// btnAdrCde is the button address code
+	// btnState is the button state
+	// status is the word wrap status (MODERO_WORD_WRAP_ENABLE | MODERO_WORD_WRAP_DISABLE)
 }
 */
 
@@ -207,6 +261,9 @@ define_function moderoNotifyButtonWordWrapStatus (dev panel, integer btnArdCde, 
 #define INCLUDE_MODERO_NOTIFY_BUTTON_BORDER_COLOUR
 define_function moderoNotifyButtonBorderColour (dev panel, integer btnArdCde, integer nbtnState, char colour[])
 {
+	// panel is the touch panel
+	// btnAdrCde is the button address code
+	// btnState is the button state
 	// colour is in hex string format (e.g., #5088f2AE)
 }
 */
@@ -215,6 +272,9 @@ define_function moderoNotifyButtonBorderColour (dev panel, integer btnArdCde, in
 #define INCLUDE_MODERO_NOTIFY_BUTTON_FILL_COLOUR
 define_function moderoNotifyButtonFillColour (dev panel, integer btnArdCde, integer nbtnState, char colour[])
 {
+	// panel is the touch panel
+	// btnAdrCde is the button address code
+	// btnState is the button state
 	// colour is in hex string format (e.g., #5088f2AE)
 }
 */
@@ -223,6 +283,9 @@ define_function moderoNotifyButtonFillColour (dev panel, integer btnArdCde, inte
 #define INCLUDE_MODERO_NOTIFY_BUTTON_TEXT_COLOUR
 define_function moderoNotifyButtonTextColour (dev panel, integer btnArdCde, integer nbtnState, char colour[])
 {
+	// panel is the touch panel
+	// btnAdrCde is the button address code
+	// btnState is the button state
 	// colour is in hex string format (e.g., #5088f2AE)
 }
 */
@@ -231,6 +294,10 @@ define_function moderoNotifyButtonTextColour (dev panel, integer btnArdCde, inte
 #define INCLUDE_MODERO_NOTIFY_BUTTON_BORDER_NAME
 define_function moderoNotifyButtonBorderName (dev panel, integer btnArdCde, integer nbtnState, char name[])
 {
+	// panel is the touch panel
+	// btnAdrCde is the button address code
+	// btnState is the button state
+	// name is the border name
 }
 */
 
@@ -238,6 +305,10 @@ define_function moderoNotifyButtonBorderName (dev panel, integer btnArdCde, inte
 #define INCLUDE_MODERO_NOTIFY_BUTTON_OPACITY
 define_function moderoNotifyButtonOpacity (dev panel, integer btnArdCde, integer nbtnState, integer opacity)
 {
+	// panel is the touch panel
+	// btnAdrCde is the button address code
+	// btnState is the button state
+	// opacity is the buttons' opacity value (0 .. 255)
 }
 */
 
@@ -245,6 +316,8 @@ define_function moderoNotifyButtonOpacity (dev panel, integer btnArdCde, integer
 #define INCLUDE_MODERO_NOTIFY_NFC_TAG_READ
 define_function moderoNotifyNfcTagRead (dev panel, char nfcUid[])
 {
+	// panel is the touch panel
+	// nfcUid is the UID of the NFC tag
 }
 */
 
@@ -252,6 +325,11 @@ define_function moderoNotifyNfcTagRead (dev panel, char nfcUid[])
 #define INCLUDE_MODERO_NOTIFY_STREAM_START
 define_function moderoNotifyStreamStart (dev panel, integer btnAdrCde, integer btnAdrPort, char streamUrl[], integer numOfStreamStarts)
 {
+	// panel is the touch panel
+	// btnAdrCde is the button address code
+	// btnAdrPort is the button address port
+	// streamUrl is the URL of the stream
+	// numOfStreamStarts contains the number of times the stream has started
 }
 */
 
@@ -259,6 +337,11 @@ define_function moderoNotifyStreamStart (dev panel, integer btnAdrCde, integer b
 #define INCLUDE_MODERO_NOTIFY_STREAM_STOP
 define_function moderoNotifyStreamStop (dev panel, integer btnAdrCde, integer btnAdrPort, char streamUrl[], integer numOfStreamStops)
 {
+	// panel is the touch panel
+	// btnAdrCde is the button address code
+	// btnAdrPort is the button address port
+	// streamUrl is the URL of the stream
+	// numOfStreamStops contains the number of times the stream has stopped
 }
 */
 
@@ -266,6 +349,11 @@ define_function moderoNotifyStreamStop (dev panel, integer btnAdrCde, integer bt
 #define INCLUDE_MODERO_NOTIFY_STREAM_ERROR
 define_function moderoNotifyStreamError (dev panel, integer btnAdrCde, integer btnAdrPort, char streamUrl[], integer numOfStreamErrors)
 {
+	// panel is the touch panel
+	// btnAdrCde is the button address code
+	// btnAdrPort is the button address port
+	// streamUrl is the URL of the stream
+	// numOfStreamErrors contains the number of times the stream has errored
 }
 */
 
@@ -273,6 +361,8 @@ define_function moderoNotifyStreamError (dev panel, integer btnAdrCde, integer b
 #define INCLUDE_MODERO_NOTIFY_RESOURCE_LOAD
 define_function moderoNotifyResourceLoad (dev panel, char resourceName[])
 {
+	// panel is the touch panel
+	// resourceName is the name of the dynamic resource that has loaded
 }
 */
 
@@ -280,6 +370,8 @@ define_function moderoNotifyResourceLoad (dev panel, char resourceName[])
 #define INCLUDE_MODERO_NOTIFY_BLUETOOTH_HANDSET
 define_function moderoNotifyBluetoothHandset (dev panel, integer status)
 {
+	// panel is the touch panel
+	// status is the staus indicator for the blutooth handset (MODERO_BLUETOOTH_ANSWER | MODERO_BLUETOOTH_REJECT_HANGUP | MODERO_BLUETOOTH_REDIAL)
 }
 */
 
@@ -287,6 +379,8 @@ define_function moderoNotifyBluetoothHandset (dev panel, integer status)
 #define INCLUDE_MODERO_NOTIFY_AUDIO_DEVICE
 define_function moderoNotifyAudioDevice (dev panel, integer audioDevice)
 {
+	// panel is the touch panel
+	// audioDevice is the audio device (MODERO_AUDIO_DEVICE_SPEAKERS | MODERO_AUDIO_DEVICE_USB_HEADSET | MODERO_AUDIO_DEVICE_BLUETOOTH_HEADSET)
 }
 */
 
@@ -294,6 +388,8 @@ define_function moderoNotifyAudioDevice (dev panel, integer audioDevice)
 #define INCLUDE_MODERO_NOTIFY_AUDIO_MUTE_STATUS
 define_function moderoNotifyAudioMuteStatus (dev panel, integer muteStatus)
 {
+	// panel is the touch panel
+	// muteStatus is the mute status (MODERO_MUTE_ENABLE | MODERO_MUTE_DISABLE)
 }
 */
 
@@ -301,6 +397,8 @@ define_function moderoNotifyAudioMuteStatus (dev panel, integer muteStatus)
 #define INCLUDE_MODERO_NOTIFY_VOLUME
 define_function moderoNotifyVolume (dev panel, integer volume)
 {
+	// panel is the touch panel
+	// volume is the volume level
 }
 */
 
@@ -308,6 +406,10 @@ define_function moderoNotifyVolume (dev panel, integer volume)
 #define INCLUDE_MODERO_NOTIFY_GESTURE
 define_function moderoNotifyGesture (dev panel, integer gestureType, integer gestureVelocitySimple, slong gestureVelocityPrecise)
 {
+	// panel is the touch panel
+	// gestureType is the gesture type (MODERO_GESTURE_TYPE_SWIPE_UP | MODERO_GESTURE_TYPE_SWIPE_DOWN | MODERO_GESTURE_TYPE_SWIPE_RIGHT | MODERO_GESTURE_TYPE_SWIPE_LEFT | MODERO_GESTURE_TYPE_CLOCKWISE_CIRCLE | MODERO_GESTURE_TYPE_COUNTER_CLOCKWISE_CIRCLE | MODERO_GESTURE_TYPE_DOUBLE_TAP | MODERO_GESTURE_TYPE_2_FINGER_SWIPE_UP | MODERO_GESTURE_TYPE_2_FINGER_SWIPE_DOWN | MODERO_GESTURE_TYPE_2_FINGER_SWIPE_RIGHT | MODERO_GESTURE_TYPE_2_FINGER_SWIPE_LEFT)
+	// gestureVelocitySimple is a simple indicator of gesture velocity (MODERO_GESTURE_VELOCITY_FAST | MODERO_GESTURE_VELOCITY_NORMAL | MODERO_GESTURE_VELOCITY_SLOW)
+	// gestureVelocityPrecise is a precise indicator of gesture velocity (pixels per second for slides and circles | double tap, total time in milliseconds from first press to the second release)
 }
 */
 
@@ -315,6 +417,7 @@ define_function moderoNotifyGesture (dev panel, integer gestureType, integer ges
 #define INCLUDE_MODERO_NOTIFY_SMART_CARD_REMOVE
 define_function moderoNotifySmartCardRemove (dev panel)
 {
+	// panel is the touch panel
 }
 */
 
@@ -322,6 +425,8 @@ define_function moderoNotifySmartCardRemove (dev panel)
 #define INCLUDE_MODERO_NOTIFY_SMART_CARD_INSERT
 define_function moderoNotifySmartCardInsert (dev panel, char chuid[])
 {
+	// panel is the touch panel
+	// chuid is the CHUID of the smart card
 }
 */
 
@@ -329,6 +434,7 @@ define_function moderoNotifySmartCardInsert (dev panel, char chuid[])
 #define INCLUDE_MODERO_NOTIFY_SMART_CARD_READER_REMOVE
 define_function moderoNotifySmartCardReaderRemove (dev panel)
 {
+	// panel is the touch panel
 }
 */
 
@@ -336,6 +442,8 @@ define_function moderoNotifySmartCardReaderRemove (dev panel)
 #define INCLUDE_MODERO_NOTIFY_SMART_CARD_READER_INSERT
 define_function moderoNotifySmartCardReaderInsert (dev panel, char readerName[])
 {
+	// panel is the touch panel
+	// readerName is the name of the smart card reader
 }
 */
 
@@ -343,6 +451,12 @@ define_function moderoNotifySmartCardReaderInsert (dev panel, char readerName[])
 #define INCLUDE_MODERO_NOTIFY_POPUP_LOCATION
 define_function moderoNotifyPopupLocation (dev panel, char popupName[], integer popupLocationNotificationType, sinteger xCoord, sinteger yCoord, integer isPopupAttachedToCurrentPage)
 {
+	// panel is the touch panel
+	// popupName is the name of the popup page
+	// popupLocationNotificationType is the location notification type (MODERO_POPUP_NOTIFICATION_FLAG_QUERY_RESPONSE | MODERO_POPUP_NOTIFICATION_FLAG_ATTACH | MODERO_POPUP_NOTIFICATION_FLAG_DRAG | MODERO_POPUP_NOTIFICATION_FLAG_DETACH)
+	// xCoord is the X coordinate of the popup
+	// yCoord is the Y coordinate of the popup
+	// isPopupAttachedToCurrentPage is a flag indicating if the popup is attached to the current page (TRUE | FALSE)
 }
 */
 
@@ -350,6 +464,11 @@ define_function moderoNotifyPopupLocation (dev panel, char popupName[], integer 
 #define INCLUDE_MODERO_NOTIFY_POPUP_SIZE
 define_function moderoNotifyPopupSize (dev panel, char popupName[], integer width, integer height, integer isPopupAttachedToCurrentPage)
 {
+	// panel is the touch panel
+	// popupName is the name of the popup page
+	// width is the width of the popup
+	// height is the height of the popup
+	// isPopupAttachedToCurrentPage is a flag indicating if the popup is attached to the current page (TRUE | FALSE)
 }
 */
 
@@ -357,6 +476,8 @@ define_function moderoNotifyPopupSize (dev panel, char popupName[], integer widt
 #define INCLUDE_MODERO_NOTIFY_BUTTON_PUSH
 define_function moderoNotifyButtonPush (dev panel, integer btnChanCde)
 {
+	// panel is the touch panel
+	// btnChanCde is the button channel code
 }
 */
 
@@ -364,6 +485,8 @@ define_function moderoNotifyButtonPush (dev panel, integer btnChanCde)
 #define INCLUDE_MODERO_NOTIFY_BUTTON_RELEASE
 define_function moderoNotifyButtonRelease (dev panel, integer btnChanCde)
 {
+	// panel is the touch panel
+	// btnChanCde is the button channel code
 }
 */
 
@@ -371,6 +494,9 @@ define_function moderoNotifyButtonRelease (dev panel, integer btnChanCde)
 #define INCLUDE_MODERO_NOTIFY_BUTTON_HOLD
 define_function moderoNotifyButtonHold (dev panel, integer btnChanCde, integer holdTime)
 {
+	// panel is the touch panel
+	// btnChanCde is the button channel code
+	// holdTime is the button hold time
 }
 */
 
@@ -378,6 +504,9 @@ define_function moderoNotifyButtonHold (dev panel, integer btnChanCde, integer h
 #define INCLUDE_MODERO_NOTIFY_LEVEL_CHANGE
 define_function moderoNotifyLevelChange (dev panel, integer btnLvlCde, integer lvlValue)
 {
+	// panel is the touch panel
+	// btnLvlCde is the button level code
+	// lvlValue is the level value
 }
 */
 
@@ -385,6 +514,8 @@ define_function moderoNotifyLevelChange (dev panel, integer btnLvlCde, integer l
 #define INCLUDE_MODERO_NOTIFY_BUTTON_FEEDBACK_OFF
 define_function moderoNotifyButtonFeedbackOff (dev panel, integer btnChanCde)
 {
+	// panel is the touch panel
+	// btnChanCde is the button channel code
 }
 */
 
@@ -392,6 +523,8 @@ define_function moderoNotifyButtonFeedbackOff (dev panel, integer btnChanCde)
 #define INCLUDE_MODERO_NOTIFY_BUTTON_FEEDBACK_ON
 define_function moderoNotifyButtonFeedbackOn (dev panel, integer btnChanCde)
 {
+	// panel is the touch panel
+	// btnChanCde is the button channel code
 }
 */
 

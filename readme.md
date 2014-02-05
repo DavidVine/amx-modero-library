@@ -62,7 +62,7 @@ Consistent, descriptive control function names within **amx-modero-control** mak
 	 */
 	define_function moderoSetButtonText (dev panel, integer btnAdrCde, integer btnState, char nonUnicodeTextString[])
 	{
-	    sendCommand (panel, "MODERO_COMMAND_BUTTON_ASSIGN_TEXT,itoa(btnAdrCde),',',itoa(btnState),',',nonUnicodeTextString")
+		sendCommand (panel, "MODERO_COMMAND_BUTTON_ASSIGN_TEXT,itoa(btnAdrCde),',',itoa(btnState),',',nonUnicodeTextString")
 	}
 
 No longer are you required to refer to the Modero manual to work out what command headers are required or how to build a control string containing all the required values. This process was time consuming and often involved converting numeric data to string form and building string expressions which were long and complex.
@@ -202,15 +202,15 @@ The callback function will be automatically triggered whenever a change occurs o
 E.g:
 
 		#program_name='main program'
-			
+		
 		dvTpMainTextEntryReturnPort = 10001:1:0
 		dvTpWelcomePanelNfc	        = 10002:1:0
-			
+		
 		define_variable
-			
+		
 		// DEV arrays for amx-modero-listener to use
 		dev dvPanelsUserTextInput[]	= { dvTpMainTextEntryReturnPort }
-		dev dvPanelsNfc[]	= { dvTpWelcomePanelNfc }
+		dev dvPanelsNfc[] = { dvTpWelcomePanelNfc }
 			
 		#define INCLUDE_MODERO_NOTIFY_KEYBOARD_ENTRY
 		define_function moderoNotifyKeyboardEntry (dev panel, char text[])

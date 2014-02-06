@@ -134,6 +134,7 @@ amx-modero-listener
 ----------------
 #####Dependencies:
 + amx-modero-api
++ amx-device-control (*see readme for amx-device-library for info*)
 
 #####Description:
 Contains dev arrays for listening to traffic returned from the AMX Modero touch panel.

@@ -149,7 +149,7 @@ define_function moderoNotifyKeypadAbort (dev panel)
 
 /*
 #define INCLUDE_MODERO_NOTIFY_BUTTON_TEXT
-define_function moderoNotifyButtonText (dev panel, integer btnArdCde, integer nbtnState, char text[])
+define_function moderoNotifyButtonText (dev panel, integer btnAdrCde, integer nbtnState, char text[])
 {
 	// panel is the touch panel
 	// btnAdrCde is the button address code
@@ -160,7 +160,7 @@ define_function moderoNotifyButtonText (dev panel, integer btnArdCde, integer nb
 
 /*
 #define INCLUDE_MODERO_NOTIFY_BUTTON_BITMAP_NAME
-define_function moderoNotifyButtonBitmapName (dev panel, integer btnArdCde, integer nbtnState, char bitmapName[])
+define_function moderoNotifyButtonBitmapName (dev panel, integer btnAdrCde, integer nbtnState, char bitmapName[])
 {
 	// panel is the touch panel
 	// btnAdrCde is the button address code
@@ -171,7 +171,7 @@ define_function moderoNotifyButtonBitmapName (dev panel, integer btnArdCde, inte
 
 /*
 #define INCLUDE_MODERO_NOTIFY_BUTTON_ICON_INDEX
-define_function moderoNotifyButtonIconIndex (dev panel, integer btnArdCde, integer nbtnState, integer iconIndex)
+define_function moderoNotifyButtonIconIndex (dev panel, integer btnAdrCde, integer nbtnState, integer iconIndex)
 {
 	// panel is the touch panel
 	// btnAdrCde is the button address code
@@ -182,7 +182,7 @@ define_function moderoNotifyButtonIconIndex (dev panel, integer btnArdCde, integ
 
 /*
 #define INCLUDE_MODERO_NOTIFY_BUTTON_TEXT_JUSTIFICATION
-define_function moderoNotifyButtonTextJustification (dev panel, integer btnArdCde, integer nbtnState, integer justification)
+define_function moderoNotifyButtonTextJustification (dev panel, integer btnAdrCde, integer nbtnState, integer justification)
 {
 	// panel is the touch panel
 	// btnAdrCde is the button address code
@@ -193,7 +193,7 @@ define_function moderoNotifyButtonTextJustification (dev panel, integer btnArdCd
 
 /*
 #define INCLUDE_MODERO_NOTIFY_BUTTON_BITMAP_JUSTIFICATION
-define_function moderoNotifyButtonBitmapJustification (dev panel, integer btnArdCde, integer nbtnState, integer justification)
+define_function moderoNotifyButtonBitmapJustification (dev panel, integer btnAdrCde, integer nbtnState, integer justification)
 {
 	// panel is the touch panel
 	// btnAdrCde is the button address code
@@ -204,7 +204,7 @@ define_function moderoNotifyButtonBitmapJustification (dev panel, integer btnArd
 
 /*
 #define INCLUDE_MODERO_NOTIFY_BUTTON_ICON_JUSTIFICATION
-define_function moderoNotifyButtonIconJustification (dev panel, integer btnArdCde, integer nbtnState, integer justification)
+define_function moderoNotifyButtonIconJustification (dev panel, integer btnAdrCde, integer nbtnState, integer justification)
 {
 	// panel is the touch panel
 	// btnAdrCde is the button address code
@@ -215,7 +215,7 @@ define_function moderoNotifyButtonIconJustification (dev panel, integer btnArdCd
 
 /*
 #define INCLUDE_MODERO_NOTIFY_BUTTON_FONT_INDEX
-define_function moderoNotifyButtonFontIndex (dev panel, integer btnArdCde, integer nbtnState, integer index)
+define_function moderoNotifyButtonFontIndex (dev panel, integer btnAdrCde, integer nbtnState, integer index)
 {
 	// panel is the touch panel
 	// btnAdrCde is the button address code
@@ -226,7 +226,7 @@ define_function moderoNotifyButtonFontIndex (dev panel, integer btnArdCde, integ
 
 /*
 #define INCLUDE_MODERO_NOTIFY_BUTTON_TEXT_EFFECT_NAME
-define_function moderoNotifyButtonTextEffectName (dev panel, integer btnArdCde, integer nbtnState, char name[])
+define_function moderoNotifyButtonTextEffectName (dev panel, integer btnAdrCde, integer nbtnState, char name[])
 {
 	// panel is the touch panel
 	// btnAdrCde is the button address code
@@ -237,7 +237,7 @@ define_function moderoNotifyButtonTextEffectName (dev panel, integer btnArdCde, 
 
 /*
 #define INCLUDE_MODERO_NOTIFY_BUTTON_TEXT_EFFECT_COLOUR
-define_function moderoNotifyButtonTextEffectColour (dev panel, integer btnArdCde, integer nbtnState, char colour[])
+define_function moderoNotifyButtonTextEffectColour (dev panel, integer btnAdrCde, integer nbtnState, char colour[])
 {
 	// panel is the touch panel
 	// btnAdrCde is the button address code
@@ -248,7 +248,7 @@ define_function moderoNotifyButtonTextEffectColour (dev panel, integer btnArdCde
 
 /*
 #define INCLUDE_MODERO_NOTIFY_BUTTON_WORD_WRAP_STATUS
-define_function moderoNotifyButtonWordWrapStatus (dev panel, integer btnArdCde, integer nbtnState, integer status)
+define_function moderoNotifyButtonWordWrapStatus (dev panel, integer btnAdrCde, integer nbtnState, integer status)
 {
 	// panel is the touch panel
 	// btnAdrCde is the button address code
@@ -259,7 +259,7 @@ define_function moderoNotifyButtonWordWrapStatus (dev panel, integer btnArdCde, 
 
 /*
 #define INCLUDE_MODERO_NOTIFY_BUTTON_BORDER_COLOUR
-define_function moderoNotifyButtonBorderColour (dev panel, integer btnArdCde, integer nbtnState, char colour[])
+define_function moderoNotifyButtonBorderColour (dev panel, integer btnAdrCde, integer nbtnState, char colour[])
 {
 	// panel is the touch panel
 	// btnAdrCde is the button address code
@@ -270,7 +270,7 @@ define_function moderoNotifyButtonBorderColour (dev panel, integer btnArdCde, in
 
 /*
 #define INCLUDE_MODERO_NOTIFY_BUTTON_FILL_COLOUR
-define_function moderoNotifyButtonFillColour (dev panel, integer btnArdCde, integer nbtnState, char colour[])
+define_function moderoNotifyButtonFillColour (dev panel, integer btnAdrCde, integer nbtnState, char colour[])
 {
 	// panel is the touch panel
 	// btnAdrCde is the button address code
@@ -281,7 +281,7 @@ define_function moderoNotifyButtonFillColour (dev panel, integer btnArdCde, inte
 
 /*
 #define INCLUDE_MODERO_NOTIFY_BUTTON_TEXT_COLOUR
-define_function moderoNotifyButtonTextColour (dev panel, integer btnArdCde, integer nbtnState, char colour[])
+define_function moderoNotifyButtonTextColour (dev panel, integer btnAdrCde, integer nbtnState, char colour[])
 {
 	// panel is the touch panel
 	// btnAdrCde is the button address code
@@ -292,7 +292,7 @@ define_function moderoNotifyButtonTextColour (dev panel, integer btnArdCde, inte
 
 /*
 #define INCLUDE_MODERO_NOTIFY_BUTTON_BORDER_NAME
-define_function moderoNotifyButtonBorderName (dev panel, integer btnArdCde, integer nbtnState, char name[])
+define_function moderoNotifyButtonBorderName (dev panel, integer btnAdrCde, integer nbtnState, char name[])
 {
 	// panel is the touch panel
 	// btnAdrCde is the button address code
@@ -303,7 +303,7 @@ define_function moderoNotifyButtonBorderName (dev panel, integer btnArdCde, inte
 
 /*
 #define INCLUDE_MODERO_NOTIFY_BUTTON_OPACITY
-define_function moderoNotifyButtonOpacity (dev panel, integer btnArdCde, integer nbtnState, integer opacity)
+define_function moderoNotifyButtonOpacity (dev panel, integer btnAdrCde, integer nbtnState, integer opacity)
 {
 	// panel is the touch panel
 	// btnAdrCde is the button address code

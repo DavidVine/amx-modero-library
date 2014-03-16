@@ -658,7 +658,7 @@ data_event[dvPanelsUserTextInput]
  */
 
 #if_defined INCLUDE_MODERO_NOTIFY_BUTTON_PUSH
-button_event [dvPanelsButtons, WILDCARD_CHANNEL_CODE]
+button_event [dvPanelsButtons, CHANNEL_CODE_WILDCARD]
 {
 	push:
 	{
@@ -669,7 +669,7 @@ button_event [dvPanelsButtons, WILDCARD_CHANNEL_CODE]
 
 
 #if_defined INCLUDE_MODERO_NOTIFY_BUTTON_RELEASE
-button_event [dvPanelsButtons, WILDCARD_CHANNEL_CODE]
+button_event [dvPanelsButtons, CHANNEL_CODE_WILDCARD]
 {
 	release:
 	{
@@ -679,7 +679,7 @@ button_event [dvPanelsButtons, WILDCARD_CHANNEL_CODE]
 #end_if
 
 #if_defined INCLUDE_MODERO_NOTIFY_BUTTON_HOLD
-button_event [dvPanelsButtons, WILDCARD_CHANNEL_CODE]
+button_event [dvPanelsButtons, CHANNEL_CODE_WILDCARD]
 {
 	hold[1,repeat]:
 	{
@@ -696,7 +696,7 @@ button_event [dvPanelsButtons, WILDCARD_CHANNEL_CODE]
  */
 
 #if_defined INCLUDE_MODERO_NOTIFY_BUTTON_FEEDBACK_ON
-channel_event [dvPanelsFeedback, WILDCARD_CHANNEL_CODE]
+channel_event [dvPanelsFeedback, CHANNEL_CODE_WILDCARD]
 {
 	on:
 	{
@@ -706,7 +706,7 @@ channel_event [dvPanelsFeedback, WILDCARD_CHANNEL_CODE]
 #end_if
 
 #if_defined INCLUDE_MODERO_NOTIFY_BUTTON_FEEDBACK_OFF
-channel_event [dvPanelsFeedback, WILDCARD_CHANNEL_CODE]
+channel_event [dvPanelsFeedback, CHANNEL_CODE_WILDCARD]
 {
 	off:
 	{

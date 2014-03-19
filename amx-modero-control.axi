@@ -4052,6 +4052,35 @@ define_function moderoSetResourceFileName (dev panel, char resourceName[], char 
 }
 
 /*
+ * Function:    moderoEnableResourceReloadOnView
+ * 
+ * Arguments:   dev panel - touch panel
+ *              char resourceName[] - resource name
+ * 
+ * Description: Configure the resource so that it is reloaded each time it comes
+ *              into view.
+ */
+define_function moderoEnableResourceReloadOnView (dev panel, char resourceName[])
+{
+	sendCommand (panel, "MODERO_COMMAND_DYNAMIC_IMAGE_MODIFY_PARAMETER,resourceName,',',MODERO_EMBEDDED_CODE_RESOURCE_PARAMETER_PRESERVE,MODERO_RESOURCE_PARAMETER_VALUE_PRESERVE_RELOAD_ON_VIEW")
+}
+
+/*
+ * Function:    moderoDisableResourceReloadOnView
+ * 
+ * Arguments:   dev panel - touch panel
+ *              char resourceName[] - resource name
+ * 
+ * Description: Configure the resource so that it is preserved in cache after 
+ *              the first time it is loaded, and not reloaded each time it comes 
+ *              into view.
+ */
+define_function moderoDisableResourceReloadOnView (dev panel, char resourceName[])
+{
+	sendCommand (panel, "MODERO_COMMAND_DYNAMIC_IMAGE_MODIFY_PARAMETER,resourceName,',',MODERO_EMBEDDED_CODE_RESOURCE_PARAMETER_PRESERVE,MODERO_RESOURCE_PARAMETER_VALUE_PRESERVE_CACHE")
+}
+
+/*
  * Function:    moderoSetResourceRefreshRate
  * 
  * Arguments:   dev panel - touch panel

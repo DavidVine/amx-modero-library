@@ -736,7 +736,7 @@ level_event [dvPanelsBargraphs, WILDCARD_LEVEL_CODE]
  */
 
 
-custom_event [dvPanelsMain, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUTTON_TEXT]
+custom_event [dvPanelsButtons, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUTTON_TEXT]
 {
 	// custom.id (INTEGER) - button address code
 	// custom.type (INTEGER) - custom_event, event id
@@ -751,7 +751,7 @@ custom_event [dvPanelsMain, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUTTON
 	#end_if
 }
 
-custom_event [dvPanelsMain, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUTTON_BITMAP_NAME]
+custom_event [dvPanelsButtons, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUTTON_BITMAP_NAME]
 {
 	// custom.id (INTEGER) - button address code
 	// custom.type (INTEGER) - custom_event, event id
@@ -766,7 +766,7 @@ custom_event [dvPanelsMain, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUTTON
 	#end_if
 }
 
-custom_event [dvPanelsMain, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUTTON_ICON_INDEX]
+custom_event [dvPanelsButtons, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUTTON_ICON_INDEX]
 {
 	// custom.id (INTEGER) - button address code
 	// custom.type (INTEGER) - custom_event, event id
@@ -781,7 +781,7 @@ custom_event [dvPanelsMain, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUTTON
 	#end_if
 }
 
-custom_event [dvPanelsMain, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUTTON_TEXT_JUSTIFICATION]
+custom_event [dvPanelsButtons, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUTTON_TEXT_JUSTIFICATION]
 {
 	// custom.id (INTEGER) - button address code
 	// custom.type (INTEGER) - custom_event, event id
@@ -796,7 +796,7 @@ custom_event [dvPanelsMain, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUTTON
 	#end_if
 }
 
-custom_event [dvPanelsMain, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUTTON_BITMAP_JUSTIFICATION]
+custom_event [dvPanelsButtons, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUTTON_BITMAP_JUSTIFICATION]
 {
 	// custom.id (INTEGER) - button address code
 	// custom.type (INTEGER) - custom_event, event id
@@ -811,7 +811,7 @@ custom_event [dvPanelsMain, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUTTON
 	#end_if
 }
 
-custom_event [dvPanelsMain, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUTTON_ICON_JUSTIFICATION]
+custom_event [dvPanelsButtons, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUTTON_ICON_JUSTIFICATION]
 {
 	// custom.id (INTEGER) - button address code
 	// custom.type (INTEGER) - custom_event, event id
@@ -826,7 +826,7 @@ custom_event [dvPanelsMain, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUTTON
 	#end_if
 }
 
-custom_event [dvPanelsMain, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUTTON_FONT_INDEX]
+custom_event [dvPanelsButtons, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUTTON_FONT_INDEX]
 {
 	// custom.id (INTEGER) - button address code
 	// custom.type (INTEGER) - custom_event, event id
@@ -841,7 +841,7 @@ custom_event [dvPanelsMain, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUTTON
 	#end_if
 }
 
-custom_event [dvPanelsMain, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUTTON_TEXT_EFFECT_NAME]
+custom_event [dvPanelsButtons, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUTTON_TEXT_EFFECT_NAME]
 {
 	// custom.id (INTEGER) - button address code
 	// custom.type (INTEGER) - custom_event, event id
@@ -856,7 +856,7 @@ custom_event [dvPanelsMain, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUTTON
 	#end_if
 }
 
-custom_event [dvPanelsMain, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUTTON_TEXT_EFFECT_COLOUR]
+custom_event [dvPanelsButtons, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUTTON_TEXT_EFFECT_COLOUR]
 {
 	// custom.id - button address code
 	// custom.type (INTEGER) - custom_event, event id
@@ -871,7 +871,7 @@ custom_event [dvPanelsMain, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUTTON
 	#end_if
 }
 
-custom_event [dvPanelsMain, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUTTON_WORD_WRAP]
+custom_event [dvPanelsButtons, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUTTON_WORD_WRAP]
 {
 	// custom.id (INTEGER) - button address code
 	// custom.type (INTEGER) - custom_event, event id
@@ -886,7 +886,7 @@ custom_event [dvPanelsMain, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUTTON
 	#end_if
 }
 
-custom_event [dvPanelsMain, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUTTON_BORDER_COLOUR]
+custom_event [dvPanelsButtons, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUTTON_BORDER_COLOUR]
 {
 	// custom.id (INTEGER) - button address code
 	// custom.type (INTEGER) - custom_event, event id
@@ -901,7 +901,7 @@ custom_event [dvPanelsMain, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUTTON
 	#end_if
 }
 
-custom_event [dvPanelsMain, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUTTON_FILL_COLOUR]
+custom_event [dvPanelsButtons, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUTTON_FILL_COLOUR]
 {
 	// custom.id (INTEGER) - button address code
 	// custom.type (INTEGER) - custom_event, event id
@@ -916,7 +916,7 @@ custom_event [dvPanelsMain, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUTTON
 	#end_if
 }
 
-custom_event [dvPanelsMain, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUTTON_TEXT_COLOUR]
+custom_event [dvPanelsButtons, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUTTON_TEXT_COLOUR]
 {
 	// custom.id (INTEGER) - button address code
 	// custom.type (INTEGER) - custom_event, event id
@@ -931,7 +931,7 @@ custom_event [dvPanelsMain, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUTTON
 	#end_if
 }
 
-custom_event [dvPanelsMain, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUTTON_BORDER_NAME]
+custom_event [dvPanelsButtons, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUTTON_BORDER_NAME]
 {
 	// custom.id (INTEGER) - button address code
 	// custom.type (INTEGER) - custom_event, event id
@@ -946,7 +946,7 @@ custom_event [dvPanelsMain, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUTTON
 	#end_if
 }
 
-custom_event [dvPanelsMain, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUTTON_OPACITY]
+custom_event [dvPanelsButtons, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUTTON_OPACITY]
 {
 	// custom.id (INTEGER) - button address code
 	// custom.type (INTEGER) - custom_event, event id

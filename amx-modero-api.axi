@@ -233,6 +233,7 @@ char MODERO_COMMAND_SUBPAGE_DYNAMIC_REORDERING[]        = '^SDR-'
 char MODERO_COMMAND_SUBPAGE_HIDE[]                      = '^SHD-'
 char MODERO_COMMAND_SUBPAGE_SHOW[]                      = '^SSH-'
 char MODERO_COMMAND_SUBPAGE_TOGGLE[]                    = '^STG-'
+char MODERO_COMMAND_SUBPAGE_HIDE_ALL[]					= '^SHA-'
 
 // LED Commands (MXD-430 Only)
 char MODERO_COMMAND_LED_CONTROL[]   = '^WLD-'

@@ -2190,6 +2190,26 @@ define_function moderoToggleSubpage (dev panel, integer btnAdrCde, char subpageN
 	sendCommand (panel, "MODERO_COMMAND_SUBPAGE_TOGGLE,itoa(btnAdrCde),',',subpageName,',',itoa(position),',',itoa(reorderTime)")
 }
 
+/*
+ * Function:    moderoHideAllSubpages
+ *
+ * Arguments:   dev panel - touch panel
+ *              integer btnAdrCde - button address code
+ *
+ * Description: Hide all subpages.
+ */
+define_function moderoHideAllSubpages (dev panel, integer btnAdrCde)
+{
+	if (moderoIsG5Panel(panel))
+	{
+		sendCommand (panel, "MODERO_COMMAND_SUBPAGE_HIDE_ALL,itoa(btnAdrCde)")
+	}
+	else
+	{
+		moderoUnsupportedCommand(panel, 'moderoHideAllSubpages(..)');
+	}
+}
+
 
 /*
  * --------------------
@@ -4096,10 +4116,10 @@ define_function moderoSetResourceFileName (dev panel, char resourceName[], char 
 
 /*
  * Function:    moderoEnableResourceReloadOnView
- * 
+ *
  * Arguments:   dev panel - touch panel
  *              char resourceName[] - resource name
- * 
+ *
  * Description: Configure the resource so that it is reloaded each time it comes
  *              into view.
  */
@@ -4110,12 +4130,12 @@ define_function moderoEnableResourceReloadOnView (dev panel, char resourceName[]
 
 /*
  * Function:    moderoDisableResourceReloadOnView
- * 
+ *
  * Arguments:   dev panel - touch panel
  *              char resourceName[] - resource name
- * 
- * Description: Configure the resource so that it is preserved in cache after 
- *              the first time it is loaded, and not reloaded each time it comes 
+ *
+ * Description: Configure the resource so that it is preserved in cache after
+ *              the first time it is loaded, and not reloaded each time it comes
  *              into view.
  */
 define_function moderoDisableResourceReloadOnView (dev panel, char resourceName[])
@@ -4161,6 +4181,22 @@ define_function char moderoIsG5Panel(dev panel)
 	}
 
 	return false;
+}
+
+define_function moderoUnsupportedCommand(dev panel, char functionName[])
+{
+	stack_var char message[256];
+	
+	if (moderoIsG5Panel(panel))
+	{
+		message = "functionName, ' is not supported in G5 panels'";
+	}
+	else
+	{
+		message = "functionName, ' is only supported in G5 panels'";
+	}
+	
+	amx_log(AMX_ERROR, message);
 }
 
 

@@ -51,9 +51,13 @@ char MODERO_COMMAND_POPUP_SHOW_EFFECT[]             = '@PSE'
 char MODERO_COMMAND_POPUP_SHOW_EFFECT_POSITION[]    = '@PSP'
 char MODERO_COMMAND_POPUP_SHOW_EFFECT_TIME[]        = '@PST'
 char MODERO_COMMAND_PAGE_FLIP[]                     = 'PAGE-'
+char MODERO_COMMAND_PAGE_FLIP_G5[]                  = '^PGE-'
 char MODERO_COMMAND_POPUP_HIDE[]                    = 'PPOF-'
+char MODERO_COMMAND_POPUP_HIDE_G5[]					= '^PPF-'
 char MODERO_COMMAND_POPUP_TOGGLE[]                  = 'PPOG-'
 char MODERO_COMMAND_POPUP_SHOW[]                    = 'PPON-'
+char MODERO_COMMAND_POPUP_SHOW_G5[]                 = '^PPN-'
+char MODERO_COMMAND_PAGE_FLIP_ANIMATED[]			= '^AFP-'
 
 // Button commands
 char MODERO_COMMAND_BUTTON_ANIMATE[]                                = '^ANI-'
@@ -437,6 +441,7 @@ char MODERO_PAGE_FLIP_ACTION_CLEAR_ALL_POPUPS_FROM_PAGE[]       = 'ClearP'
 char MODERO_PAGE_FLIP_ACTION_CLEAR_ALL_POPUPS_FROM_ALL_PAGES[]  = 'ClearA'
 
 // Page flip animations
+char MODERO_PAGE_FLIP_ANIMATION_FADE[]						= 'fade,Center'
 char MODERO_PAGE_FLIP_ANIMATION_SLIDE_LEFT[]                = 'Slide,Left'
 char MODERO_PAGE_FLIP_ANIMATION_SLIDE_RIGHT[]               = 'Slide,Right'
 char MODERO_PAGE_FLIP_ANIMATION_SLIDE_TOP[]                 = 'Slide,Top'
@@ -1100,8 +1105,8 @@ integer MODERO_BLUETOOTH_REDIAL         = 4
 
 // Resource Escape Sequences
 /*
- * The ^RAF and ^RMF commands support the replacement of any special escape 
- * sequences in the filename (specified by the %F embedded code) with the 
+ * The ^RAF and ^RMF commands support the replacement of any special escape
+ * sequences in the filename (specified by the %F embedded code) with the
  * corresponding data obtained from the system.
  *
  * For instance, http://www.amx.com/img.asp?device=$DV

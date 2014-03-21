@@ -553,50 +553,50 @@ data_event[dvPanelsCoordinateTracking]
 		if (find_string(data.text, 'Press,' ,1) == 1)    // Starts with 'Press,'
 		{
 			// String is in format 'Press,X,Y' where X and Y are the (X,Y) coordinates of the touch
-			
+
 			stack_var integer coordX
 			stack_var integer coordY
-			
+
 			remove_string (data.text, 'Press,', 1)
 			coordX = atoi (data.text)
 			remove_string (data.text, "','", 1)
 			coordY = atoi (data.text)
-			
+
 			#if_defined INCLUDE_MODERO_NOTIFY_TOUCH_COORDINATES_PRESS
 			moderoNotifyTouchCoordinatesPress (data.device, coordX, coordY)
 			#end_if
-			
+
 		}
-		
+
 		if (find_string(data.text, 'Move,' ,1) == 1)    // Starts with 'Move,'
 		{
 			// String is in format 'Press,X,Y' where X and Y are the (X,Y) coordinates of the touch
-			
+
 			stack_var integer coordX
 			stack_var integer coordY
-			
+
 			remove_string (data.text, 'Move,', 1)
 			coordX = atoi (data.text)
 			remove_string (data.text, "','", 1)
 			coordY = atoi (data.text)
-			
+
 			#if_defined INCLUDE_MODERO_NOTIFY_TOUCH_COORDINATES_MOVE
 			moderoNotifyTouchCoordinatesMove (data.device, coordX, coordY)
 			#end_if
 		}
-		
+
 		else if (find_string(data.text, 'Release,' ,1) == 1)    // Starts with 'Release,'
 		{
 			// String is in format 'Press,X,Y' where X and Y are the (X,Y) coordinates of the release
-			
+
 			stack_var integer coordX
 			stack_var integer coordY
-			
+
 			remove_string (data.text, 'Release,', 1)
 			coordX = atoi (data.text)
 			remove_string (data.text, "','", 1)
 			coordY = atoi (data.text)
-			
+
 			#if_defined INCLUDE_MODERO_NOTIFY_TOUCH_COORDINATES_RELEASE
 			moderoNotifyTouchCoordinatesRelease (data.device, coordX, coordY)
 			#end_if
@@ -613,7 +613,7 @@ data_event[dvPanelsUserTextInput]
 			active (find_string(data.text,"MODERO_STRING_KEYBOARD",1) == 1):
 			{
 				remove_string (data.text, "MODERO_STRING_KEYBOARD", 1)
-				
+
 				if (data.text == MODERO_KEYBOARD_ABORT)
 				{
 					#if_defined INCLUDE_MODERO_NOTIFY_KEYBOARD_ABORT
@@ -627,11 +627,11 @@ data_event[dvPanelsUserTextInput]
 					#end_if
 				}
 			}
-			
+
 			active (find_string(data.text,"MODERO_STRING_KEYPAD",1) == 1):
 			{
 				remove_string (data.text, "MODERO_STRING_KEYPAD", 1)
-				
+
 				if (data.text != MODERO_KEYPAD_ABORT)
 				{
 					#if_defined INCLUDE_MODERO_NOTIFY_KEYPAD_ABORT
@@ -745,7 +745,7 @@ custom_event [dvPanelsButtons, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUT
 	// custom.value2 (SLONG) - actual length of string (this is not encoded size)
 	// custom.value3 (SLONG) - index of first character (usually 1 or same as optional index)
 	// custom.text (CHAR []) - the text from the button
-	
+
 	#if_defined INCLUDE_MODERO_NOTIFY_BUTTON_TEXT
 	moderoNotifyButtonText (custom.device, custom.id, type_cast(custom.value1), custom.text)
 	#end_if
@@ -760,7 +760,7 @@ custom_event [dvPanelsButtons, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUT
 	// custom.value2 (SLONG) - actual length of string (this is not encoded size)
 	// custom.value3 (SLONG) - zero
 	// custom.text (CHAR []) - string that represents the bitmap name
-	
+
 	#if_defined INCLUDE_MODERO_NOTIFY_BUTTON_BITMAP_NAME
 	moderoNotifyButtonBitmapName (custom.device, custom.id, type_cast(custom.value1), custom.text)
 	#end_if
@@ -775,7 +775,7 @@ custom_event [dvPanelsButtons, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUT
 	// custom.value2 (SLONG) - icon index
 	// custom.value3 (SLONG) - zero
 	// custom.text (CHAR []) - blank
-	
+
 	#if_defined INCLUDE_MODERO_NOTIFY_BUTTON_ICON_INDEX
 	moderoNotifyButtonIconIndex (custom.device, custom.id, type_cast(custom.value1), type_cast(custom.value2))
 	#end_if
@@ -790,7 +790,7 @@ custom_event [dvPanelsButtons, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUT
 	// custom.value2 (SLONG) - 1 - 9 justify
 	// custom.value3 (SLONG) - zero
 	// custom.text (CHAR []) - blank
-	
+
 	#if_defined INCLUDE_MODERO_NOTIFY_BUTTON_TEXT_JUSTIFICATION
 	moderoNotifyButtonTextJustification (custom.device, custom.id, type_cast(custom.value1), type_cast(custom.value2))
 	#end_if
@@ -805,7 +805,7 @@ custom_event [dvPanelsButtons, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUT
 	// custom.value2 (SLONG) - 1 - 9 justify
 	// custom.value3 (SLONG) - zero
 	// custom.text (CHAR []) - blank
-	
+
 	#if_defined INCLUDE_MODERO_NOTIFY_BUTTON_BITMAP_JUSTIFICATION
 	moderoNotifyButtonBitmapJustification (custom.device, custom.id, type_cast(custom.value1), type_cast(custom.value2))
 	#end_if
@@ -820,7 +820,7 @@ custom_event [dvPanelsButtons, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUT
 	// custom.value2 (SLONG) - 1 - 9 justify
 	// custom.value3 (SLONG) - zero
 	// custom.text (CHAR []) - blank
-	
+
 	#if_defined INCLUDE_MODERO_NOTIFY_BUTTON_ICON_JUSTIFICATION
 	moderoNotifyButtonIconJustification (custom.device, custom.id, type_cast(custom.value1), type_cast(custom.value2))
 	#end_if
@@ -835,7 +835,7 @@ custom_event [dvPanelsButtons, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUT
 	// custom.value2 (SLONG) - font index
 	// custom.value3 (SLONG) - zero
 	// custom.text (CHAR []) - blank
-	
+
 	#if_defined INCLUDE_MODERO_NOTIFY_BUTTON_FONT_INDEX
 	moderoNotifyButtonFontIndex (custom.device, custom.id, type_cast(custom.value1), type_cast(custom.value2))
 	#end_if
@@ -850,7 +850,7 @@ custom_event [dvPanelsButtons, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUT
 	// custom.value2 (SLONG) - actual length of string
 	// custom.value3 (SLONG) - zero
 	// custom.text (CHAR []) - string that represents the text effect name
-	
+
 	#if_defined INCLUDE_MODERO_NOTIFY_BUTTON_TEXT_EFFECT_NAME
 	moderoNotifyButtonTextEffectName (custom.device, custom.id, type_cast(custom.value1), custom.text)
 	#end_if
@@ -865,7 +865,7 @@ custom_event [dvPanelsButtons, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUT
 	// custom.value2 (SLONG) - actual length of string
 	// custom.value3 (SLONG) - zero
 	// custom.text (CHAR []) - hex encoded colour value (ex: #000000FF)
-	
+
 	#if_defined INCLUDE_MODERO_NOTIFY_BUTTON_TEXT_EFFECT_COLOUR
 	moderoNotifyButtonTextEffectColour (custom.device, custom.id, type_cast(custom.value1), custom.text)
 	#end_if
@@ -880,7 +880,7 @@ custom_event [dvPanelsButtons, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUT
 	// custom.value2 (SLONG) - 0 = no wrap, 1 = word wrap
 	// custom.value3 (SLONG) - zero
 	// custom.text (CHAR []) - blank
-	
+
 	#if_defined INCLUDE_MODERO_NOTIFY_BUTTON_WORD_WRAP_STATUS
 	moderoNotifyButtonWordWrapStatus (custom.device, custom.id, type_cast(custom.value1), type_cast(custom.value2))
 	#end_if
@@ -895,7 +895,7 @@ custom_event [dvPanelsButtons, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUT
 	// custom.value2 (SLONG) - actual length of string
 	// custom.value3 (SLONG) - zero
 	// custom.text (CHAR []) - hex encoded colour value (ex: #000000FF)
-	
+
 	#if_defined INCLUDE_MODERO_NOTIFY_BUTTON_BORDER_COLOUR
 	moderoNotifyButtonBorderColour (custom.device, custom.id, type_cast(custom.value1), custom.text)
 	#end_if
@@ -910,7 +910,7 @@ custom_event [dvPanelsButtons, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUT
 	// custom.value2 (SLONG) - actual length of string
 	// custom.value3 (SLONG) - zero
 	// custom.text (CHAR []) - hex encoded colour value (ex: #000000FF)
-	
+
 	#if_defined INCLUDE_MODERO_NOTIFY_BUTTON_FILL_COLOUR
 	moderoNotifyButtonFillColour (custom.device, custom.id, type_cast(custom.value1), custom.text)
 	#end_if
@@ -925,7 +925,7 @@ custom_event [dvPanelsButtons, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUT
 	// custom.value2 (SLONG) - actual length of string
 	// custom.value3 (SLONG) - zero
 	// custom.text (CHAR []) - hex encoded colour value (ex: #000000FF)
-	
+
 	#if_defined INCLUDE_MODERO_NOTIFY_BUTTON_TEXT_COLOUR
 	moderoNotifyButtonTextColour (custom.device, custom.id, type_cast(custom.value1), custom.text)
 	#end_if
@@ -940,7 +940,7 @@ custom_event [dvPanelsButtons, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUT
 	// custom.value2 (SLONG) - actual length of string
 	// custom.value3 (SLONG) - zero
 	// custom.text (CHAR []) - string that represents border name
-	
+
 	#if_defined INCLUDE_MODERO_NOTIFY_BUTTON_BORDER_NAME
 	moderoNotifyButtonBorderName (custom.device, custom.id, type_cast(custom.value1), custom.text)
 	#end_if
@@ -955,7 +955,7 @@ custom_event [dvPanelsButtons, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUT
 	// custom.value2 (SLONG) - opacity
 	// custom.value3 (SLONG) - zero
 	// custom.text (CHAR []) - blank
-	
+
 	#if_defined INCLUDE_MODERO_NOTIFY_BUTTON_OPACITY
 	moderoNotifyButtonOpacity (custom.device, custom.id, type_cast(custom.value1), type_cast(custom.value2))
 	#end_if
@@ -978,21 +978,21 @@ custom_event [dvPanelsStreaming, 0, MODERO_CUSTOM_EVENT_ID_STREAMING_VIDEO]
 			//moderoNotifyStreamStart (custom.device, type_cast(custom.value2), type_cast(custom.value3), custom.text, type_cast(custom.value1))
 		}
 		#end_if
-		
+
 		#if_defined INCLUDE_MODERO_NOTIFY_STREAM_STOP
 		case MODERO_STREAMING_NOTIFY_FLAG_STOP:    // stop
 		{
 			moderoNotifyStreamStop (custom.device, type_cast(custom.value2), type_cast(custom.value3), custom.text, type_cast(custom.value1))
 		}
 		#end_if
-		
+
 		#if_defined INCLUDE_MODERO_NOTIFY_STREAM_ERROR
 		case MODERO_STREAMING_NOTIFY_FLAG_ERROR:
 		{
 			moderoNotifyStreamError (custom.device, type_cast(custom.value2), type_cast(custom.value3), custom.text, type_cast(custom.value1))
 		}
 		#end_if
-		
+
 		default:
 		{
 		}
@@ -1099,14 +1099,14 @@ custom_event [dvPanelsMain, 0, MODERO_CUSTOM_EVENT_ID_SMART_CARD_INSERT_REMOVE]
 			moderoNotifySmartCardRemove (custom.device)
 		}
 		#end_if
-		
+
 		#if_defined INCLUDE_MODERO_NOTIFY_SMART_CARD_INSERT
 		case MODERO_SMART_CARD_INSERT:
 		{
 			moderoNotifySmartCardInsert (custom.device, custom.text)
 		}
 		#end_if
-		
+
 		default:  // unhandled, ignore
 		{
 		}
@@ -1128,14 +1128,14 @@ custom_event [dvPanelsMain, 0, MODERO_CUSTOM_EVENT_ID_SMART_CARD_READER_INSERT_R
 			moderoNotifySmartCardReaderRemove (custom.device)
 		}
 		#end_if
-		
+
 		#if_defined INCLUDE_MODERO_NOTIFY_SMART_CARD_READER_INSERT
 		case MODERO_SMART_CARD_READER_INSERT:
 		{
 			moderoNotifySmartCardReaderInsert (custom.device, custom.text)
 		}
 		#end_if
-		
+
 		default:  // unhandled, ignore
 		{
 		}

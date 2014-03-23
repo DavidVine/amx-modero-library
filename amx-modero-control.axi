@@ -4186,7 +4186,7 @@ define_function char moderoIsG5Panel(dev panel)
 define_function moderoUnsupportedCommand(dev panel, char functionName[])
 {
 	stack_var char message[256];
-	
+
 	if (moderoIsG5Panel(panel))
 	{
 		message = "functionName, ' is not supported in G5 panels'";
@@ -4195,7 +4195,7 @@ define_function moderoUnsupportedCommand(dev panel, char functionName[])
 	{
 		message = "functionName, ' is only supported in G5 panels'";
 	}
-	
+
 	amx_log(AMX_ERROR, message);
 }
 

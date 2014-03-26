@@ -787,7 +787,14 @@ define_function moderoEnableShutdown (dev panel)
  */
 define_function moderoPlaySoundFile(dev panel, char soundFilename[])
 {
-	sendCommand (panel, "MODERO_COMMAND_PLAY_SOUND_FILE,soundFilename")
+	if (moderoIsG5Panel(panel))
+	{
+		sendCommand (panel, "MODERO_COMMAND_PLAY_SOUND_FILE_G5,soundFilename")
+	}
+	else
+	{
+		sendCommand (panel, "MODERO_COMMAND_PLAY_SOUND_FILE,soundFilename")
+	}
 }
 
 /*

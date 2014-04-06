@@ -1777,7 +1777,7 @@ define_function moderoEnableVideoCall (dev panel, char dstIp[], integer dstPort)
 define_function moderoRequestMultiPreviewInfo (dev panel, char statusField[], char id[])
 {
 	#warn '@TODO - amx-modero-control - find out more about the ?SLT command - documentation lacking!'
-	sendCommand (panel, "MODERO_COMMAND_MULTI_PREVIEW_QUERY,statusField,',',id")
+	sendCommand (panel, "MODERO_COMMAND_MULTI_PREVIEW_QUERY,'querystatus=',statusField,',',id")
 	// '?SLT-1,querystatus=<statusField>,[id]'
 	//		- response with custom_event ID: 770
 }
@@ -1881,7 +1881,7 @@ define_function moderoEnableMultiPreviewReboot (dev panel, char rebootFirmwareMo
 		case MODERO_MULTI_PREVIEW_REBOOT_FIRMWARE_PREVIOUS:
 		case MODERO_MULTI_PREVIEW_REBOOT_FIRMWARE_FACTORY:
 		{
-			sendCommand (panel, "MODERO_COMMAND_MULTI_PREVIEW,'1,reboot=',rebootFirmwareMode")
+			sendCommand (panel, "MODERO_COMMAND_MULTI_PREVIEW,'reboot=',rebootFirmwareMode")
 		}
 	}
 }

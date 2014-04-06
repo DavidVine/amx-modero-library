@@ -224,8 +224,8 @@ char MODERO_COMMAND_VIDEOCOM_START[]                        = '^VCS-'
 // Streaming Video, MXA-MP, and MXA-MPL Commands
 char MODERO_COMMAND_STREAMING_AUDIO_VIDEO_MUTE[]    = '^DMM-'
 char MODERO_COMMAND_STREAMING_START_OR_STOP[]       = '^SDM-'
-char MODERO_COMMAND_MULTI_PREVIEW[]                 = '^SLT'
-char MODERO_COMMAND_MULTI_PREVIEW_QUERY[]           = '?SLT'
+char MODERO_COMMAND_MULTI_PREVIEW[]                 = '^SLT-1,'
+char MODERO_COMMAND_MULTI_PREVIEW_QUERY[]           = '?SLT-1,'
 
 // Subpages Commands
 char MODERO_COMMAND_SUBPAGE_EXECUTE_PUSH_ON_RELEASE[]   = '^EPR-'

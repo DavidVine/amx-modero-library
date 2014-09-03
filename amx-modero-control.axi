@@ -4080,7 +4080,7 @@ define_function moderoSetResourceParameter (dev panel, char resourceName[], char
 }
 
 /*
- * Function:    moderoSetResourceFilePath
+ * Function:    moderoSetResourceHostName
  *
  * Arguments:   dev panel - touch panel
  *              char resourceName[] - resource name

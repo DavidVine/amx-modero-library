@@ -641,7 +641,7 @@ data_event[dvPanelsUserTextInput]
 			{
 				remove_string (data.text, "MODERO_STRING_KEYPAD", 1)
 
-				if (data.text != MODERO_KEYPAD_ABORT)
+				if (data.text == MODERO_KEYPAD_ABORT)
 				{
 					#if_defined INCLUDE_MODERO_NOTIFY_KEYPAD_ABORT
 					moderoNotifyKeypadAbort (data.device)

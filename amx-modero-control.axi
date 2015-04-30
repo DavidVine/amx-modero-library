@@ -114,7 +114,7 @@ define_function moderoSetPagePrevious (dev panel)
  */
 define_function moderoSetPageAnimated (dev panel, char pageName[], char pageFlipAnimation[], integer duration)
 {
-	sendCommand (panel, "MODERO_COMMAND_PAGE_FLIP_ANIMATED, pageName, pageFlipAnimation, itoa(duration)")
+	sendCommand (panel, "MODERO_COMMAND_PAGE_FLIP_ANIMATED, pageName, ',', pageFlipAnimation, ',', itoa(duration)")
 }
 
 

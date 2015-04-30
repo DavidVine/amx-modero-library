@@ -140,6 +140,15 @@ define_function moderoNotifyKeypadEntry (dev panel, char text[])
 */
 
 /*
+#define INCLUDE_MODERO_NOTIFY_EXTERNAL_KEY_EVENT
+define_function moderoNotifyExternalKeyEvent (dev panel, char key)
+{
+	// panel is the touch panel
+	// key is the character code associated with the event
+}
+*/
+
+/*
 #define INCLUDE_MODERO_NOTIFY_KEYPAD_ABORT
 define_function moderoNotifyKeypadAbort (dev panel)
 {
@@ -644,6 +653,15 @@ data_event[dvPanelsUserTextInput]
 					moderoNotifyKeypadEntry (data.device, data.text)
 					#end_if
 				}
+			}
+
+			active (find_string(data.text,"MODERO_STRING_EXTERNAL_KEY",1) == 1):
+			{
+				remove_string (data.text, "MODERO_STRING_EXTERNAL_KEY", 1)
+
+				#if_defined INCLUDE_MODERO_NOTIFY_EXTERNAL_KEY_EVENT
+				moderoNotifyExternalKeyEvent (data.device, data.text[1])
+				#end_if
 			}
 		}
 	}

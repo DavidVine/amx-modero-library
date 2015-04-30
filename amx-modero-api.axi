@@ -245,9 +245,9 @@ char MODERO_COMMAND_QUERY_POPUP_LOCATION[]              = '?PUL'
 char MODERO_COMMAND_QUERY_POPUP_SIZE[]                  = '?PUS'
 
 // Keyboard/keypad strings
-char MODERO_STRING_KEYBOARD[]   = 'KEYB-'
-char MODERO_STRING_KEYPAD[]     = 'KEYP'
-char MODERO_STRING_EXTERNAL_KEY = 'KEYE-'
+char MODERO_STRING_KEYBOARD[]     = 'KEYB-'
+char MODERO_STRING_KEYPAD[]       = 'KEYP'
+char MODERO_STRING_EXTERNAL_KEY[] = 'KEYE-'
 
 
 /*

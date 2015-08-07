@@ -22,11 +22,18 @@ include 'amx-device-control'
 /*
  * --------------------
  * Device arrays
+ *
+ * Any components that are to be monitored should have the appropriate
+ * device array copied into the main program DEFINE_VARIABLE section and the 
+ * associated #DEFINE compiler directives should be copied to the top of the 
+ * main program, above the line of code that this include file is included 
+ * into the main program.
  * --------------------
  */
 
 define_variable
 
+/*
 #if_not_defined dvPanelsMain
 #DEFINE INCLUDE_MODERO_MONITOR_MAIN
 dev dvPanelsMain[] = { 10001:1:0 }
@@ -66,7 +73,7 @@ dev dvPanelsBargraphs[] = { 10001:1:0 }
 #DEFINE INCLUDE_MODERO_MONITOR_BUTTONS
 dev dvPanelsButtons[] = { 10001:1:0 }
 #end_if
-
+*/
 
 
 

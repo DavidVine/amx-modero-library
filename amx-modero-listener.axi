@@ -28,34 +28,42 @@ include 'amx-device-control'
 define_variable
 
 #if_not_defined dvPanelsMain
+#DEFINE INCLUDE_MODERO_MONITOR_MAIN
 dev dvPanelsMain[] = { 10001:1:0 }
 #end_if
 
 #if_not_defined dvPanelsCoordinateTracking
+#DEFINE INCLUDE_MODERO_MONITOR_COORDINATE_TRACKING
 dev dvPanelsCoordinateTracking[] = { 10001:1:0 }
 #end_if
 
 #if_not_defined dvPanelsNfc
+#DEFINE INCLUDE_MODERO_MONITOR_NFC
 dev dvPanelsNfc[] = { 10001:1:0 }
 #end_if
 
 #if_not_defined dvPanelsUserTextInput
+#DEFINE INCLUDE_MODERO_MONITOR_USER_TEXT_INPUT
 dev dvPanelsUserTextInput[] = { 10001:1:0 }
 #end_if
 
 #if_not_defined dvPanelsStreaming
+#DEFINE INCLUDE_MODERO_MONITOR_STREAMING
 dev dvPanelsStreaming[] = { 10001:1:0 }
 #end_if
 
 #if_not_defined dvPanelsFeedback
+#DEFINE INCLUDE_MODERO_MONITOR_FEEDBACK
 dev dvPanelsFeedback[] = { 10001:1:0 }
 #end_if
 
 #if_not_defined dvPanelsBargraphs
+#DEFINE INCLUDE_MODERO_MONITOR_BARGRAPHS
 dev dvPanelsBargraphs[] = { 10001:1:0 }
 #end_if
 
 #if_not_defined dvPanelsButtons
+#DEFINE INCLUDE_MODERO_MONITOR_BUTTONS
 dev dvPanelsButtons[] = { 10001:1:0 }
 #end_if
 
@@ -545,7 +553,7 @@ define_event
  * --------------------
  */
 
-
+#if_defined INCLUDE_MODERO_MONITOR_COORDINATE_TRACKING
 data_event[dvPanelsCoordinateTracking]
 {
 	string:
@@ -603,7 +611,9 @@ data_event[dvPanelsCoordinateTracking]
 		}
 	}
 }
+#end_if
 
+#if_defined INCLUDE_MODERO_MONITOR_USER_TEXT_INPUT
 data_event[dvPanelsUserTextInput]
 {
 	string:
@@ -648,6 +658,7 @@ data_event[dvPanelsUserTextInput]
 		}
 	}
 }
+#end_if
 
 
 
@@ -657,6 +668,7 @@ data_event[dvPanelsUserTextInput]
  * --------------------
  */
 
+#if_defined INCLUDE_MODERO_MONITOR_BUTTONS
 #if_defined INCLUDE_MODERO_NOTIFY_BUTTON_PUSH
 button_event [dvPanelsButtons, CHANNEL_CODE_WILDCARD]
 {
@@ -666,8 +678,9 @@ button_event [dvPanelsButtons, CHANNEL_CODE_WILDCARD]
 	}
 }
 #end_if
+#end_if
 
-
+#if_defined INCLUDE_MODERO_MONITOR_BUTTONS
 #if_defined INCLUDE_MODERO_NOTIFY_BUTTON_RELEASE
 button_event [dvPanelsButtons, CHANNEL_CODE_WILDCARD]
 {
@@ -677,7 +690,9 @@ button_event [dvPanelsButtons, CHANNEL_CODE_WILDCARD]
 	}
 }
 #end_if
+#end_if
 
+#if_defined INCLUDE_MODERO_MONITOR_BUTTONS
 #if_defined INCLUDE_MODERO_NOTIFY_BUTTON_HOLD
 button_event [dvPanelsButtons, CHANNEL_CODE_WILDCARD]
 {
@@ -687,7 +702,7 @@ button_event [dvPanelsButtons, CHANNEL_CODE_WILDCARD]
 	}
 }
 #end_if
-
+#end_if
 
 /*
  * --------------------
@@ -695,6 +710,7 @@ button_event [dvPanelsButtons, CHANNEL_CODE_WILDCARD]
  * --------------------
  */
 
+#if_defined INCLUDE_MODERO_MONITOR_BUTTONS
 #if_defined INCLUDE_MODERO_NOTIFY_BUTTON_FEEDBACK_ON
 channel_event [dvPanelsFeedback, CHANNEL_CODE_WILDCARD]
 {
@@ -704,7 +720,9 @@ channel_event [dvPanelsFeedback, CHANNEL_CODE_WILDCARD]
 	}
 }
 #end_if
+#end_if
 
+#if_defined INCLUDE_MODERO_MONITOR_BUTTONS
 #if_defined INCLUDE_MODERO_NOTIFY_BUTTON_FEEDBACK_OFF
 channel_event [dvPanelsFeedback, CHANNEL_CODE_WILDCARD]
 {
@@ -714,6 +732,7 @@ channel_event [dvPanelsFeedback, CHANNEL_CODE_WILDCARD]
 	}
 }
 #end_if
+#end_if
 
 
 /*
@@ -722,11 +741,13 @@ channel_event [dvPanelsFeedback, CHANNEL_CODE_WILDCARD]
  * --------------------
  */
 
+#if_defined INCLUDE_MODERO_MONITOR_BARGRAPHS
 #if_defined INCLUDE_MODERO_NOTIFY_LEVEL_CHANGE
 level_event [dvPanelsBargraphs, WILDCARD_LEVEL_CODE]
 {
 	moderoNotifyLevelChange (level.input.device, level.input.level, level.value)
 }
+#end_if
 #end_if
 
 /*
@@ -736,6 +757,7 @@ level_event [dvPanelsBargraphs, WILDCARD_LEVEL_CODE]
  */
 
 
+#if_defined INCLUDE_MODERO_MONITOR_BUTTONS
 custom_event [dvPanelsButtons, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUTTON_TEXT]
 {
 	// custom.id (INTEGER) - button address code
@@ -750,7 +772,9 @@ custom_event [dvPanelsButtons, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUT
 	moderoNotifyButtonText (custom.device, custom.id, type_cast(custom.value1), custom.text)
 	#end_if
 }
+#end_if
 
+#if_defined INCLUDE_MODERO_MONITOR_BUTTONS
 custom_event [dvPanelsButtons, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUTTON_BITMAP_NAME]
 {
 	// custom.id (INTEGER) - button address code
@@ -765,7 +789,9 @@ custom_event [dvPanelsButtons, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUT
 	moderoNotifyButtonBitmapName (custom.device, custom.id, type_cast(custom.value1), custom.text)
 	#end_if
 }
+#end_if
 
+#if_defined INCLUDE_MODERO_MONITOR_BUTTONS
 custom_event [dvPanelsButtons, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUTTON_ICON_INDEX]
 {
 	// custom.id (INTEGER) - button address code
@@ -780,7 +806,9 @@ custom_event [dvPanelsButtons, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUT
 	moderoNotifyButtonIconIndex (custom.device, custom.id, type_cast(custom.value1), type_cast(custom.value2))
 	#end_if
 }
+#end_if
 
+#if_defined INCLUDE_MODERO_MONITOR_BUTTONS
 custom_event [dvPanelsButtons, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUTTON_TEXT_JUSTIFICATION]
 {
 	// custom.id (INTEGER) - button address code
@@ -795,7 +823,9 @@ custom_event [dvPanelsButtons, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUT
 	moderoNotifyButtonTextJustification (custom.device, custom.id, type_cast(custom.value1), type_cast(custom.value2))
 	#end_if
 }
+#end_if
 
+#if_defined INCLUDE_MODERO_MONITOR_BUTTONS
 custom_event [dvPanelsButtons, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUTTON_BITMAP_JUSTIFICATION]
 {
 	// custom.id (INTEGER) - button address code
@@ -810,7 +840,9 @@ custom_event [dvPanelsButtons, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUT
 	moderoNotifyButtonBitmapJustification (custom.device, custom.id, type_cast(custom.value1), type_cast(custom.value2))
 	#end_if
 }
+#end_if
 
+#if_defined INCLUDE_MODERO_MONITOR_BUTTONS
 custom_event [dvPanelsButtons, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUTTON_ICON_JUSTIFICATION]
 {
 	// custom.id (INTEGER) - button address code
@@ -825,7 +857,9 @@ custom_event [dvPanelsButtons, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUT
 	moderoNotifyButtonIconJustification (custom.device, custom.id, type_cast(custom.value1), type_cast(custom.value2))
 	#end_if
 }
+#end_if
 
+#if_defined INCLUDE_MODERO_MONITOR_BUTTONS
 custom_event [dvPanelsButtons, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUTTON_FONT_INDEX]
 {
 	// custom.id (INTEGER) - button address code
@@ -840,7 +874,9 @@ custom_event [dvPanelsButtons, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUT
 	moderoNotifyButtonFontIndex (custom.device, custom.id, type_cast(custom.value1), type_cast(custom.value2))
 	#end_if
 }
+#end_if
 
+#if_defined INCLUDE_MODERO_MONITOR_BUTTONS
 custom_event [dvPanelsButtons, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUTTON_TEXT_EFFECT_NAME]
 {
 	// custom.id (INTEGER) - button address code
@@ -855,7 +891,9 @@ custom_event [dvPanelsButtons, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUT
 	moderoNotifyButtonTextEffectName (custom.device, custom.id, type_cast(custom.value1), custom.text)
 	#end_if
 }
+#end_if
 
+#if_defined INCLUDE_MODERO_MONITOR_BUTTONS
 custom_event [dvPanelsButtons, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUTTON_TEXT_EFFECT_COLOUR]
 {
 	// custom.id - button address code
@@ -870,7 +908,9 @@ custom_event [dvPanelsButtons, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUT
 	moderoNotifyButtonTextEffectColour (custom.device, custom.id, type_cast(custom.value1), custom.text)
 	#end_if
 }
+#end_if
 
+#if_defined INCLUDE_MODERO_MONITOR_BUTTONS
 custom_event [dvPanelsButtons, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUTTON_WORD_WRAP]
 {
 	// custom.id (INTEGER) - button address code
@@ -885,7 +925,9 @@ custom_event [dvPanelsButtons, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUT
 	moderoNotifyButtonWordWrapStatus (custom.device, custom.id, type_cast(custom.value1), type_cast(custom.value2))
 	#end_if
 }
+#end_if
 
+#if_defined INCLUDE_MODERO_MONITOR_BUTTONS
 custom_event [dvPanelsButtons, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUTTON_BORDER_COLOUR]
 {
 	// custom.id (INTEGER) - button address code
@@ -900,7 +942,9 @@ custom_event [dvPanelsButtons, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUT
 	moderoNotifyButtonBorderColour (custom.device, custom.id, type_cast(custom.value1), custom.text)
 	#end_if
 }
+#end_if
 
+#if_defined INCLUDE_MODERO_MONITOR_BUTTONS
 custom_event [dvPanelsButtons, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUTTON_FILL_COLOUR]
 {
 	// custom.id (INTEGER) - button address code
@@ -915,7 +959,9 @@ custom_event [dvPanelsButtons, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUT
 	moderoNotifyButtonFillColour (custom.device, custom.id, type_cast(custom.value1), custom.text)
 	#end_if
 }
+#end_if
 
+#if_defined INCLUDE_MODERO_MONITOR_BUTTONS
 custom_event [dvPanelsButtons, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUTTON_TEXT_COLOUR]
 {
 	// custom.id (INTEGER) - button address code
@@ -930,7 +976,9 @@ custom_event [dvPanelsButtons, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUT
 	moderoNotifyButtonTextColour (custom.device, custom.id, type_cast(custom.value1), custom.text)
 	#end_if
 }
+#end_if
 
+#if_defined INCLUDE_MODERO_MONITOR_BUTTONS
 custom_event [dvPanelsButtons, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUTTON_BORDER_NAME]
 {
 	// custom.id (INTEGER) - button address code
@@ -945,7 +993,9 @@ custom_event [dvPanelsButtons, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUT
 	moderoNotifyButtonBorderName (custom.device, custom.id, type_cast(custom.value1), custom.text)
 	#end_if
 }
+#end_if
 
+#if_defined INCLUDE_MODERO_MONITOR_BUTTONS
 custom_event [dvPanelsButtons, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUTTON_OPACITY]
 {
 	// custom.id (INTEGER) - button address code
@@ -960,14 +1010,18 @@ custom_event [dvPanelsButtons, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_BUT
 	moderoNotifyButtonOpacity (custom.device, custom.id, type_cast(custom.value1), type_cast(custom.value2))
 	#end_if
 }
+#end_if
 
+#if_defined INCLUDE_MODERO_MONITOR_NFC
 custom_event [dvPanelsNfc, 1, MODERO_CUSTOM_EVENT_ID_NFC_READ_TAG]
 {
 	#if_defined INCLUDE_MODERO_NOTIFY_NFC_TAG_READ
 	moderoNotifyNfcTagRead (custom.device, custom.text)
 	#end_if
 }
+#end_if
 
+#if_defined INCLUDE_MODERO_MONITOR_STREAMING
 custom_event [dvPanelsStreaming, 0, MODERO_CUSTOM_EVENT_ID_STREAMING_VIDEO]
 {
 	switch (custom.flag)
@@ -998,7 +1052,9 @@ custom_event [dvPanelsStreaming, 0, MODERO_CUSTOM_EVENT_ID_STREAMING_VIDEO]
 		}
 	}
 }
+#end_if
 
+#if_defined INCLUDE_MODERO_MONITOR_MAIN
 custom_event [dvPanelsMain, 0, MODERO_CUSTOM_EVENT_ID_POPUP_LOCATION]
 {
 	// custom.flag (INTEGER) - operation (0=location query, 10=attach, 20=drag, 30=detach)
@@ -1010,7 +1066,9 @@ custom_event [dvPanelsMain, 0, MODERO_CUSTOM_EVENT_ID_POPUP_LOCATION]
 	moderoNotifyPopupLocation (custom.device, custom.text, custom.flag, type_cast(custom.value1), type_cast(custom.value2), type_cast(custom.value3))
 	#end_if
 }
+#end_if
 
+#if_defined INCLUDE_MODERO_MONITOR_MAIN
 custom_event [dvPanelsMain, 0, MODERO_CUSTOM_EVENT_ID_POPUP_SIZE]
 {
 	// custom.device
@@ -1022,7 +1080,9 @@ custom_event [dvPanelsMain, 0, MODERO_CUSTOM_EVENT_ID_POPUP_SIZE]
 	moderoNotifyPopupSize (custom.device, custom.text, type_cast(custom.value1), type_cast(custom.value2), type_cast(custom.value3))
 	#end_if
 }
+#end_if
 
+#if_defined INCLUDE_MODERO_MONITOR_MAIN
 custom_event [dvPanelsMain, 0, MODERO_CUSTOM_EVENT_ID_RESOURCE_LOAD_NOTIFICATION]
 {
 	// custom.text (CHAR []) - string containing the resource name
@@ -1030,8 +1090,9 @@ custom_event [dvPanelsMain, 0, MODERO_CUSTOM_EVENT_ID_RESOURCE_LOAD_NOTIFICATION
 	moderoNotifyResourceLoad (custom.device, custom.text)
 	#end_if
 }
+#end_if
 
-
+#if_defined INCLUDE_MODERO_MONITOR_MAIN
 custom_event [dvPanelsMain, 0, MODERO_CUSTOM_EVENT_ID_BLUETOOTH_HANDSET]
 {
 	// // custom.flag (INTEGER) - Accept (1), Reject/Hangup (2), Redial (4)
@@ -1039,7 +1100,9 @@ custom_event [dvPanelsMain, 0, MODERO_CUSTOM_EVENT_ID_BLUETOOTH_HANDSET]
 	moderoNotifyBluetoothHandset (custom.device, custom.flag)
 	#end_if
 }
+#end_if
 
+#if_defined INCLUDE_MODERO_MONITOR_MAIN
 custom_event [dvPanelsMain, 0, MODERO_CUSTOM_EVENT_ID_AUDIO_DEVICE]
 {
 	// custom.value1 (SLONG) - Device type (1=built-in speaker, 2=usb headset, 3=bluetooth headset)
@@ -1047,7 +1110,9 @@ custom_event [dvPanelsMain, 0, MODERO_CUSTOM_EVENT_ID_AUDIO_DEVICE]
 	moderoNotifyAudioDevice (custom.device, type_cast(custom.value1))
 	#end_if
 }
+#end_if
 
+#if_defined INCLUDE_MODERO_MONITOR_MAIN
 custom_event [dvPanelsMain, 0, MODERO_CUSTOM_EVENT_ID_AUDIO_MUTE_STATUS]
 {
 	// custom.value1 (SLONG) - 0 (unmuted) / 1 (muted)
@@ -1055,7 +1120,9 @@ custom_event [dvPanelsMain, 0, MODERO_CUSTOM_EVENT_ID_AUDIO_MUTE_STATUS]
 	moderoNotifyAudioMuteStatus (custom.device, type_cast(custom.value1))
 	#end_if
 }
+#end_if
 
+#if_defined INCLUDE_MODERO_MONITOR_MAIN
 custom_event [dvPanelsMain, 0, MODERO_CUSTOM_EVENT_ID_AUDIO_VOLUME]
 {
 	// custom.value1 (SLONG) - master volume value
@@ -1063,7 +1130,9 @@ custom_event [dvPanelsMain, 0, MODERO_CUSTOM_EVENT_ID_AUDIO_VOLUME]
 	moderoNotifyVolume (custom.device, type_cast(custom.value1))
 	#end_if
 }
+#end_if
 
+#if_defined INCLUDE_MODERO_MONITOR_MAIN
 custom_event [dvPanelsMain, 0, MODERO_CUSTOM_EVENT_ID_GESTURE]
 {
 	// custom.value1 (SLONG) - gesture number
@@ -1075,7 +1144,9 @@ custom_event [dvPanelsMain, 0, MODERO_CUSTOM_EVENT_ID_GESTURE]
 	moderoNotifyGesture (custom.device, type_cast(custom.value1), type_cast(custom.value2), custom.value3)
 	#end_if
 }
+#end_if
 
+#if_defined INCLUDE_MODERO_MONITOR_MAIN
 custom_event [dvPanelsMain, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_MULTI_PREVIEW_QUERY_RESPONSE]
 {
 	// custom.value1 (SLONG) - message id (echoed 'id' value from query)
@@ -1083,7 +1154,9 @@ custom_event [dvPanelsMain, ADDRESS_CODE_WILDCARD, MODERO_CUSTOM_EVENT_ID_MULTI_
 	// Query command is of the form ?SLT-1,querystatus=<statusField>,[id]
 	#warn '@TODO: amx-modero-listener - need to find out more about multi-preview query, not documented very well!'
 }
+#end_if
 
+#if_defined INCLUDE_MODERO_MONITOR_MAIN
 custom_event [dvPanelsMain, 0, MODERO_CUSTOM_EVENT_ID_SMART_CARD_INSERT_REMOVE]
 {
 	// custom.flag (INTEGER) - 0: remove card event, 1: insert card event
@@ -1112,7 +1185,9 @@ custom_event [dvPanelsMain, 0, MODERO_CUSTOM_EVENT_ID_SMART_CARD_INSERT_REMOVE]
 		}
 	}
 }
+#end_if
 
+#if_defined INCLUDE_MODERO_MONITOR_MAIN
 custom_event [dvPanelsMain, 0, MODERO_CUSTOM_EVENT_ID_SMART_CARD_READER_INSERT_REMOVE]
 {
 	// custom.flag (INTEGER) - 0: remove reader event, 1: insert reader event
@@ -1141,7 +1216,9 @@ custom_event [dvPanelsMain, 0, MODERO_CUSTOM_EVENT_ID_SMART_CARD_READER_INSERT_R
 		}
 	}
 }
+#end_if
 
+#if_defined INCLUDE_MODERO_MONITOR_MAIN
 custom_event [dvPanelsMain, 0, MODERO_CUSTOM_EVENT_ID_SUBPAGE_ANCHOR_NOTIFICATION]
 {
 	// custom.id (INTEGER) - the address of the subpage view button which generated the event
@@ -1151,7 +1228,9 @@ custom_event [dvPanelsMain, 0, MODERO_CUSTOM_EVENT_ID_SUBPAGE_ANCHOR_NOTIFICATIO
 	// custom.text (CHAR []) - pipe character seperated list of subpage names
 	#warn '@TODO: amx-modero-listener - custom_event for subpage anchor notification, could come in over multiple custom_events'
 }
+#end_if
 
+#if_defined INCLUDE_MODERO_MONITOR_MAIN
 custom_event [dvPanelsMain, 0, MODERO_CUSTOM_EVENT_ID_SUBPAGE_ONSCREEN_NOTIFICATION]
 {
 	// custom.id (INTEGER) - the address of the subpage view button which generated the event
@@ -1161,7 +1240,9 @@ custom_event [dvPanelsMain, 0, MODERO_CUSTOM_EVENT_ID_SUBPAGE_ONSCREEN_NOTIFICAT
 	// custom.text (CHAR []) - pipe character seperated list of subpage names
 	#warn '@TODO: amx-modero-listener - custom_event for subpage onscreen notification, could come in over multiple custom_events'
 }
+#end_if
 
+#if_defined INCLUDE_MODERO_MONITOR_MAIN
 custom_event [dvPanelsMain, 0, MODERO_CUSTOM_EVENT_ID_SUBPAGE_OFFSCREEN_NOTIFICATION]
 {
 	// custom.id (INTEGER) - the address of the subpage view button which generated the event
@@ -1171,7 +1252,9 @@ custom_event [dvPanelsMain, 0, MODERO_CUSTOM_EVENT_ID_SUBPAGE_OFFSCREEN_NOTIFICA
 	// custom.text (CHAR []) - pipe character seperated list of subpage names
 	#warn '@TODO: amx-modero-listener - custom_event for subpage offscreen notification, could come in over multiple custom_events'
 }
+#end_if
 
+#if_defined INCLUDE_MODERO_MONITOR_MAIN
 custom_event [dvPanelsMain, 0, MODERO_CUSTOM_EVENT_ID_SUBPAGE_REORDER_NOTIFICATION]
 {
 	// custom.id (INTEGER) - the address of the subpage view button which generated the event
@@ -1181,5 +1264,6 @@ custom_event [dvPanelsMain, 0, MODERO_CUSTOM_EVENT_ID_SUBPAGE_REORDER_NOTIFICATI
 	// custom.text (CHAR []) - pipe character seperated list of subpage names
 	#warn '@TODO: amx-modero-listener - custom_event for subpage reorder notification, could come in over multiple custom_events'
 }
+#end_if
 
 #end_if

@@ -741,7 +741,7 @@ channel_event [dvPanelsFeedback, CHANNEL_CODE_WILDCARD]
  */
 
 #if_defined INCLUDE_MODERO_NOTIFY_LEVEL_CHANGE
-level_event [dvPanelsBargraphs, WILDCARD_LEVEL_CODE]
+level_event [dvPanelsBargraphs, LEVEL_CODE_WILDCARD]
 {
 	moderoNotifyLevelChange (level.input.device, level.input.level, level.value)
 }

@@ -114,7 +114,7 @@ define_function moderoSetPagePrevious (dev panel)
  */
 define_function moderoSetPageAnimated (dev panel, char pageName[], char pageFlipAnimation[], integer duration)
 {
-	sendCommand (panel, "MODERO_COMMAND_PAGE_FLIP_ANIMATED, pageName, pageFlipAnimation, itoa(duration)")
+	sendCommand (panel, "MODERO_COMMAND_PAGE_FLIP_ANIMATED, pageName, ',', pageFlipAnimation, ',', itoa(duration)")
 }
 
 
@@ -1801,64 +1801,44 @@ define_function moderoSetStreamingAudioVideoMuteStatus (dev panel, char audioMut
  * Function:    moderoEnableStreamSession
  *
  * Arguments:   dev panel - touch panel
+ *              integer btnAdrCode - button address
+ *              integer btnState - button state
  *              char streamUrl[] - stream url
  *              integer streamPort - stream port
  *
  * Description: Start a streaming session.
  */
-define_function moderoEnableStreamSession (dev panel, char streamUrl[], integer streamPort)
+define_function moderoEnableStreamSession (dev panel, integer btnAdrCde, integer btnState, char streamUrl[], integer streamPort)
 {
-	sendCommand (panel, "MODERO_COMMAND_STREAMING_START_OR_STOP,'10,2,',streamUrl,':',itoa(streamPort)")
+	sendCommand (panel, "MODERO_COMMAND_STREAMING_START_OR_STOP, itoa(btnAdrCde), ',', itoa(btnState),',', streamUrl,':',itoa(streamPort)")
 }
 
 /*
  * Function:    moderoEnableStreamSessionCamera
  *
  * Arguments:   dev panel - touch panel
+ *              integer btnAdrCode - button address
+ *              integer btnState - button state
  *
  * Description: Start a streaming session from the built-in camera.
  */
-define_function moderoEnableStreamSessionCamera (dev panel)
+define_function moderoEnableStreamSessionCamera (dev panel, integer btnAdrCde, integer btnState)
 {
-	sendCommand (panel, "MODERO_COMMAND_STREAMING_START_OR_STOP,'10,2,',MODERO_STREAMING_CAMERA_URL")
+	sendCommand (panel, "MODERO_COMMAND_STREAMING_START_OR_STOP, itoa(btnAdrCde), ',', itoa(btnState), ',', MODERO_STREAMING_CAMERA_URL")
 }
 
 /*
  * Function:    moderoDisableStreamSession
  *
  * Arguments:   dev panel - touch panel
- *              char streamUrl[] - stream url
- *              integer streamPort - stream port
- *
- * Description: Stop a streaming session.
- */
-define_function moderoDisableStreamSession (dev panel, char streamAdr[], integer streamPort)
-{
-	sendCommand (panel, "MODERO_COMMAND_STREAMING_START_OR_STOP,'10,1,',streamAdr,':',itoa(streamPort)")
-}
-
-/*
- * Function:    moderoDisableStreamSessionCurrent
- *
- * Arguments:   dev panel - touch panel
+ *              integer btnAdrCode - button address
+ *              integer btnState - button state
  *
  * Description: Stop the current streaming session.
  */
-define_function moderoDisableStreamSessionCurrent (dev panel)
+define_function moderoDisableStreamSession (dev panel, integer btnAdrCde, integer btnState)
 {
-	sendCommand (panel, "MODERO_COMMAND_STREAMING_START_OR_STOP,'10,1,',MODERO_STREAMING_STOP")
-}
-
-/*
- * Function:    moderoDisableStreamSessionCamera
- *
- * Arguments:   dev panel - touch panel
- *
- * Description: Stop the current streaming session from the camera.
- */
-define_function moderoDisableStreamSessionCamera (dev panel)
-{
-	sendCommand (panel, "MODERO_COMMAND_STREAMING_START_OR_STOP,'10,1,',MODERO_STREAMING_CAMERA_URL")
+	sendCommand (panel, "MODERO_COMMAND_STREAMING_START_OR_STOP, itoa(btnAdrCde), ',', itoa(btnState), ',' ,MODERO_STREAMING_STOP")
 }
 
 /*
